@@ -43,12 +43,12 @@ class Content
     // getTitle() const
     // Summary - Gets the title of a content(Movie, in our case).
     // Post-conditions - Returns the title of a content(movie).
-    string getTitle() const;      
+    virtual string getTitle() const;      
 
     // getReleaseYear() const
     // Summary - Gets the release year of the content(movie).
     // Post-conditions - Returns the release year of a content(movie).
-    int getReleaseYear() const;      
+    virtual int getReleaseYear() const;      
 
     //---------------------------------------------Setter methods--------------------------------------------------------------
 
