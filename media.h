@@ -26,7 +26,7 @@ class Media
     //--------------------------------------------Constructors & Destructor-----------------------------------------------------
 
     // Media()
-    // Summary - Default constructor initializing a Media object with default values.
+    // Summary - Default constructor.
     // Post-conditions - A Media object is initialized with default values.
     Media();
 
@@ -45,12 +45,12 @@ class Media
     // reduceStock()
     // Summary - Reduces the stock of a media item by 1 if there's valid stock.
     // Post-conditions - Decreases the stock of the media item by 1.
-    virtual bool reduceStock();
+    bool reduceStock();
 
     // increaseStock()
     // Summary - Increases the stock of media item by 1.
     // Post-conditions - Increases the stock of the media item by 1.
-    virtual bool increaseStock();
+    bool increaseStock();
     
     //----------------------------------------------setter methods-------------------------------------------------------
 
@@ -80,7 +80,6 @@ class Media
     // Summary - Gets the unique identifier of a media item.
     // Post-conditions - Returns the unique identifier of a media item.
     string getMediaId() const;
-    
 
    private:
     int stock;            // Stock available for the media item.
