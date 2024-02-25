@@ -19,6 +19,7 @@
 #include "media.h"
 #include "customer.h"
 #include "store.h"
+#include "map.h"
 using namespace std;
 
 class Parser
@@ -44,13 +45,13 @@ class Parser
     // Summary - Parses a string of inventory data to build the store's inventory.
     // Pre-conditions - The input data must be properly formatted according to requirements.
     // Post-conditions - Returns a store object based on the parsed data.
-    Store& parseInventoryFile(const string& line);
+    Map<string, Media> parseInventoryFile(string fileName);
     
     // parseCustomersFile(const string& line)
     // Summary - Parses a string of customer data to create corresponding customer objects.
     // Pre-conditions - The input data must be properly formatted according to requirements.
     // Post-conditions - Returns a customer object based on the parsed data.
-    Customer& parseCustomersFile(const string& line);
+    Map<string, Customer> parseCustomersFile(string fileName);
   
 }
 
