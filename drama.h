@@ -39,10 +39,10 @@ class Drama : public Movies  // Drama class inherits from Movie class
 
     //---------------------------------------------getter methods-----------------------------------------------------------
 
-    // getMovieId() const
+    // getContentId() const
     // Summary - Gets the unique identifier for a drama movie. Implemented from the parent class Movie.
     //Post-conditions - Returns the unique identifier for a drama movie.
-    int getMovieId() const;
+    int getContentId() const;
 };
 
 #endif
