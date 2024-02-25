@@ -62,10 +62,10 @@ class Movies : public Content // Movies class inherits from Content class
     // Post-conditions - Returns the firstName and lastName of the director of a movie.
     string getDirector() const;
 
-    // getMovieId() const
-    // Summary - Abstract function to get a movieId, a unique identifier of a movie.
+    // getContentId() const
+    // Summary - Abstract function to get a contentId, the unique identifier of this movie.
     // Post-conditions - None.
-    string getMovieId() const;
+    string getContentId() const;
 
 
     //--------------------------------------------additional functionalities------------------------------------------------
