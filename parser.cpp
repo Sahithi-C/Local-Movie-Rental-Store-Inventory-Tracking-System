@@ -1,31 +1,20 @@
 #include<iostream>
-#include<string>
-#include "movies.h"
-#include "media.h"
-#include "customer.h"
-#include "store.h"
+#include "parser.h"
+
 using namespace std;
 
+Map<string, Media> Parse::parseInventoryFile(const string fileName) {
 
-// parseInventoryFile(const string& line)
-// Summary - Parses a string of inventory data to build the store's inventory.
-// Pre-conditions - The input data must be properly formatted according to requirements.
-// Post-conditions - Returns a store object based on the parsed data.
-Store& Parse::parseInventoryFile(const string fileName) {
-	for(each line in dataFile) {
-		parse the line to get movie details
-		check the type of movie(classics, drama, comedy)
-		create a movie object based on the type of movie
-		if(type of movie is comedy) {
-			add movie to comedy list in the store
-		}
-		else if(type of movie is drama) {
-			add movie to drama list in the store
-		}
-		else {	
-			add movie to classics list in the store
-		}
-	}
-	
-	return the created store object
+    create an empty map object m
+
+    for(each line) {
+        parse the line to get movie details
+        validate the type of movie(Classics, Drama, Comedy)
+        create a movie object mov, based on the type of movie
+        create a media object med with stock, object mov and the type of media. 
+
+        Insert <mediaId, med> into map m
+    }
+    
+    Return map object m
 }
