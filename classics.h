@@ -62,10 +62,10 @@ class Classics : public Movies  // Classics class inherits from Movies class
     // Post-conditions - Returns the release month of a classic movie.
     int getReleaseMonth() const;
 
-    // getMovieId() const
+    // getContentId() const
     // Summary - Gets the unique identifier for a classic movie. Implemented from the parent class Movie.
     // Post-conditions - Returns the unique identifier for a classic movie.
-    string getMovieId() const;
+    string getContentId() const;
 
    private:
     int releaseMonth;  // release month of a classic movie.
