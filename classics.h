@@ -24,12 +24,12 @@ class Classics : public Movies  // Classics class inherits from Movies class
     //--------------------------------------------constructors and destructor-----------------------------------------------------
 
     // Classics()
-    // Summary - Default constructor for Classics class that constructs a Classics object.
-    // Post-conditions - Constrcts a Classics object.
+    // Summary - Default constructor.
+    // Post-conditions - Constructs a Classics object.
     Classics();
 
     // Classics(const Classics& other)
-    // Summary - Copy constructor that copies one Classics objecct to another.
+    // Summary - Copy constructor.
     //Post-conditions - Constructs a Classics object as a copy of other Classics object.
     Classics(const Classics& other);
 
@@ -42,7 +42,7 @@ class Classics : public Movies  // Classics class inherits from Movies class
 
     // setName(const string& firstName, const string& lastName)
     // Summary - Sets the name of major actor.
-    // Post-conditions - first name and last name of a major actor is set.
+    // Post-conditions - First name and last name of a major actor is set.
     void setName(const string& firstName, const string& lastName);
 
     // setReleaseMonth(int month)
@@ -64,7 +64,7 @@ class Classics : public Movies  // Classics class inherits from Movies class
 
     // getMovieId() const
     // Summary - Gets the unique identifier for a classic movie. Implemented from the parent class Movie.
-    // Post-conditions - Returns the unique id for a classic movie.
+    // Post-conditions - Returns the unique identifier for a classic movie.
     string getMovieId() const;
 
    private:
