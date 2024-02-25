@@ -30,11 +30,6 @@ class Store
     // Post-conditions - Initializes a store object.
     Store();
 
-    // Store(const Store& other)
-    // Summary - Copy constructor.
-    // Post-conditions - Intitializes a store object as a copy of other.
-    Store(const Store& other);
-
     // ~Store()
     // Summary - Destructor.
     // Post-conditions - Cleans any dynamically allocated memory.
