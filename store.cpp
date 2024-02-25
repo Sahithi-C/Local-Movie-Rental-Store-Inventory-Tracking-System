@@ -1,6 +1,5 @@
 #include<iostream>
 #include "store.h"
-using namespace std;
 
 // showCustomerHistory() const
 // Summary - Displays the list of customers of the store.
@@ -15,7 +14,6 @@ void Store::showCustomerHistory() {
 
 // borrowItem()
 // Summary - Records a customer borrowing an item from the store.
-// Pre-conditions - None.
 // Post-conditions - Updates the inventory and customer records by recording borrow action type.
 void store::borrowItem(Customer c, Content content) {
 	if (!customers.contains(c))
@@ -49,7 +47,6 @@ void store::returnItem(Customer c, Content content) {
 
 // showInventory() const
 // Summary - Displays the current inventory of the store.
-// Pre-conditions - None.
 // Post-conditions - Thes current inventory of the store is displayed.
 void store::showInventory() {
 	for each type of movie m {
