@@ -26,28 +26,34 @@ class Map
 
     // Map()
     // Summary - Default constructor.
+    // Post-conditions - Initializes an empty map object.
     Map();
 
     // ~Map()
     // Summary - Destructor.
+    // Post-conditions - Clears any dynamically associated memory.
     ~Map();
 
     //-------------------------------------------------------other member functions------------------------------------------------
 
     // setValue(const Key& key, const Value& value)
     // Summary - Inserts a key-value pair into the map. Returns true if successful, false otherwise.
+    // Post-conditions - A key-value pair is inserted into the map. and returns true if successful. false otherwise.
     bool setValue(const Key& key, const Value& value);
 
     // getValue(const Key& key, const Value& value)
     // Summary - Finds a key-value pair if present in the map. Returns the value if found, false otherwise.
+    // Post-conditions - Searches for a key-value pair in the map. Returns true if pair is found. false, otherwise.
     Value& getValue(const Key& key, const Value& value);
 
     // remove(const Key& key)
     // Summary - Removes a key-value pair from the map. Returns true if successful, false otherwise.
+    // Post-conditions - The key-value pair from the map is removed. Returns true if successful. false, otherwise.
     bool remove(const Key& key);
 
     // isEmpty() const
     // Summary - Checks if the map is empty. Returns true if the map is empty, false otherwise.
+    // Post-conditions - Returns true if the map is empty. false, otherwise.
     bool isEmpty() const;
 
    private:
