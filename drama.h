@@ -6,7 +6,7 @@
 
 // Date of Last Modification : 02/24/2024
 
-// Purpose : Defining a Drama class representing a drama movie.This class inherits from Movie class. 
+// Purpose : Defining a Drama class representing a drama movie. This class inherits from Movie class. 
 
 // -------------------------------------------------------------------------------------------------------------------------
 
@@ -23,13 +23,11 @@ class Drama : public Movies  // Drama class inherits from Movie class
     //------------------------------------------Constructors & Destructor-----------------------------------------------------
     
     // Drama()
-    // Summary - Default constructor.
-    // Pre-conditions - None.
-    // Post-conditions - Constructs a drama object.
+    // Summary - Default constructor that constructs a Drama object.
     Drama();
 
     // Drama(const Drama& other)
-    // Summary - Copy constructor.
+    // Summary - Copy constructor 
     // Pre-conditions - None.
     // Post-consitions - Constructs a drama objects as a copy other drama object.
     Drama(const Drama& other);
