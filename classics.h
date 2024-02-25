@@ -56,7 +56,7 @@ class Classics : public Movies  // Classics class inherits from Movies class
     int getReleaseMonth() const;
 
     // getMovieId() const
-    // Summary - Gets the unique identifier for a classic movie. Implemented from the parent class.
+    // Summary - Gets the unique identifier for a classic movie. Implemented from the parent class Movie.
     string getMovieId() const;
 
    private:
