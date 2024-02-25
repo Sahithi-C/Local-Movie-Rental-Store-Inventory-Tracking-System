@@ -50,7 +50,6 @@ class Transaction
 
     // getRecord(const string transactionId) const
     // Summary - Gets the transaction record of a given transaction Id.
-    // Pre-conditions - None.
     // Post-conditions - Returns the record for the transaction.
     Transaction& getRecord(const string transactionId) const;
 
