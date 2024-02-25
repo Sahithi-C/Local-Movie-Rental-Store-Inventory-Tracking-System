@@ -45,11 +45,6 @@ class Inventory
 
     //---------------------------------------------------other member functions-----------------------------------------------------
 
-    // sortInventory()
-    // Summary - Sorts the inventory according to the requirements and sorting criteria.
-    // Post-conditions - The inventory is sorted according to the required criteria.
-    void sortInventory();
-
     // populateInventory()
     // Summary - Populates the inventory object with data from the parser.
     // Post-conditions - The inventory is populated with valid media items.
@@ -61,6 +56,11 @@ class Inventory
     Map<string, Media> comedyMap;    // Hash table to store sorted list of all Comedy media items.
     Map<string, Media> dramaMap;     // Hash table to store sorted list of all Drama media items.
     Map<string, Media> classicsMap;  // Hash table to store sorted list of all Classics media items.
+
+    // sortInventory()
+    // Summary - Sorts the inventory according to the requirements and sorting criteria.
+    // Post-conditions - The inventory is sorted according to the required criteria.
+    void sortInventory();
 };
 
 
