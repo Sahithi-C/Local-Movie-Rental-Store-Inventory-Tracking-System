@@ -69,12 +69,12 @@ class Customer
     // getTransactionHistory() const
     // Summary - Gets the whole transaction history of a customer.
     // Post-conditions - Returns the transaction list of a particular customer.
-    vector<TransactionHistory> getTransactionHistory() const;
+    virtual vector<TransactionHistory> getTransactionHistory() const;
 
     // printTransactionHistory() const
     // Summary - Prints the transaction history of the specified customer.
     // Post-conditions - transactio history of a customer is printed.
-    void printTransactionHistory() const;
+    virtual void printTransactionHistory() const;
     
     // borrowMedia(int mediaId)
     // Summary - Records a transaction of a customer borrowing a movie in borrowedMediaList 
