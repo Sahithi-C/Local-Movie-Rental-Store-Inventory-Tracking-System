@@ -6,8 +6,8 @@
 
 // Date of Last Modification : 02/24/2024
 
-// Purpose : Defining an Inventory class representing a collection media items. 
-
+// Purpose : Defining an Inventory class representing a collection of media items 
+//           that are also the store's inventory
 // -------------------------------------------------------------------------------------------------------------------------
 
 #ifndef INVENTORY_H
@@ -26,49 +26,36 @@ class Inventory
     //-------------------------------------------------Constructors & Destructor------------------------------------------------
 
     // Inventory()
-    // Summary - Default constructor.
-    // Pre-conditions - None.
-    // Post-conditions - Initializes an emty inventory object.
+    // Summary - Default constructor  that initializes an empty inventory object.
     Inventory();
 
-    // Inventory(const Inventory& other)
-    // Summary - Copu constructor.
-    // Pre-conditions - None.
-    // Post-conditions - Initializes an inventory object as a copy of other inventory object.
-    Inventory(const Inventory& other);
-
     // ~Inventory()
-    // Summary - Dstructor.
-    // Pre-conditions - None.
-    // Post-conditions - Clears any dynamically assciated memory.
+    // Summary - Destructor.
     ~Inventory();
 
     //--------------------------------------------------getter methods------------------------------------------------------------
 
     // getMedia(mediaId)
-    // Summary - gets the media item with given media id.
-    // Pre-conditions - the id shoud be a valid mediaId.
-    // Post-conditions - Returns the media item of given media id.
+    // Summary - Gets the media item with given media id.
+    //           MediaID is a unique string representing the mediaType and movieID.
     Media getMedia(mediaId);
 
     //---------------------------------------------------other member functions-----------------------------------------------------
 
     // sortInventory()
     // Summary - Sorts the inventory according to the requirements and sorting criteria.
-    // Pre-conditions - None.
-    // Post-conditions - The inventory is sorted according to the required criteria.
     void sortInventory();
 
     // populateInventory()
-    // Summary - Populates the inventory.
-    // Pre-conditions - None.
-    // Post-conditions - Populates the inventory with valid media items.
+    // Summary - Populates the inventory object with data from the parser.
     void populateInventory();
 
    private:
-    map<int, Media> comedyList;    // Map to store list of all comedy media items.
-    map<int, Media> dramaList;     // Map to store list of all drama media items.
-    map<int, Media> classicsList;  // Map to store list of all classic media items.
+    Map<mediaId, Media> mediaMap;      // Unsorted Map of the inventory objects.
+
+    Map<mediaId, Media> comedyList;    // Hash table to store sorted list of all Comedy media items.
+    Map<mediaId, Media> dramaList;     // Hash table to store sorted list of all Drama media items.
+    Map<mediaId, Media> classicsList;  // Hash table to store sorted list of all Classics media items.
 
 };
 
