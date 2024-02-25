@@ -6,8 +6,8 @@
 
 // Date of Last Modification : 02/24/2024
 
-// Purpose : Defining a Parser class responsible for parsing input strings and creating corresponding objects.
-
+// Purpose : Defining a Parser class responsible for parsing input strings 
+//           and creating corresponding objects.
 // -------------------------------------------------------------------------------------------------------------------------
 
 #ifndef PARSER_H
