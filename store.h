@@ -66,7 +66,7 @@ class Store
     // buildInventory()
     // Summary - Builds the inventory for the store from data from the Parser.
     // Post-conditions - The inventory data is sorted and the store's inventory is built.
-    void buildInventory();
+    virtual void buildInventory();
 
     // addCustomer(const Customer& customer)
     // Summary - Adds a new customer to the store.
