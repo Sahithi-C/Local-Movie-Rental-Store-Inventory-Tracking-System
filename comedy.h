@@ -23,30 +23,22 @@ class Comedy : public Movies  // Comedy class inherits from Movie class.
     //-------------------------------------------Constructors and Destructor----------------------------------------------------
 
     // Comedy()
-    // Summary - Default constructor.
-    // Pre-conditions - None.
-    // Post-conditions - Constructs a comedy object.
+    // Summary - Default constructor that constructs a Comedy object.
     Comedy();
 
     // Comedy(const Comedy& other)
-    // Summary - Copy constructor.
-    // Pre-conditions - None.
-    // Post-conditions - Constructs a comedy object as a copy of ther comedy object.
+    // Summary - Copy constructor that copies one Comedy object to another.
     Comedy(const Comedy& other);
 
     // ~Comedy()
     // Summary - Destrcutor.
-    // Pre-conditions - None.
-    // Post-conditions - clears any dynamically associated memory.
     ~Comedy();
     
     //------------------------------------------------getter methods---------------------------------------------------------------
     
     // getMovieId() const
-    // Summary - gets the unique id for a comedy movie.
-    // Pre-conditions - There should be a valid movie in movies of drama genre type.
-    // Post-conditions - returns the unique id for a drama movie.
-    int getMovieId() const;
+    // Summary - Gets the unique identifier for a comedy movie.
+    string getMovieId() const;
 
 };
 
