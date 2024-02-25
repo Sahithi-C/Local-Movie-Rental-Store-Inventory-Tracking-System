@@ -11,7 +11,7 @@ using namespace std;
 // Summary - Parses a string of inventory data to build the store's inventory.
 // Pre-conditions - The input data must be properly formatted according to requirements.
 // Post-conditions - Returns a store object based on the parsed data.
-Store& Parse::parseInventoryFile(const string& line) {
+Store& Parse::parseInventoryFile(const string fileName) {
 	for(each line in dataFile) {
 		parse the line to get movie details
 		check the type of movie(classics, drama, comedy)
