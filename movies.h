@@ -65,7 +65,7 @@ class Movies : public Content // Movies class inherits from Content class
     // getMovieId() const
     // Summary - Abstract function to get a movieId, a unique identifier of a movie.
     // Post-conditions - None.
-    int getMovieId() const;
+    string getMovieId() const;
 
 
     //--------------------------------------------additional functionalities------------------------------------------------
