@@ -38,7 +38,7 @@ class Inventory
     // ~Inventory()
     // Summary - Destructor.
     // Post-conditions - Clears any dynamically associated memory.
-    ~Inventory();
+    virtual ~Inventory();
 
     //--------------------------------------------------getter methods------------------------------------------------------------
 
@@ -46,19 +46,19 @@ class Inventory
     // Summary - Gets the media item with given media id.
     //           MediaID is a unique string representing the mediaType and movieID.
     // Post-conditions - Returns the media item of the given media id.
-    Media getMedia(mediaId);
+    virtual Media getMedia(mediaId);
 
     //---------------------------------------------------other member functions-----------------------------------------------------
 
     // sortInventory()
     // Summary - Sorts the inventory according to the requirements and sorting criteria.
     // Post-conditions - The inventory is sorted according to the required criteria.
-    void sortInventory();
+    virtual void sortInventory();
 
     // populateInventory()
     // Summary - Populates the inventory object with data from the parser.
     // Post-conditions - Populates the inventory with valid media items.
-    void populateInventory();
+    virtual void populateInventory();
 
    private:
     Map<mediaId, Media> mediaMap;      // Unsorted Map of the inventory objects.
