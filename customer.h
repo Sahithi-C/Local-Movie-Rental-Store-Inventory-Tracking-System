@@ -30,11 +30,6 @@ class Customer
     // Post-conditions - A customer object is initialized with default values.
     Customer();
 
-    // Customer(const Customer& other)
-    // Summary - Copy constructor.
-    // Post-conditions - A customer object is initialized as a copy of other customer object.
-    Customer(const Customer& other);
-
     // ~Customer()
     // Summary - Destructor.
     // Post-conditions - cleans any dynamically associated memory.
