@@ -30,11 +30,6 @@ class Media
     // Post-conditions - A Media object is initialized with default values.
     Media();
 
-    // Media(const Media& other)
-    // Summary - Copy constructor.
-    // Post-conditions - A Media object is initialized with the data of other Media object.
-    Media(const Media& other);
-
     // ~Media()
     // Summary - Destructor.
     // Post-conditions - Cleans any dynamically associated memory.
