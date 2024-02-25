@@ -38,19 +38,19 @@ class Media
     // ~Media()
     // Summary - Destructor.
     // Post-conditions - Cleans any dynamically associated memory.
-    ~Media(); 
+    virtual ~Media(); 
 
     //----------------------------------------------other member functions---------------------------------------------------------
 
     // reduceStock()
     // Summary - Reduces the stock of a media item by 1 if there's valid stock.
     // Post-conditions - Decreases the stock of the media item by 1.
-    bool reduceStock();
+    virtual bool reduceStock();
 
     // increaseStock()
     // Summary - Increases the stock of media item by 1.
     // Post-conditions - Increases the stock of the media item by 1.
-    bool increaseStock();
+    virtual bool increaseStock();
     
     //----------------------------------------------setter methods-------------------------------------------------------
 
