@@ -37,7 +37,7 @@ class Comedy : public Movies  // Comedy class inherits from Movie class.
     //------------------------------------------------getter methods---------------------------------------------------------------
     
     // getMovieId() const
-    // Summary - Gets the unique identifier for a comedy movie.
+    // Summary - Gets the unique identifier for a comedy movie. Implemented from the parent class Movie.
     string getMovieId() const;
 
 };
