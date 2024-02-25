@@ -27,23 +27,17 @@ class Drama : public Movies  // Drama class inherits from Movie class
     Drama();
 
     // Drama(const Drama& other)
-    // Summary - Copy constructor 
-    // Pre-conditions - None.
-    // Post-consitions - Constructs a drama objects as a copy other drama object.
+    // Summary - Copy constructor that copies one Drama objecct to another. 
     Drama(const Drama& other);
 
     // ~Drama()
     // Summary - Destructor.
-    // Pre-conditions - None.
-    // Post-consitions - Clears any dynamically associated memory.
     ~Drama();
 
     //---------------------------------------------getter methods-----------------------------------------------------------
 
     // getMovieId() const
-    // Summary - gets the unique id for a drama movie.
-    // Pre-consitions - a valid movie should exist in drama genre to get it's id.
-    // Post-consditions - Returns unique id for a drama movie.
+    // Summary - Gets the unique identifier for a drama movie. Implemented from the parent class Movie.
     int getMovieId() const;
 };
 
