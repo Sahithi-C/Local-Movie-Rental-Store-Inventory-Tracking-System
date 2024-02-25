@@ -43,13 +43,13 @@ class Customer
     //-------------------------------------------------setter methods-----------------------------------------------------------
 
     // setCustomerId(int customerId)
-    // Summary - Sets the customer id for a Customer.
+    // Summary - Sets the customer Id for a Customer.
     // Post-conditions - customer Id is set for a customer.
     void setCustomerId(int customerId);
 
     // setCustomerName(const string& firstName, const string& lastName)
     // Summary - Sets customer's first name and last name.
-    // Post-conditions - first and last names of a customer are set.
+    // Post-conditions - First and last names of a customer are set.
     void setCustomerName(const string& firstName, const string& lastname);
     
     //------------------------------------------------getter methods-------------------------------------------------------
@@ -69,12 +69,12 @@ class Customer
     // getTransactionHistory() const
     // Summary - Gets the whole transaction history of a customer.
     // Post-conditions - Returns the transaction list of a particular customer.
-    virtual vector<TransactionHistory> getTransactionHistory() const;
+    vector<TransactionHistory> getTransactionHistory() const;
 
     // printTransactionHistory() const
     // Summary - Prints the transaction history of the specified customer.
     // Post-conditions - transactio history of a customer is printed.
-    virtual void printTransactionHistory() const;
+    void printTransactionHistory() const;
     
     // borrowMedia(int mediaId)
     // Summary - Records a transaction of a customer borrowing a movie in borrowedMediaList 
@@ -85,7 +85,8 @@ class Customer
     // returnmedia(int mediaId)
     // Summary - Records a transaction for a customer returning a movie, 
     //           by removing the media item from borrowedMediaList.
-    // Post-conditions - Transaction history for return of media by a customer is recorded, by removing the item from list.
+    // Post-conditions - Transaction history for return of media by a customer is recorded, 
+    //                   by removing the item from list.
     void returnMedia(int mediaId);
 
     // isItemReturnable(int mediaId) const
@@ -97,7 +98,7 @@ class Customer
     string firstName;                        // First name of the customer.
     string lastname;                         // last name of the customer.
     int customerId;                          // Unique Customer id.
-    map<string, Media> borrowedMediaList;    // List of borrowed media items by a customer.
+    Map<string, Media> borrowedMediaList;    // List of borrowed media items by a customer.
 };
 
 #endif
