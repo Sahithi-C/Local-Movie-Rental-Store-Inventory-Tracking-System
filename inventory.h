@@ -27,10 +27,17 @@ class Inventory
 
     // Inventory()
     // Summary - Default constructor  that initializes an empty inventory object.
+    // Post-conditions - Initializes an empty inventory object.
     Inventory();
+
+    // Inventory(const Inventory& other)
+    // Summary - Copy constructor.
+    // Post-conditions - Initializes an inventory object as a copy of other inventory object.
+    Inventory(const Inventory& other);
 
     // ~Inventory()
     // Summary - Destructor.
+    // Post-conditions - Clears any dynamically associated memory.
     ~Inventory();
 
     //--------------------------------------------------getter methods------------------------------------------------------------
@@ -38,16 +45,19 @@ class Inventory
     // getMedia(mediaId)
     // Summary - Gets the media item with given media id.
     //           MediaID is a unique string representing the mediaType and movieID.
+    // Post-conditions - Returns the media item of the given media id.
     Media getMedia(mediaId);
 
     //---------------------------------------------------other member functions-----------------------------------------------------
 
     // sortInventory()
     // Summary - Sorts the inventory according to the requirements and sorting criteria.
+    // Post-conditions - The inventory is sorted according to the required criteria.
     void sortInventory();
 
     // populateInventory()
     // Summary - Populates the inventory object with data from the parser.
+    // Post-conditions - Populates the inventory with valid media items.
     void populateInventory();
 
    private:
