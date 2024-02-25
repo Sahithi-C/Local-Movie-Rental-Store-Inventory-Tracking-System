@@ -26,87 +26,65 @@ class Customer
     //-------------------------------------------------Constructors & Destructor-------------------------------------------------
 
     // Customer()
-    // Summary - Default constructor.
-    // Pre-conditions - None.
-    // Post-conditions - A customer object is initialized with default values.
+    // Summary - Default constructor initializing a customer object with default values.
     Customer();
 
     // Customer(const Customer& other)
-    // Summary - copy constructor.
-    // Pre-conditions - None.
-    // Post-conditions - A customer object is initialized as a copy of other customer object.
+    // Summary - Copy constructor.
     Customer(const Customer& other);
 
     // ~Customer()
     // Summary - Destructor.
-    // Pre-conditions - None.
-    // Post-conditions - cleans any dynamically associated memory.
     ~Customer();
 
     //-------------------------------------------------setter methods-----------------------------------------------------------
 
     // setCustomerId(int customerId)
-    // Summary - sets the customer id.
-    // Pre-conditions - None.
-    // Post-conditions - customer Id is set for a customer.
+    // Summary - Sets the customer id for a Customer.
     void setCustomerId(int customerId);
 
     // setCustomerName(const string& firstName, const string& lastName)
-    // Summary - sets customers first name and last name.
-    // Pre-conditions - None.
-    // Post-conditions - first and last names of a customer are set.
+    // Summary - Sets customer's first name and last name.
     void setCustomerName(const string& firstName, const string& lastname);
     
     //------------------------------------------------getter methods-------------------------------------------------------
 
     // getCustomerId() const
-    // Summary - gets the customer id.
-    // Pre-conditions - there should exist a valid customer to get that customer id.
-    // Post-conditions - Returns unique id of a customer.
+    // Summary - Gets the unique customer id.
     int getCustomerId() const;
 
     // getCustomerName() const
-    // Summary - gets first and last names of a customer.
-    // Pre-conditions - There should exist a valid customer to get their name.
-    // Post-conditions - Returns first and last names of a customer.
+    // Summary - Gets first and last names of a customer.
     string getCustomerName() const;
 
     //-----------------------------------------other member functions-----------------------------------------------------------
 
     // getTransactionHistory() const
-    // Summary - gest whole transaction history of a customer.
-    // Pre-conditions - There should exist a valid customer to get their history.
-    // Post-conditions - Returns the transaction list of a particular customer. 
+    // Summary - Gets the whole transaction history of a customer.
     vector<TransactionHistory> getTransactionHistory() const;
 
     // printTransactionHistory() const
-    // Summary - prints the transaction history for a customer.
-    // Pre-conditions - There should exist a valid customer to print their history.
-    // Post-conditions - transactio history of a customer is printed.
+    // Summary - Prints the transaction history of the specified customer.
     void printTransactionHistory() const;
     
-    // borrowMedia(int mediaId, int movieId)
-    // Summary - Records a transaction for borrowing media for a customer in borrowedMediaList to keep track of customers borrows.
-    // Pre-conditions - None.
-    // Post-conditions - Transaction history for borrow of media by a customer is recorded.
-    void borrowMedia(int mediaId, int movieId);
+    // borrowMedia(int mediaId)
+    // Summary - Records a transaction of a customer borrowing a movie in borrowedMediaList 
+    //           to keep track of customer's borrows.
+    void borrowMedia(int mediaId);
 
-    // returnmedia(int mediaId, int movieId)
-    // Summary - Records a transaction for returning media by a customer, by removing the media item from borrowedMediaList.
-    // Pre-conditions - There should exist a record of borrow by customer to record(remove it from list) it as return.
-    // Post-conditions - Transaction history for return of media by a customer is recorded, by removing the item from list.
-    void returnMedia(int mediaId, int movieId);
+    // returnmedia(int mediaId)
+    // Summary - Records a transaction for a customer returning a movie, 
+    //           by removing the media item from borrowedMediaList.
+    void returnMedia(int mediaId);
 
     // isItemReturnable(int mediaId) const
     // Summary - Checks if a media item is returnable by a customer.
-    // Pre-conditions - There should exist a record of borrow by the customer of the media item in borrowedMediaList.
-    // Post-conditions - Returns true, if the item is a returnable item. false, otherwise.
     bool isItemReturnable(int mediaId) const;
 
    private:
     string firstName;                        // First name of the customer.
     string lastname;                         // last name of the customer.
-    int customerId;                          // Customer id.
+    int customerId;                          // Unique Customer id.
     map<string, Media> borrowedMediaList;    // List of borrowed media items by a customer.
 };
 
