@@ -26,14 +26,9 @@ class Inventory
     //-------------------------------------------------Constructors & Destructor------------------------------------------------
 
     // Inventory()
-    // Summary - Default constructor  that initializes an empty inventory object.
+    // Summary - Default constructor.
     // Post-conditions - Initializes an empty inventory object.
     Inventory();
-
-    // Inventory(const Inventory& other)
-    // Summary - Copy constructor.
-    // Post-conditions - Initializes an inventory object as a copy of other inventory object.
-    Inventory(const Inventory& other);
 
     // ~Inventory()
     // Summary - Destructor.
@@ -46,27 +41,26 @@ class Inventory
     // Summary - Gets the media item with given media id.
     //           MediaID is a unique string representing the mediaType and movieID.
     // Post-conditions - Returns the media item of the given media id.
-    virtual Media getMedia(mediaId);
+    Media getMedia(mediaId);
 
     //---------------------------------------------------other member functions-----------------------------------------------------
 
     // sortInventory()
     // Summary - Sorts the inventory according to the requirements and sorting criteria.
     // Post-conditions - The inventory is sorted according to the required criteria.
-    virtual void sortInventory();
+    void sortInventory();
 
     // populateInventory()
     // Summary - Populates the inventory object with data from the parser.
-    // Post-conditions - Populates the inventory with valid media items.
-    virtual void populateInventory();
+    // Post-conditions - The inventory is populated with valid media items.
+    void populateInventory();
 
    private:
-    Map<mediaId, Media> mediaMap;      // Unsorted Map of the inventory objects.
+    Map<string, Media> mediaMap;      // Unsorted Map of the inventory objects.
 
-    Map<mediaId, Media> comedyList;    // Hash table to store sorted list of all Comedy media items.
-    Map<mediaId, Media> dramaList;     // Hash table to store sorted list of all Drama media items.
-    Map<mediaId, Media> classicsList;  // Hash table to store sorted list of all Classics media items.
-
+    Map<string, Media> comedyMap;    // Hash table to store sorted list of all Comedy media items.
+    Map<string, Media> dramaMap;     // Hash table to store sorted list of all Drama media items.
+    Map<string, Media> classicsMap;  // Hash table to store sorted list of all Classics media items.
 };
 
 
