@@ -27,27 +27,23 @@ class Store
 
     // Store()
     // Summary - Default constructor.
-    // Pre-conditions - None.
-    // Post-conditions - initializes a store object.
+    // Post-conditions - Initializes a store object.
     Store();
 
     // Store(const Store& other)
     // Summary - Copy constructor.
-    // Pre-conditions - None.
     // Post-conditions - Intitializes a store object as a copy of other.
     Store(const Store& other);
 
     // ~Store()
     // Summary - Destructor.
-    // Pre-conditions - None.
-    // Post-conditions - Cleans any dynamically associated memory.
+    // Post-conditions - Cleans any dynamically allocated memory.
     ~Store();
 
     //--------------------------------------------------other member functions----------------------------------------------------
 
     // borrowItem()
     // Summary - Records a customer borrowing an item from the store.
-    // Pre-conditions - None.
     // Post-conditions - Updates the inventory and customer records by recording borrow action type.
     void borrowItem();
 
@@ -59,32 +55,27 @@ class Store
 
     // showInventory() const
     // Summary - Displays the current inventory of the store.
-    // Pre-conditions - None.
     // Post-conditions - Thes current inventory of the store is displayed.
     void showInventory() const;
 
-    // showCustomer() const
-    // Summary - Displays the list of customers in the store.
-    // Pre-conditions - None.
+    // showCustomerHistory() const
+    // Summary - Displays the list of customers of the store.
     // Post-conditions - The lsit of customers of the store is displayed.
-    void showCustomer() const;
+    void showCustomerHistory() const;
 
     // buildInventory()
-    // Summary - Builds the inventory for the store.
-    // Pre-conditions - None.
-    // Post-conditions - Populates the inventory of the store with given data.
+    // Summary - Builds the inventory for the store from data from the Parser.
+    // Post-conditions - The inventory data is sorted and the store's inventory is built.
     void buildInventory();
 
     // addCustomer(const Customer& customer)
     // Summary - Adds a new customer to the store.
-    // Pre-conditions - None.
     // Post-conditions - A new customer is added to the customers list in the store.
     void addCustomer(const Customer& customer);
 
    private:
-    map<string, Customer> customerList;     // List of customers in the store.
+    Map<string, Customer> customerMap;     // List of customers in the store.
     Inventory inventory;                    // Inventory of the store.
-
 };
 
 
