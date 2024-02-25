@@ -45,13 +45,13 @@ class Parser
     // Summary - Parses a string of inventory data to build the store's inventory.
     // Pre-conditions - The input data must be properly formatted according to requirements.
     // Post-conditions - Returns a store object based on the parsed data.
-    Map<string, Media> parseInventoryFile(string fileName);
+    Map<string, Media> parseInventoryFile(const string fileName);
     
     // parseCustomersFile(const string& line)
     // Summary - Parses a string of customer data to create corresponding customer objects.
     // Pre-conditions - The input data must be properly formatted according to requirements.
     // Post-conditions - Returns a customer object based on the parsed data.
-    Map<string, Customer> parseCustomersFile(string fileName);
+    Map<string, Customer> parseCustomersFile(const string fileName);
   
 }
 
