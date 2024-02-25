@@ -77,8 +77,8 @@ class Media
     char getMediaType() const;
 
     // getMediaId() const
-    // Summary - Abstract class to get the unique identifier of a media item.
-    // Post-conditions - Returns the unique id for a media item.
+    // Summary - Gets the unique identifier of a media item.
+    // Post-conditions - Returns the unique identifier of a media item.
     string getMediaId() const;
     
 
