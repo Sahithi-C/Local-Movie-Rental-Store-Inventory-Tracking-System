@@ -54,7 +54,7 @@ class Map
     Key key;                     //Hashed key for the table
     Value value;                 //Value for the given key
     int size;                    //size of the hash table 
-    Map* next;
+    Map* next;                   //pointer to the next element in the map
 };
 
 #endif
