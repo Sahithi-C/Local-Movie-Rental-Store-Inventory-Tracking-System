@@ -63,7 +63,12 @@ class Store
     // Post-conditions - The inventory data is sorted and the store's inventory is built.
     void buildInventory();
 
-    // addCustomer(const Customer& customer)
+    // setCustomers(Map<string, Customer>& customerMap)
+    // Summary - Sets the Customer map.
+    // Post-conditions - The list of customers are set as a hash map.
+    void setCustomers(Map<string, Customer>& customerMap);
+
+    // addCustomer(const Customer& customer) - for extension
     // Summary - Adds a new customer to the store.
     // Post-conditions - A new customer is added to the customers list in the store.
     void addCustomer(const Customer& customer);
