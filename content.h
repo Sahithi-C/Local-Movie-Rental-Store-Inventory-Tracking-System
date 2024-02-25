@@ -53,7 +53,7 @@ class Content
     // getContentId() const
     // Summary: Gets the unique ID for this piece of content.
     // Post-conditions: Returns the unique ID for this piece of content.
-    int getContentId() const;
+    string getContentId() const;
 
     //---------------------------------------------Setter methods--------------------------------------------------------------
 
