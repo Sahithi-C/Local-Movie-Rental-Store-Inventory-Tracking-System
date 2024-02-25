@@ -48,7 +48,12 @@ class Content
     // getReleaseYear() const
     // Summary - Gets the release year of the content(movie).
     // Post-conditions - Returns the release year of a content(movie).
-    int getReleaseYear() const;      
+    int getReleaseYear() const;
+
+    // getContentId() const
+    // Summary: Gets the unique ID for this piece of content.
+    // Post-conditions: Returns the unique ID for this piece of content.
+    int getContentId() const;
 
     //---------------------------------------------Setter methods--------------------------------------------------------------
 
