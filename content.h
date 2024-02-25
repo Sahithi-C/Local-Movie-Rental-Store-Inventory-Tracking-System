@@ -23,35 +23,25 @@ class Content
     //-------------------------------------------------Constructors & Destructor--------------------------------------------------
 
     // Content()
-    // Summary - Default constuctor.
-    // Pre-conditions - None.
-    // Post-conditions - A content object is initialized with default values.
+    // Summary - Default constructor initializing a content object with default values.
     Content();
 
     // Content(const Content& other)
     // Summary - Copy constructor
-    // Pre-conditions - None.
-    // Post-consditions - A content object is initialized with data of other content object.
     Content(const Content& other);
 
     // ~Content()
     // Summary - Destructor
-    // Pre-conditions - None.
-    // Post-conditions - Cleans any dynamically associated memory.
     ~Content();
 
     //-----------------------------------------------getter methods---------------------------------------------------------------
 
     // getTitle() const
-    // Summary - gets the title of the content.
-    // Pre-conditions - None.
-    // Post-conditons - Returns the title of the content.
+    // Summary - Gets the title of the content.
     string getTitle() const;      
 
     // getReleaseyear() const
-    // Summary - gets release year of the content.
-    // Pre-conditions - None.
-    // Post-consitions - Returns the release year of the content. 
+    // Summary - Gets release year of the content.
     int getReleaseYear() const;      
 
 
