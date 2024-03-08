@@ -30,22 +30,17 @@ class Customer
     // Post-conditions - A customer object is initialized with default values.
     Customer();
 
+    // Customer()
+    // Summary - Parametrized constructor that initializes a customer object with
+    //           customer id, first name and last name.
+    // Post-conditions - A customer object is initialized with customer id,
+    //                   first name and last name.
+    Customer(int customerId, const string& firstName, const string& lastName);
+
     // ~Customer()
     // Summary - Destructor.
     // Post-conditions - cleans any dynamically associated memory.
     ~Customer();
-
-    //-------------------------------------------------setter methods-----------------------------------------------------------
-
-    // setCustomerId(int customerId)
-    // Summary - Sets the customer Id for a Customer.
-    // Post-conditions - customer Id is set for a customer.
-    void setCustomerId(int customerId);
-
-    // setCustomerName(const string& firstName, const string& lastName)
-    // Summary - Sets customer's first name and last name.
-    // Post-conditions - First and last names of a customer are set.
-    void setCustomerName(const string& firstName, const string& lastname);
     
     //------------------------------------------------getter methods-------------------------------------------------------
 
@@ -90,9 +85,9 @@ class Customer
     bool isItemReturnable(int mediaId) const;
 
    private:
+    int customerId;                          // Unique Customer id.
     string firstName;                        // First name of the customer.
     string lastname;                         // last name of the customer.
-    int customerId;                          // Unique Customer id.
     Map<string, Media> borrowedMediaList;    // List of borrowed media items by a customer.
 };
 
