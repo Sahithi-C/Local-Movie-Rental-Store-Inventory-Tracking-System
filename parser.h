@@ -17,12 +17,25 @@
 #include<string>
 #include<fstream>
 #include<sstream>
-#include "movies.h"
+#include <list> 
 #include "media.h"
 #include "customer.h"
-#include "store.h"
 #include "map.h"
+#include "store.h"
+#include "movies.h"
 using namespace std;
+
+struct inventoryData
+{
+    char genreType;
+    int stock;
+    string directorName;
+    string movieTitle;
+    int releaseYear;
+    string actorFirstName;
+    string actorLastname;
+    int releaseMonth;
+};
 
 class Parser
 {
@@ -44,8 +57,8 @@ class Parser
     // parseInventoryFile(const string& line)
     // Summary - Parses a string of inventory data to build the store's inventory.
     // Pre-conditions - The input data must be properly formatted according to requirements.
-    // Post-conditions - Returns a store object based on the parsed data.
-    Map<string, Media> parseInventoryFile(const string fileName);
+    // Post-conditions - Returns a list of inventoryData structs based on the parsed data.
+    list<inventoryData> parseInventoryFile(const string fileName);
     
     // parseCustomersFile(const string& line)
     // Summary - Parses a string of customer data to create corresponding customer objects.
