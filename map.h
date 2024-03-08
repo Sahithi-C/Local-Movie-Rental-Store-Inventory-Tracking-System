@@ -14,8 +14,9 @@
 #define MAP_H
 
 #include<iostream>
-#include<string>
-#include "bintree.h"
+#include<list>
+#include <utility>
+
 using namespace std;
 
 template<typename Key, typename Value> 
@@ -26,12 +27,12 @@ class Map
 
     // Map()
     // Summary - Default constructor.
-    // Post-conditions - Initializes an empty map object.
+    // Post-conditions - Initializes an empty map object with default capacity.
     Map();
 
     // ~Map()
     // Summary - Destructor.
-    // Post-conditions - Clears any dynamically associated memory.
+    // Post-conditions - Clears any dynamically allocated memory.
     ~Map();
 
     //-------------------------------------------------------other member functions------------------------------------------------
@@ -39,12 +40,12 @@ class Map
     // setValue(const Key& key, const Value& value)
     // Summary - Inserts a key-value pair into the map. 
     // Post-conditions - A key-value pair is inserted into the map. Returns true if successful; false, otherwise.
-    bool setValue(const Key& key, const Value& value);
+    void insert( const Key& key, const Value& value);
 
     // getValue(const Key& key, const Value& value)
     // Summary - Finds a key-value pair if present in the map.
-    // Post-conditions - Searches for a key-value pair in the map. Returns true if pair is found; false, otherwise.
-    Value& getValue(const Key& key, const Value& value);
+    // Post-conditions - Searches for a key-value pair in the map. Returns the value if pair is found;
+    bool getValue(const Key& key, Value* foundValue);
 
     // remove(const Key& key)
     // Summary - Removes a key-value pair from the map.
@@ -56,11 +57,24 @@ class Map
     // Post-conditions - Returns true if the map is empty; false, otherwise.
     bool isEmpty() const;
 
+    // getSize()
+    // Summary - Returns the current size of the map.
+    // Post-conditions - Returns the number of elements in the map.
+    int getSize() const;
+
+    // getCapacity()
+    // Summary - Returns the capacity of the map.
+    // Post-conditions - Returns the maximum number of elements the map can hold.
+    int getCapacity() const;
+
    private:
-    Key key;                     //Hashed key for the table
-    Value value;                 //Value for the given key
-    int size;                    //size of the hash table 
-    Map* next;                   //pointer to the next element in the map
+    list<pair<Key, Value>>* hashMap; // Array of lists of Key-Value pairs
+    int size;                        // Number of elements in the hash map
+    int capacity;                    // Capacity of the hash map
+    
+    int hash(const Key& key) const;  //Hash function
 };
+
+#include "map.cpp"
 
 #endif
