@@ -3,18 +3,44 @@
 
 using namespace std;
 
-Map<string, Media> Parse::parseInventoryFile(const string fileName) {
-
-    create an empty map object m
-
-    for(each line) {
-        parse the line to get movie details
-        validate the type of movie(Classics, Drama, Comedy)
-        create a movie object mov, based on the type of movie
-        create a media object med with stock, object mov and the type of media. 
-
-        Insert <mediaId, med> into map m
-    }
+Parser::Parser() {
     
-    Return map object m
+}
+
+Parser::~Parser() {
+
+}
+
+Map<string, Customer> Parser::parseCustomersFile(const string fileName) {
+
+    Map<int, Customer> customerMap;
+
+    ifstream inputFile;
+    inputFile.open(fileName);
+    if(!inputFile) {
+        cout << "File could not be opened" << endl;
+        reutrn customerMap;
+    }
+
+    string line;
+    while(getline(inputFile, line)) {
+
+        stringstream ss(line);
+
+        int customerId;
+        string firstName, lastName;
+
+        ss >> customerId >> firstName >> lastName;
+
+        Customer customer(customerId, firstName, lastName);
+
+        customerMap.insert(customerId, customer);
+
+        if(inputFile.eof())
+        break;
+    }
+
+    inputFile.close();
+
+    return customerMap;
 }
