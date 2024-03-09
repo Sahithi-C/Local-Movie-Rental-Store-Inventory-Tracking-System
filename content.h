@@ -27,6 +27,8 @@ class Content
     // Post-conditions - A content object is initialized with default values.
     Content();
 
+    Content(const string& title, int releaseYear);
+
     // Content(const Content& other)
     // Summary - Copy constructor
     // Post-consditions - A content object is initialized with data of other 
