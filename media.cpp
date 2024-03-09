@@ -24,6 +24,12 @@ Media::Media() {
     content = nullptr;
 }
 
+Media::Media(int stock, availableMediaType mediaType, Content* content) {
+    setStock(stock);
+    setMediaType(mediaType);
+    setContent(content);
+}
+
 // ~Media()
 // Summary - Destructor.
 // Post-conditions - Cleans any dynamically associated memory.
