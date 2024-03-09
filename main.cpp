@@ -12,10 +12,11 @@ int main() {
     Parser parser;
     Store store;
     
-    // //Creating customer list
-    // store.setCustomers(parser.parseCustomersFile("data4customers.txt"));
-
-    ifstream inventoryFile("data4movies.txt");
+    //Creating customer list
+    Map<int, Customer> customers = parser.parseCustomersFile("data4customers.txt");
+    store.setCustomers(parser.parseCustomersFile("data4customers.txt"));
+ 
+ /*   ifstream inventoryFile("data4movies.txt");
     if(inventoryFile.is_open())
     {
         Map<string, Media> inventoryData = parser.parserInventoryFile(inventoryFile);
@@ -50,7 +51,7 @@ int main() {
     else
     {
         cout << "unable to open commandFile" << endl;
-    }
+    }*/
 
     return 0;
 }
