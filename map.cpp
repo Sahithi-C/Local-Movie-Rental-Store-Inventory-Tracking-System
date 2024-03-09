@@ -122,7 +122,7 @@ Map<Key, Value> &Map<Key, Value>::operator=(const Map<Key, Value> &other) {
 
         // Copy elements from other map
         for (int i = 0; i < capacity; ++i) {
-            for (const auto& pair : other.hashMap[i]) {
+            for (const pair<Key, Value>& pair : other.hashMap[i]) {
                 insert(pair.first, pair.second);
             }
         }
