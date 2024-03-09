@@ -15,3 +15,12 @@ Customer::Customer(int customerId, const string& firstName, const string& lastNa
 
 Customer::~Customer() {
 }
+
+int Customer::getCustomerId() const {
+    return customerId;
+}
+
+string Customer::getCustomerName() const {
+    return firstName + " " + lastName;
+}
+
