@@ -18,6 +18,8 @@
 #include "map.h"
 #include "inventory.h"
 #include "customer.h"
+#include "inventoryData.h"
+
 using namespace std;
 
 class Store
@@ -58,15 +60,15 @@ class Store
     // Post-conditions - The lsit of customers of the store is displayed.
     void showCustomerHistory() const;
 
-    // buildInventory()
+    // buildInventory(const list<inventoryData>& inventoryList)
     // Summary - Builds the inventory for the store from data from the Parser.
-    // Post-conditions - The inventory data is sorted and the store's inventory is built.
-    void buildInventory();
+    // Post-conditions - The inventory data is sent to the inventory to build the data.
+    void buildInventory(const list<InventoryData>& inventoryList);
 
     // setCustomers(Map<string, Customer>& customerMap)
     // Summary - Sets the Customer map.
     // Post-conditions - The list of customers are set as a hash map.
-    void setCustomers(Map<string, Customer>& customerMap);
+    void setCustomers(Map<int, Customer>& customerMap);
 
     // addCustomer(const Customer& customer) - for extension
     // Summary - Adds a new customer to the store.
@@ -74,7 +76,7 @@ class Store
     void addCustomer(const Customer& customer);
 
    private:
-    Map<string, Customer> customerMap;     // List of customers in the store.
+    Map<int, Customer> customerMap;         // List of customers in the store.
     Inventory inventory;                    // Inventory of the store.
 };
 
