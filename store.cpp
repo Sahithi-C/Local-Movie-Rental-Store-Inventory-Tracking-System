@@ -11,7 +11,7 @@ Store::~Store() {
 
 }
 
-void Store::buildInventory(const list<inventoryData> &inventoryList) {
+void Store::buildInventory(const list<InventoryData> &inventoryList) {
 
     inventory.populateInventory(inventoryList);
 }
