@@ -18,7 +18,8 @@
 #include "map.h"
 #include "inventory.h"
 #include "customer.h"
-#include"parser.h"
+#include "inventoryData.h"
+
 using namespace std;
 
 class Store
@@ -62,7 +63,7 @@ class Store
     // buildInventory(const list<inventoryData>& inventoryList)
     // Summary - Builds the inventory for the store from data from the Parser.
     // Post-conditions - The inventory data is sent to the inventory to build the data.
-    void buildInventory(const list<inventoryData>& inventoryList);
+    void buildInventory(const list<InventoryData>& inventoryList);
 
     // setCustomers(Map<string, Customer>& customerMap)
     // Summary - Sets the Customer map.
