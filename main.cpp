@@ -1,5 +1,8 @@
 #include<iostream>
 #include<string>
+#include<fstream>
+#include "store.h"
+#include "parser.h"
 
 using namespace std;
 
