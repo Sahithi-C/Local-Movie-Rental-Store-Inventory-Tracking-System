@@ -18,6 +18,9 @@
 #include<set>
 #include "media.h"
 #include "map.h"
+#include"parser.h"
+#include "inventoryData.h"
+
 using namespace std;
 
 class Inventory
@@ -49,7 +52,7 @@ class Inventory
     // populateInventory()
     // Summary - Populates the inventory object with data from the parser.
     // Post-conditions - The inventory is populated with valid media items.
-    void populateInventory();
+    void populateInventory(const list<InventoryData>& inventoryList);
 
    private:
 
