@@ -1,6 +1,7 @@
 #include<iostream>
 #include<string>
 #include<fstream>
+#include "map.h"
 #include "store.h"
 #include "parser.h"
 
