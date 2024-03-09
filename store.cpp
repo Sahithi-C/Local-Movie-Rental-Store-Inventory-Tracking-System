@@ -1,6 +1,27 @@
 #include<iostream>
 #include "store.h"
+using namespace std;
 
+Store::Store() {
+
+}
+
+Store::~Store() {
+
+}
+
+void Store::buildInventory(const list<InventoryData> &inventoryList) {
+
+    inventory.populateInventory(inventoryList);
+}
+
+void Store::setCustomers(Map<int, Customer> &customerMap) {
+
+    this->customerMap = customerMap;
+}
+
+
+/* 
 // showCustomerHistory() const
 // Summary - Displays the list of customers of the store.
 // Post-conditions - The lsit of customers of the store is displayed.
@@ -55,3 +76,5 @@ void store::showInventory() {
 		do an inorder traversal to display the binary tree
 	}
 }
+
+*/
