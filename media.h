@@ -18,11 +18,14 @@
 #include<string>
 using namespace std;
 
-class Movies;
+#include "content.h"
 
 class Media
 {
    public:
+    enum availableMediaTypes {
+        DvD
+    };
     //--------------------------------------------Constructors & Destructor-----------------------------------------------------
 
     // Media()
@@ -52,12 +55,20 @@ class Media
     // setStock()
     // Summary - Sets the stock count for a valid media item.
     // Post-conditions - Stock count for a valid media item is set.
-    void setStock(int stock);
+    bool setStock(int stock);
 
     // setMediaType()
     // Summary - Sets the type for a media item.
     // Post-conditions - Type of the media is set for the media item.
-    void setMediaType(char mediaType);
+    bool setMediaType(availableMediaTypes mediaType);
+
+    // setContent()
+    // Summary - Sets the content that is present on this media.
+    //           Media can only have content assigned to it once.
+    // Post-conditions - content field is set for this media object permanently.
+    //                   Returns true if content field was updated.
+    //                   false otherwise.
+    bool setContent(Content * content);
 
     //---------------------------------------------------getter methods------------------------------------------------------------
 
@@ -69,7 +80,13 @@ class Media
     // getMediaType() const
     // Summary - Gets the type of the media item.
     // Post-conditions - Returns the type of media item.
-    char getMediaType() const;
+    availableMediaTypes getMediaType() const;
+
+    // getContent()
+    // Summary - Gets the content that is present on this media.
+    // Post-conditions - Returns the content for on this media object.
+    //                   nullptr if there is no content for this media object yet.
+    const Content * getContent() const;
 
     // getMediaId() const
     // Summary - Gets the unique identifier of a media item.
@@ -78,8 +95,13 @@ class Media
 
    private:
     int stock;            // Stock available for the media item.
-    char mediaType;       // Type of a media item.
-    Movies* movie;        // Pointer to the associated Movies object.
+    availableMediaTypes mediaType; // Type of a media item.
+    Content * content;        // Pointer to the associated Movies object.
+
+    // mediaTypeToString()
+    // Summary - Converts the enum availableMediaTypes to a readable string
+    // Post-conditions - Returns a string representing the passed mediaType
+    static string mediaTypeToString(const availableMediaTypes mediaType); 
 };
 
 #endif

@@ -43,12 +43,16 @@ class Movies : public Content // Movies class inherits from Content class
     // setDirector(const string& director)
     // Summary - Sets the director of a movie.
     // Post-conditions - Director of a movie is set.
-    void setDirector(const string& director);
+    //                   Returns true if the director is set.
+    //                   false otherwise.
+    bool setDirector(const string& director);
 
     // setGenreType(char genre)
     // Summary - Sets the genre type for a movie.
     // Post-conditions - genreType is set for a movie.
-    void setGenreType(char genreType);
+    //                   Returns true if the genre is set.
+    //                   false otherwise.
+    bool setGenreType(char genreType);
 
     //-----------------------------------------------getter methods--------------------------------------------------------------
 
@@ -81,7 +85,7 @@ class Movies : public Content // Movies class inherits from Content class
     bool removeMovie();
 
    private:
-    string Director;    // Director for a movie.
+    string director;    // Director for a movie.
     char genreType;     // genre type for a movie.
 };
 

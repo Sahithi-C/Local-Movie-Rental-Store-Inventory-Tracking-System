@@ -60,15 +60,19 @@ class Content
     // setTitle(const string& title)
     // Summary - Sets the title of the content(Movie, in our case).
     // Post-conditions - Title of a movie is set.
-    void setTitle(const string& title);
+    //                   Returns true if title is set.
+    //                   false otherwise.
+    bool setTitle(const string& title);
 
     // setReleaseYear(int year)
     // Summary - Sets the release year of the content(Movie).
     // Post-conditions - Release year of a movie is set.
-    void setReleaseYear(int releaseYear);
+    //                   Returns true if release year is set.
+    //                   false otherwise.
+    bool setReleaseYear(int releaseYear);
 
 
-   private:
+   protected:
     string title;     // title of the content.
     int releaseYear;  // release year of the content.
 };
