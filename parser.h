@@ -15,11 +15,13 @@
 
 #include<iostream>
 #include<string>
-#include "movies.h"
-#include "media.h"
+#include<fstream>
+#include<sstream>
+#include <list> 
 #include "customer.h"
-#include "store.h"
 #include "map.h"
+#include "store.h"
+#include "inventoryData.h"
 using namespace std;
 
 class Parser
@@ -39,21 +41,19 @@ class Parser
 
     //--------------------------------------------------other member functions-----------------------------------------------------
 
-   
-
     // parseInventoryFile(const string& line)
     // Summary - Parses a string of inventory data to build the store's inventory.
     // Pre-conditions - The input data must be properly formatted according to requirements.
-    // Post-conditions - Returns a store object based on the parsed data.
-    Map<string, Media> parseInventoryFile(const string fileName);
+    // Post-conditions - Returns a list of inventoryData structs based on the parsed data.
+    list<InventoryData> parseInventoryFile(const string fileName);
     
     // parseCustomersFile(const string& line)
     // Summary - Parses a string of customer data to create corresponding customer objects.
     // Pre-conditions - The input data must be properly formatted according to requirements.
     // Post-conditions - Returns a customer object based on the parsed data.
-    Map<string, Customer> parseCustomersFile(const string fileName);
+    Map<int, Customer> parseCustomersFile(const string fileName);
   
-}
+};
 
 
 #endif
