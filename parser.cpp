@@ -48,9 +48,9 @@ Map<int, Customer> Parser::parseCustomersFile(const string fileName) {
 }
 
 
-list<inventoryData> Parser::parseInventoryFile(const string fileName) {
+list<InventoryData> Parser::parseInventoryFile(const string fileName) {
 
-    list<inventoryData> inventoryList;
+    list<InventoryData> inventoryList;
 
     ifstream inputFile;
     inputFile.open(fileName);
@@ -62,7 +62,7 @@ list<inventoryData> Parser::parseInventoryFile(const string fileName) {
     string line;
     while(getline(inputFile, line)) {
         stringstream ss(line);
-        inventoryData data;
+        InventoryData data;
 
         char genre;
         ss >> genre;
