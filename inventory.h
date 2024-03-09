@@ -18,7 +18,6 @@
 #include<set>
 #include "media.h"
 #include "map.h"
-#include"parser.h"
 #include "inventoryData.h"
 
 using namespace std;
