@@ -20,6 +20,11 @@ Movies::Movies(){
     genreType = 'N';
 }
 
+Movies::Movies(char genreType, const string &director) {
+    this->genreType = genreType;
+    this->director = director;
+}
+
 // Movies(Movies& other)
 // Summary - Copy constructor.
 // Post-conditions - constructs movie object as a copy of another movies object.
