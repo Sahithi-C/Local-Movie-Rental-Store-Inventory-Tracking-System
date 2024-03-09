@@ -1,4 +1,7 @@
+#include<iostream>
 #include "classics.h"
+
+using namespace std;
 
 Classics::Classics(){
 }
