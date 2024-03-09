@@ -92,8 +92,5 @@ int Map<Key, Value>::hash(const Key &key) const {
     //revisit this for string type
     int hashedIndex = static_cast<int>(key) % capacity;
 
-    // Ensuring that the hashedIndex is within range of capacity
-    hashedIndex %= capacity;
-
     return hashedIndex;
 }
