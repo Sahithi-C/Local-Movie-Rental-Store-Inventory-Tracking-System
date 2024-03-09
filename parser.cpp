@@ -72,31 +72,22 @@ list<inventoryData> Parser::parseInventoryFile(const string fileName) {
             continue;                       // Move on to the next line
         }
 
+        data.genreType = genre;
+
+        ss.ignore();
+        ss >> data.stock;
+
+        ss.ignore();
+        getline(ss, data.directorName, ',');
+
+        getline(ss, data.movieTitle, ',');
+
         if(genre == 'F' || genre == 'D') {
-
-            data.genreType = genre;
-
-            ss.ignore();
-            ss >> data.stock;
-
-            ss.ignore();
-            getline(ss, data.directorName, ',');
-
-            getline(ss, data.movieTitle, ',');
-
+            
             ss >> data.releaseYear;
         }
         else if (genre == 'C') {
 
-            data.genreType = genre;
-
-            ss.ignore();
-            ss >> data.stock;
-
-            ss.ignore();
-            getline(ss, data.directorName, ',');
-
-            getline(ss, data.movieTitle, ',');
             ss >> data.actorFirstName >> data.actorLastname >> data.releaseMonth >> data.releaseYear;
         }
 
