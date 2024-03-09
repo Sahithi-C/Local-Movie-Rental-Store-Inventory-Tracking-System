@@ -24,48 +24,37 @@ class Content
 
     // Content()
     // Summary - Default constuctor.
+    // Pre-conditions - None.
     // Post-conditions - A content object is initialized with default values.
     Content();
 
+    Content(const string& title, int releaseYear);
+
     // Content(const Content& other)
     // Summary - Copy constructor
-    // Post-consditions - A content object is initialized with data of other 
-    //                    content object.
+    // Pre-conditions - None.
+    // Post-consditions - A content object is initialized with data of other content object.
     Content(const Content& other);
 
     // ~Content()
     // Summary - Destructor
-    // Post-conditions - Clears any dynamically associated memory.
-    ~Content();
+    // Pre-conditions - None.
+    // Post-conditions - Cleans any dynamically associated memory.
+    virtual ~Content();
 
     //-----------------------------------------------getter methods---------------------------------------------------------------
 
     // getTitle() const
-    // Summary - Gets the title of a content(Movie, in our case).
-    // Post-conditions - Returns the title of a content(movie).
+    // Summary - gets the title of the content.
+    // Pre-conditions - None.
+    // Post-conditons - Returns the title of the content.
     string getTitle() const;      
 
-    // getReleaseYear() const
-    // Summary - Gets the release year of the content(movie).
-    // Post-conditions - Returns the release year of a content(movie).
-    int getReleaseYear() const;
-
-    // getContentId() const
-    // Summary: Gets the unique ID for this piece of content.
-    // Post-conditions: Returns the unique ID for this piece of content.
-    string getContentId() const;
-
-    //---------------------------------------------Setter methods--------------------------------------------------------------
-
-    // setTitle(const string& title)
-    // Summary - Sets the title of the content(Movie, in our case).
-    // Post-conditions - Title of a movie is set.
-    void setTitle(const string& title);
-
-    // setReleaseYear(int year)
-    // Summary - Sets the release year of the content(Movie).
-    // Post-conditions - Release year of a movie is set.
-    void setReleaseYear(int releaseYear);
+    // getReleaseyear() const
+    // Summary - gets release year of the content.
+    // Pre-conditions - None.
+    // Post-consitions - Returns the release year of the content. 
+    int getReleaseYear() const;      
 
 
    private:
