@@ -29,6 +29,8 @@ class Map
     // Summary - Default constructor.
     // Post-conditions - Initializes an empty map object with default capacity.
     Map();
+    
+    Map(const Map<Key, Value> &other);
 
     // ~Map()
     // Summary - Destructor.
@@ -66,6 +68,9 @@ class Map
     // Summary - Returns the capacity of the map.
     // Post-conditions - Returns the maximum number of elements the map can hold.
     int getCapacity() const;
+    
+    Map<Key, Value>& operator=(const Map<Key, Value>& other);
+   
 
    private:
     list<pair<Key, Value>>* hashMap; // Array of lists of Key-Value pairs
@@ -73,6 +78,7 @@ class Map
     int capacity;                    // Capacity of the hash map
     
     int hash(const Key& key) const;  //Hash function
+    void makeEmpty();                // To clear exisiting map
 };
 
 #include "map.cpp"
