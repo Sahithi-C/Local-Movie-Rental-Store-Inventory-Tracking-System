@@ -18,11 +18,9 @@
 #include<fstream>
 #include<sstream>
 #include <list> 
-#include "media.h"
 #include "customer.h"
 #include "map.h"
 #include "store.h"
-#include "movies.h"
 using namespace std;
 
 struct inventoryData
@@ -66,7 +64,7 @@ class Parser
     // Post-conditions - Returns a customer object based on the parsed data.
     Map<int, Customer> parseCustomersFile(const string fileName);
   
-}
+};
 
 
 #endif
