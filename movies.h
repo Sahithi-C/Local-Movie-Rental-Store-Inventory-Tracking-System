@@ -29,6 +29,8 @@ class Movies : public Content // Movies class inherits from Content class
     // Post-conditions - Constructs a movie object.
     Movies();
 
+    Movies(char genreType, const string &director);
+
     // Movies(Movies& other)
     // Summary - Copy constructor.
     // Post-conditions - constructs movie object as a copy of another movies object.
