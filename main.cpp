@@ -14,7 +14,7 @@ int main() {
     
     //Creating customer list
     Map<int, Customer> customers = parser.parseCustomersFile("data4customers.txt");
-    store.setCustomers(parser.parseCustomersFile("data4customers.txt"));
+    store.setCustomers(customers);
 
     //Parsing movie data
     list<inventoryData> inventoryList = parser.parseInventoryFile("data4movies.txt");
