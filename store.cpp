@@ -3,13 +3,9 @@
 
 using namespace std;
 
-Store::Store() {
+Store::Store() {}
 
-}
-
-Store::~Store() {
-
-}
+Store::~Store() {}
 
 void Store::buildInventory(const list<InventoryData> &inventoryList) {
 
@@ -24,7 +20,10 @@ void Store::setCustomers(Map<int, Customer>& customerMap) {
 void Store::borrowItem(const CommandData& data) {
     Customer customer;
     if(this->customerMap.getValue(data.customerId, &customer)) {
-        Media media = inventory.getMedia("fix me."); //media should hold the address of the media object from the tree
+        Content content = ContentFactory::createContent(data);
+        Media borrowMedia(data.stock, Media::availableMediaTypes::DvD, &content);
+
+        Media media = inventory.getMedia(borrowMedia.getMediaId()); 
         if(media.getStock() > 0) {
             customer.borrowMedia(media);
             media.reduceStock();
