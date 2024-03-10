@@ -71,19 +71,19 @@ class Customer
     // Summary - Records a transaction of a customer borrowing a movie in borrowedMediaList 
     //           to keep track of customer's borrows.
     // Post-conditions - Transaction history for borrow of media by a customer is recorded.
-    void borrowMedia(Media& media);
+    void borrowMedia(string mediaId);
 
     // returnmedia(int mediaId)
     // Summary - Records a transaction for a customer returning a movie, 
     //           by removing the media item from borrowedMediaList.
     // Post-conditions - Transaction history for return of media by a customer is recorded, 
     //                   by removing the item from list.
-    void returnMedia(int mediaId);
+    void returnMedia(string mediaId);
 
     // isItemReturnable(int mediaId) const
     // Summary - Checks if a media item is returnable by a customer.
     // Post-conditions - Returns true, if the item is returnable. false, otherwise.
-    bool isItemReturnable(int mediaId) const;
+    bool isItemReturnable(string mediaId) const;
 
    private:
     int customerId;                          // Unique Customer id.
