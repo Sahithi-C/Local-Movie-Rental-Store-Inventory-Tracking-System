@@ -3,9 +3,7 @@
 
 using namespace std;
 
-Customer::Customer() {
-
-}
+Customer::Customer() {}
 
 Customer::Customer(int customerId, const string& firstName, const string& lastName) {
     this->customerId = customerId;
@@ -13,8 +11,7 @@ Customer::Customer(int customerId, const string& firstName, const string& lastNa
     this->lastName = lastName;
 }
 
-Customer::~Customer() {
-}
+Customer::~Customer() {}
 
 int Customer::getCustomerId() const {
     return customerId;
@@ -24,10 +21,11 @@ string Customer::getCustomerName() const {
     return firstName + " " + lastName;
 }
 
-//Incomplete
-void Customer::borrowMedia(string mediaId) {
+void Customer::borrowMedia(Media &media) {
+    string mediaId = media.getMediaId();
     Transaction transaction('B', mediaId);
-    this->transactionList.push_back(trasaction);
+    this->transactionList.push_back(transaction);
+    this->borrowedMediaList.insert(mediaId, true);
 }
 
 
