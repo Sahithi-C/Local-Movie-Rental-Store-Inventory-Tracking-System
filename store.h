@@ -71,12 +71,6 @@ class Store
     // Post-conditions - The lsit of customers of the store is displayed.
     void showCustomerHistory(int customerId) const;
 
-
-    // addCustomer(const Customer& customer) - for extension
-    // Summary - Adds a new customer to the store.
-    // Post-conditions - A new customer is added to the customers list in the store.
-    void addCustomer(const Customer& customer);
-
    private:
     Map<int, Customer> customerMap;         // List of customers in the store.
     Inventory inventory;                    // Inventory of the store.
