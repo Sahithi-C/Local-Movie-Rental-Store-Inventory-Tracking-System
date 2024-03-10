@@ -1,3 +1,12 @@
+// comedy.cpp
+// Jonah Kolar
+// Made on: 3/8/2024
+// Last updated: 3/10/2024
+// CSS 502
+// Assignment 4
+// Summary: This file contains the implementation for Comedy.
+// Assumptions: None
+
 #include<iostream>
 #include "comedy.h"
 
@@ -116,5 +125,5 @@ bool Comedy::operator==(const Comedy &c) const {
 // Pre-conditions - There should be a valid movie in movies of drama genre type.
 // Post-conditions - returns the unique id for a drama movie.
 string Comedy::getContentId() const{
-       return Movies::getContentId();
+       return title + to_string(releaseYear);
 }

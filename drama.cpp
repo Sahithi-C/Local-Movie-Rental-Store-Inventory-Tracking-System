@@ -1,3 +1,12 @@
+// drama.cpp
+// Jonah Kolar
+// Made on: 3/8/2024
+// Last updated: 3/9/2024
+// CSS 502
+// Assignment 4
+// Summary: This file contains the implementation for Drama.
+// Assumptions: None
+
 #include<iostream>
 #include "drama.h"
 using namespace std;
@@ -115,5 +124,5 @@ bool Drama::operator==(const Drama &c) const {
 // Pre-consitions - a valid movie should exist in drama genre to get it's id.
 // Post-consditions - Returns unique id for a drama movie.
 string Drama::getContentId() const{
-      return Movies::getContentId();
+      return director + to_string(releaseYear);
 }

@@ -21,6 +21,7 @@
 
 using namespace std;
 
+// Our Map class
 template<typename Key, typename Value> 
 class Map
 {

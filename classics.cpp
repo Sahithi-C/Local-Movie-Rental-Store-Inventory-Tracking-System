@@ -1,3 +1,12 @@
+// classics.cpp
+// Jonah Kolar
+// Made on: 3/8/2024
+// Last updated: 3/9/2024
+// CSS 502
+// Assignment 4
+// Summary: This file contains the implementation for Classics.
+// Assumptions: None
+
 #include<iostream>
 #include "classics.h"
 
@@ -177,5 +186,5 @@ int Classics::getReleaseMonth() const {
 // Pre-conditions - a valid movie should exist in classic genre to get it's id.
 // Post-conditions - Returns the unique id for a classic movie.
 string Classics::getContentId() const {
-    return Movies::getContentId() + firstName + lastName + to_string(releaseMonth);
+    return to_string(releaseYear) + to_string(releaseMonth) + lastName + firstName;
 }
