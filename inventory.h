@@ -44,7 +44,7 @@ class Inventory
     // Summary - Gets the media item with given media id.
     //           MediaID is a unique string representing the mediaType and movieID.
     // Post-conditions - Returns the media item of the given media id.
-    Media getMedia(mediaId);
+    Media& getMedia(string mediaId);
 
     //---------------------------------------------------other member functions-----------------------------------------------------
 
