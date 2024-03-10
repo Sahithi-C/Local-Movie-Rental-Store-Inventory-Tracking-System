@@ -29,29 +29,17 @@ class Transaction
     // Post-conditions - A Transaction object is initialized with default values.
     Transaction();
 
+    Transaction(char actionType, const string& mediaId);
+
     // ~Transaction()
     // Summary - Destructor.
     // Post-conditions - Clears any dynamically allocated memory.
     ~Transaction();
 
-    //-------------------------------------------------setter metods-------------------------------------------------------------
-
-    // setRecord(const Customer& customerId)
-    // Summary - Creates a transaction record of a customer.
-    // Post-conditions - The transactionId, action type and the associated mediaId are set.
-    void setRecord(const Customer& customerId);
-
-    //---------------------------------------------------getter methods-----------------------------------------------------------
-
-    // getRecord(const string transactionId) const
-    // Summary - Gets the transaction record of a given transaction Id.
-    // Post-conditions - Returns the record for the transaction.
-    Transaction& getRecord(const string transactionId) const;
 
    private:
     char actionType;        // Type of action for a transaction.
     string mediaId;         // media Id associated with transaction.
-    string transactionId;   // Transaction Id for transaction.
 };
 
 #endif;
