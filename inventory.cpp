@@ -1,6 +1,7 @@
 #include<iostream>
 #include "inventory.h"
 #include "media.h"
+#include "inventoryData.h"
 
 using namespace std;
 
@@ -16,6 +17,6 @@ void Inventory::populateInventory(const list<InventoryData> &inventoryList) {
 
     for(const auto& data: inventoryList) {
         Content content = ContentFactory::createContent(data);
-        Media media(data.stock, 'DVD', &content);
+        Media media(data.stock, Media::availableMediaTypes::DvD, &content);
     }
 }
