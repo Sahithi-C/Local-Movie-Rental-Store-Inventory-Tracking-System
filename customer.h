@@ -15,9 +15,10 @@
 
 #include<iostream>
 #include<string>
-#include<vector>
+#include<list>
 #include "map.h"
 #include "transaction.h"
+#include "media.h"
 using namespace std;
 
 class Customer
@@ -30,22 +31,17 @@ class Customer
     // Post-conditions - A customer object is initialized with default values.
     Customer();
 
+    // Customer()
+    // Summary - Parametrized constructor that initializes a customer object with
+    //           customer id, first name and last name.
+    // Post-conditions - A customer object is initialized with customer id,
+    //                   first name and last name.
+    Customer(int customerId, const string& firstName, const string& lastName);
+
     // ~Customer()
     // Summary - Destructor.
     // Post-conditions - cleans any dynamically associated memory.
     ~Customer();
-
-    //-------------------------------------------------setter methods-----------------------------------------------------------
-
-    // setCustomerId(int customerId)
-    // Summary - Sets the customer Id for a Customer.
-    // Post-conditions - customer Id is set for a customer.
-    void setCustomerId(int customerId);
-
-    // setCustomerName(const string& firstName, const string& lastName)
-    // Summary - Sets customer's first name and last name.
-    // Post-conditions - First and last names of a customer are set.
-    void setCustomerName(const string& firstName, const string& lastname);
     
     //------------------------------------------------getter methods-------------------------------------------------------
 
@@ -64,7 +60,7 @@ class Customer
     // getTransactionHistory() const
     // Summary - Gets the whole transaction history of a customer.
     // Post-conditions - Returns the transaction list of a particular customer.
-    vector<TransactionHistory> getTransactionHistory() const;
+    list<Transaction> getTransactionHistory() const;
 
     // printTransactionHistory() const
     // Summary - Prints the transaction history of the specified customer.
@@ -75,25 +71,26 @@ class Customer
     // Summary - Records a transaction of a customer borrowing a movie in borrowedMediaList 
     //           to keep track of customer's borrows.
     // Post-conditions - Transaction history for borrow of media by a customer is recorded.
-    void borrowMedia(int mediaId);
+    void borrowMedia(string mediaId);
 
     // returnmedia(int mediaId)
     // Summary - Records a transaction for a customer returning a movie, 
     //           by removing the media item from borrowedMediaList.
     // Post-conditions - Transaction history for return of media by a customer is recorded, 
     //                   by removing the item from list.
-    void returnMedia(int mediaId);
+    void returnMedia(string mediaId);
 
     // isItemReturnable(int mediaId) const
     // Summary - Checks if a media item is returnable by a customer.
     // Post-conditions - Returns true, if the item is returnable. false, otherwise.
-    bool isItemReturnable(int mediaId) const;
+    bool isItemReturnable(string mediaId) const;
 
    private:
+    int customerId;                          // Unique Customer id.
     string firstName;                        // First name of the customer.
     string lastname;                         // last name of the customer.
-    int customerId;                          // Unique Customer id.
-    Map<string, Media> borrowedMediaList;    // List of borrowed media items by a customer.
+    list<Transaction> transactionList;       // List of all transactions by the customer.
+    Map<string, bool> borrowedMediaList;    // List of borrowed media items by a customer.
 };
 
 #endif

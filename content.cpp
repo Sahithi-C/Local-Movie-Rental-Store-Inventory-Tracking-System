@@ -19,6 +19,11 @@ Content::Content(){
     releaseYear = -1;
 }
 
+Content::Content(const string &title, int releaseYear) {
+    this->title = title;
+    this->releaseYear = releaseYear;
+}
+
 // Content(const Content& other)
 // Summary - Copy constructor
 // Post-consditions - A content object is initialized with data of other 

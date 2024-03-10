@@ -6,7 +6,7 @@
 
 // Date of Last Modification : 02/24/2024
 
-// Purpose : Defining a Drama class representing a drama movie. This class inherits from Movie class. 
+// Purpose : Defining a Drama class representing a drama movie.This class inherits from Movie class. 
 
 // -------------------------------------------------------------------------------------------------------------------------
 
@@ -24,25 +24,32 @@ class Drama : public Movies  // Drama class inherits from Movie class
     
     // Drama()
     // Summary - Default constructor.
+    // Pre-conditions - None.
     // Post-conditions - Constructs a drama object.
     Drama();
 
+    // Parameterized constructor
+    Drama(char genreType, const string& directorName, const string& movieTitle, int releaseYear);
+
     // Drama(const Drama& other)
     // Summary - Copy constructor.
-    //Post-conditions - Constructs a drama object as a copy other drama object.
+    // Pre-conditions - None.
+    // Post-consitions - Constructs a drama objects as a copy other drama object.
     Drama(const Drama& other);
 
     // ~Drama()
     // Summary - Destructor.
-    //Post-conditions - Clears any dynamically associated memory.
+    // Pre-conditions - None.
+    // Post-consitions - Clears any dynamically associated memory.
     ~Drama();
 
     //---------------------------------------------getter methods-----------------------------------------------------------
 
-    // getContentId() const
-    // Summary - Gets the unique identifier for a drama movie. Implemented from the parent class Movie.
-    //Post-conditions - Returns the unique identifier for a drama movie.
-    int getContentId() const;
+    // getMovieId() const
+    // Summary - gets the unique id for a drama movie.
+    // Pre-consitions - a valid movie should exist in drama genre to get it's id.
+    // Post-consditions - Returns unique id for a drama movie.
+    int getMovieId() const;
 };
 
 #endif

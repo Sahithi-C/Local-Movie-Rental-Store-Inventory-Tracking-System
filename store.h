@@ -18,6 +18,9 @@
 #include "map.h"
 #include "inventory.h"
 #include "customer.h"
+#include "inventoryData.h"
+#include "commandData.h"
+
 using namespace std;
 
 class Store
@@ -37,16 +40,26 @@ class Store
 
     //--------------------------------------------------other member functions----------------------------------------------------
 
+    // buildInventory(const list<inventoryData>& inventoryList)
+    // Summary - Builds the inventory for the store from data from the Parser.
+    // Post-conditions - The inventory data is sent to the inventory to build the data.
+    void buildInventory(const list<InventoryData>& inventoryList);
+
+    // setCustomers(Map<string, Customer>& customerMap)
+    // Summary - Sets the Customer map.
+    // Post-conditions - The list of customers are set as a hash map.
+    void setCustomers(Map<int, Customer>& customerMap);
+
     // borrowItem()
     // Summary - Records a customer borrowing an item from the store.
     // Post-conditions - Updates the inventory and customer records by recording borrow action type.
-    void borrowItem();
+    void borrowItem(const CommandData &data);
 
     // returnItem()
     // Summary - Records a customer returning an item from the store.
     // Pre-conditions - The item should be initially borrowed for the customer to return it.
     // Post-conditions - Updates the inventory and customer records by recording return action type.
-    void returnItem();
+    void returnItem(const CommandData &data);
 
     // showInventory() const
     // Summary - Displays the current inventory of the store.
@@ -56,17 +69,7 @@ class Store
     // showCustomerHistory() const
     // Summary - Displays the list of customers of the store.
     // Post-conditions - The lsit of customers of the store is displayed.
-    void showCustomerHistory() const;
-
-    // buildInventory()
-    // Summary - Builds the inventory for the store from data from the Parser.
-    // Post-conditions - The inventory data is sorted and the store's inventory is built.
-    void buildInventory();
-
-    // setCustomers(Map<string, Customer>& customerMap)
-    // Summary - Sets the Customer map.
-    // Post-conditions - The list of customers are set as a hash map.
-    void setCustomers(Map<string, Customer>& customerMap);
+    void showCustomerHistory(int customerId) const;
 
     // addCustomer(const Customer& customer) - for extension
     // Summary - Adds a new customer to the store.
@@ -74,7 +77,7 @@ class Store
     void addCustomer(const Customer& customer);
 
    private:
-    Map<string, Customer> customerMap;     // List of customers in the store.
+    Map<int, Customer> customerMap;         // List of customers in the store.
     Inventory inventory;                    // Inventory of the store.
 };
 

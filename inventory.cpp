@@ -1,19 +1,22 @@
 #include<iostream>
 #include "inventory.h"
+#include "media.h"
+#include "inventoryData.h"
 
 using namespace std;
 
-void Inventory::populateInventory(Map<string, Media>& mediaMap) {
-    set the mediaMap to the mediaMap attribute of this class 
+Inventory::Inventory() {
 
-    for each media m in the mediaMap {
-        if(movie type is Comedy)
-          add to comedyMap
-        else if(movie type is Drama)
-          add to dramaMap
-        else 
-          add to classicsMap
+}
+
+Inventory::~Inventory() {
+
+}
+
+void Inventory::populateInventory(const list<InventoryData> &inventoryList) {
+
+    for(const auto& data: inventoryList) {
+        Content content = ContentFactory::createContent(data);
+        Media media(data.stock, Media::availableMediaTypes::DvD, &content);
     }
-
-    call sortInventory() to sort list of media inside each hash map
 }
