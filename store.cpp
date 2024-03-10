@@ -25,7 +25,7 @@ void Store::borrowItem(const CommandData& data) {
     if(this->customerMap.getValue(data.customerId, &customer)) {
         Media media = inventory.getMedia("fix me."); //media should hold the address of the media object from the tree
         if(media.getStock() > 0) {
-            customer.borrowMedia(media);
+            customer.borrowMedia(media.mediaId);
             media.reduceStock();
         }
     }
