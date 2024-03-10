@@ -3,13 +3,26 @@
 
 using namespace std;
 
+// Content::Content()
+// Summary - default constructor for the Content class.
+// Pre-conditions - None.
+// Post-conditions - An instance of the Content class is created with default values.
 Content::Content() {
 }
 
+// Content::Content(const string &title, int releaseYear)
+// Summary - initializes a Content object with specified values for title and release year.
+// Pre-conditions - The title should be a non-empty string.
+//                  releaseYear should be a valid integer representing the year of release.
+// Post-conditions - An instance of the Content class is created with the provided values.
 Content::Content(const string &title, int releaseYear) {
     this->title = title;
     this->releaseYear = releaseYear;
 }
 
+// ~Content()
+// Summary - destructor for the Content class.
+// Pre-conditions - None.
+// Post-conditions - Resources held by the Content object are released upon destruction.
 virtual Content::~Content() {
 }
