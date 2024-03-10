@@ -15,9 +15,10 @@
 
 #include<iostream>
 #include<string>
-#include<vector>
+#include<list>
 #include "map.h"
 #include "transaction.h"
+#include "media.h"
 using namespace std;
 
 class Customer
@@ -59,7 +60,7 @@ class Customer
     // getTransactionHistory() const
     // Summary - Gets the whole transaction history of a customer.
     // Post-conditions - Returns the transaction list of a particular customer.
-    vector<TransactionHistory> getTransactionHistory() const;
+    list<Transaction> getTransactionHistory() const;
 
     // printTransactionHistory() const
     // Summary - Prints the transaction history of the specified customer.
@@ -70,7 +71,7 @@ class Customer
     // Summary - Records a transaction of a customer borrowing a movie in borrowedMediaList 
     //           to keep track of customer's borrows.
     // Post-conditions - Transaction history for borrow of media by a customer is recorded.
-    void borrowMedia(int mediaId);
+    void borrowMedia(Media& media);
 
     // returnmedia(int mediaId)
     // Summary - Records a transaction for a customer returning a movie, 
@@ -88,7 +89,8 @@ class Customer
     int customerId;                          // Unique Customer id.
     string firstName;                        // First name of the customer.
     string lastname;                         // last name of the customer.
-    Map<string, Media> borrowedMediaList;    // List of borrowed media items by a customer.
+    list<Transaction> transactionList;       // List of all transactions by the customer.
+    Map<string, bool> borrowedMediaList;    // List of borrowed media items by a customer.
 };
 
 #endif
