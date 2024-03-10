@@ -16,6 +16,8 @@
 #include<iostream>
 #include<list>
 #include <utility>
+#include <string>
+#include <functional>
 
 using namespace std;
 
@@ -70,14 +72,15 @@ class Map
     int getCapacity() const;
     
     Map<Key, Value>& operator=(const Map<Key, Value>& other);
-   
+    
+    list<Value> getAllValues() const;
 
    private:
     list<pair<Key, Value>>* hashMap; // Array of lists of Key-Value pairs
     int size;                        // Number of elements in the hash map
     int capacity;                    // Capacity of the hash map
     
-    int hash(const Key& key) const;  //Hash function
+    int getHash(const Key& key) const;  //Hash function
     void makeEmpty();                // To clear exisiting map
 };
 
