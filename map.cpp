@@ -14,7 +14,7 @@ Map<Key, Value>::Map() {
 
 template <typename Key, typename Value>
 Map<Key, Value>::Map(const Map<Key, Value> &other) {
-  cout << "copy copy copy copy" << endl;
+
   size = other.size;
   capacity = other.capacity;
   hashMap = new list<pair<Key, Value>>[capacity];
@@ -34,7 +34,7 @@ Map<Key, Value>::~Map() {
 template <typename Key, typename Value>
 void Map<Key, Value>::insert(const Key &key, const Value &value) {
 
-    int index = hash(key);
+    int index = getHash(key);
 
     //Checking if the key already exists in the list
     for(pair<Key, Value>& pair : hashMap[index]) {
@@ -53,7 +53,7 @@ void Map<Key, Value>::insert(const Key &key, const Value &value) {
 template <typename Key, typename Value>
 bool Map<Key, Value>::getValue(const Key &key, Value* foundValue) {
 
-    int index = hash(key);
+    int index = getHash(key);
 
     for(const pair<Key, Value>& pair: hashMap[index]) {
         if(pair.first == key) {
@@ -69,7 +69,7 @@ bool Map<Key, Value>::getValue(const Key &key, Value* foundValue) {
 template <typename Key, typename Value>
 bool Map<Key, Value>::remove(const Key &key) {
 
-    int index = hash(key);
+    int index = getHash(key);
 
     // Finding the key-value pair in the list at the index
     list<pair<Key, Value>>& currentList = hashMap[index];
@@ -132,10 +132,32 @@ Map<Key, Value> &Map<Key, Value>::operator=(const Map<Key, Value> &other) {
 }
 
 template <typename Key, typename Value>
-int Map<Key, Value>::hash(const Key &key) const {
+list<Value> Map<Key, Value>::getAllValues() const {
+    list<Value> allValues;
 
-    //revisit this for string type
-    int hashedIndex = static_cast<int>(key) % capacity;
+    for(int i = 0; i < capacity; i++) {
+        for(const suto& pair : hashMap[i]) {
+            allValues.push_back(pair.second);
+        }
+    }
+
+    return allValues;
+}
+
+template <typename Key, typename Value>
+int Map<Key, Value>::getHash(const Key &key) const {
+    int hashedIndex;
+    if constexpr (is_same_v<Key, int>) {
+        // Hash function for int keys
+        hash<int> intHasher;
+        hashedIndex = intHasher(key);
+    } else if constexpr (is_same_v<Key, std::string>) {
+        // Hash function for string keys
+        hash<std::string> stringHasher;
+        hashedIndex = stringHasher(key);
+    }
+
+    hashedIndex %= capacity;
 
     return hashedIndex;
 }
