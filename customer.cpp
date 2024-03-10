@@ -23,3 +23,11 @@ int Customer::getCustomerId() const {
 string Customer::getCustomerName() const {
     return firstName + " " + lastName;
 }
+
+//Incomplete
+void Customer::borrowMedia(string mediaId) {
+    Transaction transaction('B', mediaId);
+    this->transactionList.push_back(trasaction);
+}
+
+
