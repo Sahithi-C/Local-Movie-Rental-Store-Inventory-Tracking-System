@@ -1,17 +1,11 @@
 #include<iostream>
 #include "inventory.h"
-#include "media.h"
-#include "inventoryData.h"
 
 using namespace std;
 
-Inventory::Inventory() {
+Inventory::Inventory() {}
 
-}
-
-Inventory::~Inventory() {
-
-}
+Inventory::~Inventory() {}
 
 void Inventory::populateInventory(const list<InventoryData> &inventoryList) {
 
