@@ -3,6 +3,10 @@
 
 using namespace std;
 
+// Comedy()
+// Summary - default constructor for the Comedy class.
+// Pre-conditions - None.
+// Post-conditions - An instance of the Comedy class is created with default values.
 Comedy::Comedy() {
 
 }
