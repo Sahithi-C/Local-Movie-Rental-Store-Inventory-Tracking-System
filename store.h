@@ -19,6 +19,7 @@
 #include "inventory.h"
 #include "customer.h"
 #include "inventoryData.h"
+#include "commandData.h"
 
 using namespace std;
 
@@ -39,27 +40,6 @@ class Store
 
     //--------------------------------------------------other member functions----------------------------------------------------
 
-    // borrowItem()
-    // Summary - Records a customer borrowing an item from the store.
-    // Post-conditions - Updates the inventory and customer records by recording borrow action type.
-    void borrowItem();
-
-    // returnItem()
-    // Summary - Records a customer returning an item from the store.
-    // Pre-conditions - The item should be initially borrowed for the customer to return it.
-    // Post-conditions - Updates the inventory and customer records by recording return action type.
-    void returnItem();
-
-    // showInventory() const
-    // Summary - Displays the current inventory of the store.
-    // Post-conditions - Thes current inventory of the store is displayed.
-    void showInventory() const;
-
-    // showCustomerHistory() const
-    // Summary - Displays the list of customers of the store.
-    // Post-conditions - The lsit of customers of the store is displayed.
-    void showCustomerHistory() const;
-
     // buildInventory(const list<inventoryData>& inventoryList)
     // Summary - Builds the inventory for the store from data from the Parser.
     // Post-conditions - The inventory data is sent to the inventory to build the data.
@@ -69,6 +49,27 @@ class Store
     // Summary - Sets the Customer map.
     // Post-conditions - The list of customers are set as a hash map.
     void setCustomers(Map<int, Customer>& customerMap);
+
+    // borrowItem()
+    // Summary - Records a customer borrowing an item from the store.
+    // Post-conditions - Updates the inventory and customer records by recording borrow action type.
+    void borrowItem(const CommandData &data);
+
+    // returnItem()
+    // Summary - Records a customer returning an item from the store.
+    // Pre-conditions - The item should be initially borrowed for the customer to return it.
+    // Post-conditions - Updates the inventory and customer records by recording return action type.
+    void returnItem(const CommandData &data);
+
+    // showInventory() const
+    // Summary - Displays the current inventory of the store.
+    // Post-conditions - Thes current inventory of the store is displayed.
+    void showInventory() const;
+
+    // showCustomerHistory() const
+    // Summary - Displays the list of customers of the store.
+    // Post-conditions - The lsit of customers of the store is displayed.
+    void showCustomerHistory(int customerId) const;
 
     // addCustomer(const Customer& customer) - for extension
     // Summary - Adds a new customer to the store.
