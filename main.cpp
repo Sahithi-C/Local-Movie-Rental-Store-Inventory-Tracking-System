@@ -1,9 +1,10 @@
 #include<iostream>
 #include<string>
-#include<fstream>
-#include "map.h"
-#include "store.h"
-#include "parser.h"
+#include"parser.h"
+#include"store.h"
+#include"map.h"
+#include"inventoryData.h"
+#include"commandData.h"
 
 using namespace std;
 
@@ -17,8 +18,25 @@ int main() {
     store.setCustomers(customers);
 
     //Parsing movie data
-    list<inventoryData> inventoryList = parser.parseInventoryFile("data4movies.txt");
-   
+    list<InventoryData> inventoryList = parser.parseInventoryFile("data4movies.txt");
+    store.buildInventory(inventoryList);
+
+    //Parsing commands
+    list<CommandData> commandList = parser.parseCommandFile("data4commands.txt");
+    for(const auto& data: commandList) {
+        if(data.actionType == 'I') {
+            store.showInventory();
+        }
+        else if(data.actionType == 'H') {
+            store.showCustomerHistory(data.customerId);
+        }
+        else if(data.actionType == 'B') {
+            store.borrowItem(data);
+        }
+        else if(data.actionType == 'R') {
+            store.returnItem(data);
+        }
+    }
 
     return 0;
 }
