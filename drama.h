@@ -43,13 +43,51 @@ class Drama : public Movies  // Drama class inherits from Movie class
     // Post-consitions - Clears any dynamically associated memory.
     ~Drama();
 
+        //--------------------------------------------comparison operators------------------------------------------------------------
+
+    // operator>()
+    // Summmary - Overloads the > operator to correctly compare Drama.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is > c.
+    //                   false otherwise.
+    bool operator>(const Drama &c) const;
+
+    // operator>=()
+    // Summmary - Overloads the >= operator to correctly compare Drama.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is >= c.
+    //                   false otherwise.
+    bool operator>=(const Drama &c) const;
+
+    // operator<()
+    // Summmary - Overloads the < operator to correctly compare Drama.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is < c.
+    //                   false otherwise.
+    bool operator<(const Drama &c) const;
+
+    // operator<=()
+    // Summmary - Overloads the <= operator to correctly compare Drama.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is <= c.
+    //                   false otherwise.
+    bool operator<=(const Drama &c) const;
+    
+
+    // operator==()
+    // Summmary - Overloads the == operator to correctly compare Drama.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is == c.
+    //                   false otherwise.
+    bool operator==(const Drama &c) const;
+
     //---------------------------------------------getter methods-----------------------------------------------------------
 
-    // getMovieId() const
+    // getContentId() const
     // Summary - gets the unique id for a drama movie.
     // Pre-consitions - a valid movie should exist in drama genre to get it's id.
     // Post-consditions - Returns unique id for a drama movie.
-    int getMovieId() const;
+    string getContentId() const;
 };
 
 #endif

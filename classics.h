@@ -46,14 +46,57 @@ class Classics : public Movies  // Classics class inherits from Movies class
     // Post-conditions - Clears any dynamically associated memory.
     ~Classics();
 
+    //--------------------------------------------comparison operators------------------------------------------------------------
+
+    // operator>()
+    // Summmary - Overloads the > operator to correctly compare Classics.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is > c.
+    //                   false otherwise.
+    bool operator>(const Classics &c) const;
+
+    // operator>=()
+    // Summmary - Overloads the >= operator to correctly compare Classics.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is >= c.
+    //                   false otherwise.
+    bool operator>=(const Classics &c) const;
+
+    // operator<()
+    // Summmary - Overloads the < operator to correctly compare Classics.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is < c.
+    //                   false otherwise.
+    bool operator<(const Classics &c) const;
+
+    // operator<=()
+    // Summmary - Overloads the <= operator to correctly compare Classics.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is <= c.
+    //                   false otherwise.
+    bool operator<=(const Classics &c) const;
+    
+
+    // operator==()
+    // Summmary - Overloads the == operator to correctly compare Classics.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is == c.
+    //                   false otherwise.
+    bool operator==(const Classics &c) const;
 
     //--------------------------------------------getter methods------------------------------------------------------------------
 
-    // getName() const
-    // Summary - gets the first name and last name of a major actor.
+    // getFirstName() const
+    // Summary - gets the first name of the major actor.
     // Pre-conditions - None.
-    // Post-conditions - Returns the first name and last name of a major actor.
-    string getName() const;
+    // Post-conditions - Returns the first name of the major actor.
+    string getFirstName() const;
+
+    // getLastName() const
+    // Summary - gets the last name of the major actor.
+    // Pre-conditions - None.
+    // Post-conditions - Returns the last name of the major actor.
+    string getLastName() const;
 
     // getReleaseMonth() const
     // Summary - gets the release month of a classic movie.
@@ -61,11 +104,11 @@ class Classics : public Movies  // Classics class inherits from Movies class
     // Post-conditions - Returns the release month oa a classic movie.
     int getReleaseMonth() const;
 
-    // getMovieId() const
+    // getContentId() const
     // Summary - gets the unique id for a classic movie.
     // Pre-conditions - a valid movie should exist in classic genre to get it's id.
     // Post-conditions - Returns the unique id for a classic movie.
-    int getMovieId() const;
+    string getContentId() const;
 
    private:
     string firstName;  // first name of the major actor.

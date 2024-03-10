@@ -33,7 +33,7 @@ class Media
     // Post-conditions - A Media object is initialized with default values.
     Media();
 
-    Media(int stock, AvailableMediaType mediaType, Content* content);
+    Media(int stock, availableMediaTypes mediaType, Content* content);
 
     // ~Media()
     // Summary - Destructor.

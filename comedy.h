@@ -43,13 +43,51 @@ class Comedy : public Movies  // Comedy class inherits from Movie class.
     // Post-conditions - clears any dynamically associated memory.
     ~Comedy();
     
+    //--------------------------------------------comparison operators------------------------------------------------------------
+
+    // operator>()
+    // Summmary - Overloads the > operator to correctly compare Comedy.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is > c.
+    //                   false otherwise.
+    bool operator>(const Comedy &c) const;
+
+    // operator>=()
+    // Summmary - Overloads the >= operator to correctly compare Comedy.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is >= c.
+    //                   false otherwise.
+    bool operator>=(const Comedy &c) const;
+
+    // operator<()
+    // Summmary - Overloads the < operator to correctly compare Comedy.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is < c.
+    //                   false otherwise.
+    bool operator<(const Comedy &c) const;
+
+    // operator<=()
+    // Summmary - Overloads the <= operator to correctly compare Comedy.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is <= c.
+    //                   false otherwise.
+    bool operator<=(const Comedy &c) const;
+    
+
+    // operator==()
+    // Summmary - Overloads the == operator to correctly compare Comedy.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is == c.
+    //                   false otherwise.
+    bool operator==(const Comedy &c) const;
+
     //------------------------------------------------getter methods---------------------------------------------------------------
     
-    // getMovieId() const
+    // getContentId() const
     // Summary - gets the unique id for a comedy movie.
     // Pre-conditions - There should be a valid movie in movies of drama genre type.
     // Post-conditions - returns the unique id for a drama movie.
-    int getMovieId() const;
+    string getContentId() const;
 
 };
 

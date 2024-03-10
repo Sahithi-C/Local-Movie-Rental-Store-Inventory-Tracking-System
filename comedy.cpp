@@ -3,15 +3,118 @@
 
 using namespace std;
 
-Comedy::Comedy() {
+//-------------------------------------------Constructors and Destructor----------------------------------------------------
 
-}
+// Comedy()
+// Summary - Default constructor.
+// Pre-conditions - None.
+// Post-conditions - Constructs a comedy object.
+Comedy::Comedy(){}
 
+// Comedy()
+// Summary - A constructor.
+// Pre-conditions - None.
+// Post-conditions - Constructs a comedy object with the specified values.
 Comedy::Comedy(char genreType, const string &directorName, const string &movieTitle, int releaseYear) 
-       : Movies(genreType, directorName), Content(movieTitle, releaseYear) {
+       : Movies(genreType, directorName, movieTitle, releaseYear) {
 
 }
 
-Comedy::~Comedy(){
+// Comedy(const Comedy& other)
+// Summary - Copy constructor.
+// Pre-conditions - None.
+// Post-conditions - Constructs a comedy object as a copy of ther comedy object.
+Comedy::Comedy(const Comedy& other) 
+       : Movies(other) {}
+
+// ~Comedy()
+// Summary - Destrcutor.
+// Pre-conditions - None.
+// Post-conditions - clears any dynamically associated memory.
+Comedy::~Comedy(){}
+
+//--------------------------------------------comparison operators------------------------------------------------------------
+
+// operator>()
+// Summmary - Overloads the > operator to correctly compare Comedy.
+// Pre-conditons - None.
+// Post-conditions - Returns true if this is > c.
+//                   false otherwise.
+bool Comedy::operator>(const Comedy &c) const {
+
+    // Start with the title
+    if (this->title > c.title) {
+       return true;
+    }
+    else if (this->title < c.title) {
+       return false;
+    }
+
+    // If equal compare release year
+    if (this->releaseYear > c.releaseYear) {
+        return true;
+    }
+    else if (this->releaseYear < c.releaseYear) {
+        return false;
+    }
+
+    // If equal return false
+    return false;
+}
+
+// operator>=()
+// Summmary - Overloads the >= operator to correctly compare Comedy.
+// Pre-conditons - None.
+// Post-conditions - Returns true if this is >= c.
+//                   false otherwise.
+bool Comedy::operator>=(const Comedy &c) const {
+    return (*this > c || *this == c);
+}
+
+// operator<()
+// Summmary - Overloads the < operator to correctly compare Comedy.
+// Pre-conditons - None.
+// Post-conditions - Returns true if this is < c.
+//                   false otherwise.
+bool Comedy::operator<(const Comedy &c) const {
+    return !(*this > c || *this == c);
+}
+
+// operator<=()
+// Summmary - Overloads the <= operator to correctly compare Comedy.
+// Pre-conditons - None.
+// Post-conditions - Returns true if this is <= c.
+//                   false otherwise.
+bool Comedy::operator<=(const Comedy &c) const {
+    return (*this < c || *this == c);
+}
+
+
+// operator==()
+// Summmary - Overloads the == operator to correctly compare Comedy.
+//            Only checks for equality among sortable attributes since they uniquely identify the movie
+// Pre-conditons - None.
+// Post-conditions - Returns true if this is == c.
+//                   false otherwise.
+bool Comedy::operator==(const Comedy &c) const {
     
+    if (this->title != c.title) {
+       return false;
+    }
+    
+    if (this->releaseYear != c.releaseYear) {
+        return false;
+    }
+
+    return true;
+}
+
+//------------------------------------------------getter methods---------------------------------------------------------------
+
+// getContentId() const
+// Summary - gets the unique id for a comedy movie.
+// Pre-conditions - There should be a valid movie in movies of drama genre type.
+// Post-conditions - returns the unique id for a drama movie.
+string Comedy::getContentId() const{
+       return Movies::getContentId();
 }

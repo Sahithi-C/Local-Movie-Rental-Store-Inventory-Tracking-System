@@ -24,7 +24,7 @@ Media::Media() {
     content = nullptr;
 }
 
-Media::Media(int stock, availableMediaType mediaType, Content* content) {
+Media::Media(int stock, availableMediaTypes mediaType, Content* content) {
     setStock(stock);
     setMediaType(mediaType);
     setContent(content);

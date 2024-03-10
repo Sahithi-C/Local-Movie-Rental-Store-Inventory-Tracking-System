@@ -29,12 +29,12 @@ class Movies : public Content // Movies class inherits from Content class
     // Post-conditions - Constructs a movie object.
     Movies();
 
-    Movies(char genreType, const string &director);
+    Movies(char genreType, const string &director, const string &movieTitle, int releaseYear);
 
     // Movies(Movies& other)
     // Summary - Copy constructor.
     // Post-conditions - constructs movie object as a copy of another movies object.
-    Movies(Movies& other);
+    Movies(const Movies& other);
 
     // ~Movies()
     // Summary - Destructor.
@@ -71,7 +71,7 @@ class Movies : public Content // Movies class inherits from Content class
     // getContentId() const
     // Summary - Abstract function to get a contentId, the unique identifier of this movie.
     // Post-conditions - None.
-    string getContentId() const;
+    virtual string getContentId() const;
 
 
     //--------------------------------------------additional functionalities------------------------------------------------
@@ -86,7 +86,7 @@ class Movies : public Content // Movies class inherits from Content class
     // Post-conditions - a movie is removed from the inventory.
     bool removeMovie();
 
-   private:
+   protected:
     string director;    // Director for a movie.
     char genreType;     // genre type for a movie.
 };

@@ -14,13 +14,14 @@
 // Movies()
 // Summary - Default constructor.
 // Post-conditions - Constructs a movie object.
-Movies::Movies(){
-    Content();
+Movies::Movies()
+    : Content() {
     director = "";
     genreType = 'N';
 }
 
-Movies::Movies(char genreType, const string &director) {
+Movies::Movies(char genreType, const string &director, const string &movieTitle, int releaseYear) 
+    : Content(movieTitle, releaseYear) {
     this->genreType = genreType;
     this->director = director;
 }
@@ -28,8 +29,8 @@ Movies::Movies(char genreType, const string &director) {
 // Movies(Movies& other)
 // Summary - Copy constructor.
 // Post-conditions - constructs movie object as a copy of another movies object.
-Movies::Movies(Movies& other){
-    Content(other);
+Movies::Movies(const Movies& other)
+    : Content(other) {
     this->director = other.director;
     this->genreType = other.genreType;
 }
@@ -80,7 +81,7 @@ string Movies::getDirector() const{
 // Summary - Abstract function to get a contentId, the unique identifier of this movie.
 // Post-conditions - None.
 string Movies::getContentId() const{
-    return title + to_string(releaseYear) + director + genreType;
+    return Content::getContentId() + director + genreType;
 }
 
 
