@@ -7,6 +7,18 @@
 // Summary: This file contains the implementation for Movies.
 // Assumptions: None
 
+//------------------------------------------------------movies.cpp-----------------------------------------------------------
+
+// Programmer Name Course Section Number : VG, Jonah Kolar, Sahithi Chimakurthi(CSS 502 A)
+
+// Creation Date : 03/10/2024
+
+// Date of Last Modification : 03/10/2024
+
+// Purpose : Impementing the Movie class representing a movie entity.
+//           This class is the base class for specific movie genres.        
+// -------------------------------------------------------------------------------------------------------------------------
+
 #include "movies.h"
 
 //--------------------------------------constructors and destructor--------------------------------------------------------
