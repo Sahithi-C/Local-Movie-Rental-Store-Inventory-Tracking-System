@@ -1,8 +1,11 @@
 //------------------------------------------------------CommandData.h-----------------------------------------------------------
 
 // Programmer Name Course Section Number : VG, Jonah Kolar, Sahithi Chimakurthi(CSS 502 A)
+
 // Creation Date : 03/10/2024
+
 // Date of Last Modification : 03/10/2024 
+
 // Purpose : Defining of the CommandData struct representing data related to movie rental commands.
 
 // -------------------------------------------------------------------------------------------------------------------------
