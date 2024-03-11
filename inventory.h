@@ -40,6 +40,12 @@ class Inventory
 
     //--------------------------------------------------getter methods------------------------------------------------------------
 
+    // getMedia(mediaId)
+    // Summary - Gets the Media object using the given mediaId.
+    //           mediaId is a unique string representing the mediaType and contentId
+    // Post-conditions - Returns the Media item of the given mediaId.
+    Media& getMedia(string mediaId);
+
     // getComedy(mediaId)
     // Summary - Gets the Media object representing copies of a Comedy Movie using the given mediaId.
     //           mediaId is a unique string representing the mediaType and contentId

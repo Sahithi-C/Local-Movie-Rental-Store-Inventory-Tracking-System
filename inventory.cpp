@@ -22,6 +22,27 @@ Inventory::~Inventory() {}
 
 //--------------------------------------------------getter methods------------------------------------------------------------
 
+// getMedia(mediaId)
+// Summary - Gets the Media object using the given mediaId.
+//           mediaId is a unique string representing the mediaType and contentId
+// Post-conditions - Returns the Media item of the given mediaId.
+//                   Returns an empty Media item if there is no Media item with the givenId in Inventory.
+Media& Inventory::getMedia(string mediaId) {
+    Media ret = Media();
+    if (comedyMap.getValue(mediaId, &ret)) {
+        return ret;
+    }
+    else if (dramaMap.getValue(mediaId, &ret)) {
+        return ret;
+    }
+    else if (classicsMap.getValue(mediaId, &ret)) {
+        return ret;
+    }
+
+    // Will be an empty media object.
+    return ret;
+}
+
 // getComedy(mediaId)
 // Summary - Gets the Media object representing copies of a Comedy Movie using the given mediaId.
 //           mediaId is a unique string representing the mediaType and contentId
