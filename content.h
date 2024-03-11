@@ -28,12 +28,17 @@ class Content
     // Post-conditions - A content object is initialized with default values.
     Content();
 
+    // Content(const string &title, int releaseYear)
+    // Summary - Initializes a Content object with specified values for title and release year.
+    // Pre-conditions - The title should be a non-empty string.
+    //                  releaseYear should be a valid integer representing the year of release.
+    // Post-conditions - An instance of the Content class is created with the provided values.
     Content(const string& title, int releaseYear);
 
     // Content(const Content& other)
     // Summary - Copy constructor
     // Pre-conditions - None.
-    // Post-consditions - A content object is initialized with data of other content object.
+    // Post-conditions - A content object is initialized with data of other content object.
     Content(const Content& other);
 
     // ~Content()
@@ -45,15 +50,15 @@ class Content
     //-----------------------------------------------getter methods---------------------------------------------------------------
 
     // getTitle() const
-    // Summary - gets the title of the content.
+    // Summary - Gets the title of the content.
     // Pre-conditions - None.
-    // Post-conditons - Returns the title of the content.
+    // Post-conditions - Returns the title of the content.
     string getTitle() const;      
 
     // getReleaseyear() const
     // Summary - gets release year of the content.
     // Pre-conditions - None.
-    // Post-consitions - Returns the release year of the content. 
+    // Post-conditions - Returns the release year of the content. 
     int getReleaseYear() const;      
 
 
