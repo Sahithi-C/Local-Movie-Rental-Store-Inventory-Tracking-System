@@ -56,15 +56,15 @@ class Content
     string getTitle() const;      
 
     // getReleaseyear() const
-    // Summary - gets release year of the content.
+    // Summary - Gets release year of the content.
     // Pre-conditions - None.
     // Post-conditions - Returns the release year of the content. 
     int getReleaseYear() const;      
 
 
    private:
-    string title;     // title of the content.
-    int releaseYear;  // release year of the content.
+    string title;     // Title of the content.
+    int releaseYear;  // Release year of the content.
 };
 
 #endif
