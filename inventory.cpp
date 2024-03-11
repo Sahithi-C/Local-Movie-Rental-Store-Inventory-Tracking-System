@@ -11,8 +11,7 @@ Inventory::Inventory() {}
 
 // ~Inventory()
 // Summary - Destructor for the Inventory class.
-// Pre-conditions - None.
-// Post-conditions - Resources held by the Inventory object are released upon destruction.
+// Pre-conditions - Clears any dynamically allocated memory associated with the Inventory object.
 Inventory::~Inventory() {}
 
 // populateInventory(const list<InventoryData> &inventoryList)
