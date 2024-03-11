@@ -27,18 +27,22 @@ class Customer
 
     // Customer()
     // Summary - Default constructor initializes a customer object with default values.
+    // Pre-conditions - None.
     // Post-conditions - A customer object is initialized with default values.
     Customer();
 
     // Customer()
     // Summary - Parametrized constructor that initializes a customer object with
     //           customer id, first name and last name.
+    // Pre-conditions - The customerId should be a valid integer.
+    //                - The firstName and lastName should be non-empty strings.
     // Post-conditions - A customer object is initialized with customer id,
     //                   first name and last name.
     Customer(int customerId, const string& firstName, const string& lastName);
 
     // ~Customer()
     // Summary - Destructor.
+    // Pre-conditions - None.
     // Post-conditions - Cleans any dynamically associated memory.
     ~Customer();
     
@@ -46,11 +50,13 @@ class Customer
 
     // getCustomerId() const
     // Summary - Gets the unique customer id.
+    // Pre-conditions - None.
     // Post-conditions - Returns unique ID of a customer.
     int getCustomerId() const;
 
     // getCustomerName() const
     // Summary - Gets first and last names of a customer.
+    // Pre-conditions - None.
     // Post-conditions - Returns first and last names of a customer.
     string getCustomerName() const;
 
