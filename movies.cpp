@@ -26,6 +26,7 @@
 
 // Movies()
 // Summary - Default constructor.
+// Pre-conditions - None.
 // Post-conditions - Constructs a movie object.
 Movies::Movies(){
     Content();
@@ -53,6 +54,7 @@ Movies::Movies(Movies& other){
 
 // ~Movies()
 // Summary - Destructor.
+// Pre-conditions - None.
 // Post-conditions - cleans up any dynamically allocated memory.
 Movies::~Movies(){}
 
