@@ -1,3 +1,15 @@
+//------------------------------------------------------ContentFactory.cpp-----------------------------------------------------------
+
+// Programmer Name Course Section Number : VG, Jonah Kolar, Sahithi Chimakurthi(CSS 502 A)
+
+// Creation Date : 03/10/2024
+
+// Date of Last Modification : 03/10/2024
+
+// Purpose : Implementing the ContentFactory class responsible for creating content objects based on inventory data.
+
+// -------------------------------------------------------------------------------------------------------------------------
+
 #include<iostream>
 #include"contentFactory.h"
 #include "comedy.h"
