@@ -40,11 +40,23 @@ class Inventory
 
     //--------------------------------------------------getter methods------------------------------------------------------------
 
-    // getMedia(mediaId)
-    // Summary - Gets the media item with given media id.
-    //           MediaID is a unique string representing the mediaType and movieID.
-    // Post-conditions - Returns the media item of the given media id.
-    Media& getMedia(string mediaId);
+    // getComedy(mediaId)
+    // Summary - Gets the Media object representing copies of a Comedy Movie using the given mediaId.
+    //           mediaId is a unique string representing the mediaType and contentId
+    // Post-conditions - Returns the Media item of the given mediaId.
+    Media& getComedy(string mediaId);
+
+    // getDrama(mediaId)
+    // Summary - Gets the Media object representing copies of a Drama Movie using the given mediaId.
+    //           mediaId is a unique string representing the mediaType and contentId
+    // Post-conditions - Returns the Media item of the given mediaId.
+    Media& getDrama(string mediaId);
+
+    // getClassics(mediaId)
+    // Summary - Gets the Media object representing copies of a Classics Movie using the given mediaId.
+    //           mediaId is a unique string representing the mediaType and contentId
+    // Post-conditions - Returns the Media item of the given mediaId.
+    Media& getClassics(string mediaId);
 
     //---------------------------------------------------other member functions-----------------------------------------------------
 
@@ -53,16 +65,20 @@ class Inventory
     // Post-conditions - The inventory is populated with valid media items.
     void populateInventory(const list<InventoryData>& inventoryList);
 
+    // getSortedInventory()
+    // Summary - Generates and returns a sorted list of all Media objects in the store.
+    // Post-conditions - The return will be a sorted list of all Media objects in the store.
+    list<Media> getSortedInventory();
+
    private:
 
-    set<Media> comedySet;    // Set to store a list of all comedy media items.
-    set<Media> dramaSet;     // Set to store a list of all drama media items.
-    set<Media> classicsSet;  // Set to store a list of all classic media items.
+    Map<string, Media> comedyMap;    // Map to store a list of all comedy media items.
+    Map<string, Media> dramaMap;     // Map to store a list of all drama media items.
+    Map<string, Media> classicsMap;  // Map to store a list of all classic media items.
 
-    // sortInventory()
-    // Summary - Sorts the inventory according to the requirements and sorting criteria.
-    // Post-conditions - The inventory is sorted according to the required criteria.
-    void sortInventory();
+    Media& getComedy(string mediaId);
+    Media& getDrama(string mediaId);
+    Media& getClassics(string mediaId);
 };
 
 
