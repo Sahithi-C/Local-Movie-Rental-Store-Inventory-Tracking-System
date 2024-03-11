@@ -26,7 +26,7 @@ Comedy::Comedy(char genreType, const string &directorName, const string &movieTi
 // ~Comedy()
 // Summary - This is the destructor for the Comedy class.
 // Pre-conditions - None.
-// Post-conditions - Resources held by the Comedy object are released upon destruction.
+// Post-conditions - Clears any dynamically allocated memory associated with the Comedy object.
 Comedy::~Comedy(){
     
 }
