@@ -30,6 +30,10 @@ class Transaction
     // Post-conditions - A Transaction object is initialized with default values.
     Transaction();
 
+    // Transaction(char actionType, const string &mediaId)
+    // Summary - Parameterized constructor for the Transaction class.
+    // Pre-conditions - None.
+    // Post-conditions - Initializes a Transaction object with the specified actionType and mediaId.
     Transaction(char actionType, const string& mediaId);
 
 
@@ -48,6 +52,10 @@ class Transaction
     // Post-conditions - Returns the type of action for the transaction.
     char getActionType() const;
 
+    // getTransactionMedia()
+    // Summary - Getter function for the mediaId attribute.
+    // Pre-conditions - None.
+    // Post-conditions - Returns the mediaId of the Transaction object.
     string getTransactionMedia(); 
 
     private:
