@@ -29,6 +29,15 @@ class Classics : public Movies  // Classics class inherits from Movies class
     // Post-conditions - Constrcts a Classics object.
     Classics();
 
+    // Classics(char genreType, const string &directorName, const string &movieTitle,
+    //          int releaseYear, const string &actorFirstName, const string &actorLastname,
+    //          int releaseMonth)
+    // Summary - Initializes a Classics object with specified values for genre type, director name,
+    //           movie title, release year, actor's first and last name, and release month.
+    // Pre-conditions - The provided genreType should be a valid character representing the genre type.
+    //                  The directorName, movieTitle, actorFirstName, and actorLastName should be non-empty strings.
+    //                  releaseYear and releaseMonth should be valid integers representing the year and month of release.
+    // Post-conditions - An instance of the Classics class is created with the provided values.
     Classics(char genreType, const string& directorName, 
              const string& movieTitle, int releaseYear,
              const string& actorFirstName, const string& actorLastname, 
