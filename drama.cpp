@@ -124,5 +124,5 @@ bool Drama::operator==(const Drama &c) const {
 // Pre-consitions - a valid movie should exist in drama genre to get it's id.
 // Post-consditions - Returns unique id for a drama movie.
 string Drama::getContentId() const{
-      return director + to_string(releaseYear);
+      return director + title;
 }

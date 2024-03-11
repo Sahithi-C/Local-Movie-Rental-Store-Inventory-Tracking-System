@@ -57,33 +57,30 @@ class Customer
 
     //-----------------------------------------other member functions-----------------------------------------------------------
 
-    // getTransactionHistory() const
-    // Summary - Gets the whole transaction history of a customer.
-    // Post-conditions - Returns the transaction list of a particular customer.
-    list<Transaction> getTransactionHistory() const;
 
     // printTransactionHistory() const
     // Summary - Prints the transaction history of the specified customer.
     // Post-conditions - transactio history of a customer is printed.
     void printTransactionHistory() const;
     
-    // borrowMedia(int mediaId)
+  // borrowMedia(int mediaId)
     // Summary - Records a transaction of a customer borrowing a movie in borrowedMediaList 
     //           to keep track of customer's borrows.
     // Post-conditions - Transaction history for borrow of media by a customer is recorded.
-    void borrowMedia(string mediaId);
+    void borrowMedia(Media& media);
 
     // returnmedia(int mediaId)
     // Summary - Records a transaction for a customer returning a movie, 
     //           by removing the media item from borrowedMediaList.
     // Post-conditions - Transaction history for return of media by a customer is recorded, 
     //                   by removing the item from list.
-    void returnMedia(string mediaId);
+    void returnMedia(Media& media);
 
     // isItemReturnable(int mediaId) const
     // Summary - Checks if a media item is returnable by a customer.
     // Post-conditions - Returns true, if the item is returnable. false, otherwise.
     bool isItemReturnable(string mediaId) const;
+
 
    private:
     int customerId;                          // Unique Customer id.
