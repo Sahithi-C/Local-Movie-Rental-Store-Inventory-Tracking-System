@@ -1,3 +1,15 @@
+//------------------------------------------------------InventoryData.h-----------------------------------------------------------
+
+// Programmer Name Course Section Number : VG, Jonah Kolar, Sahithi Chimakurthi(CSS 502 A)
+
+// Creation Date : 03/10/2024
+
+// Date of Last Modification : 03/10/2024
+
+// Purpose : Defining the InventoryData struct representing data related to inventory items.
+
+// -------------------------------------------------------------------------------------------------------------------------
+
 #ifndef INVENTORY_DATA_H
 #define INVENTORY_DATA_H
 
