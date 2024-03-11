@@ -32,11 +32,13 @@ class Parser
 
     // Parser()
     // Summary - Default constructor.
+    // Pre-conditions - None.
     // Post-conditions - Constructs a parser object.
     Parser();
 
     // ~Parser()
     // Summary - Destructor.
+    // Pre-conditions - None.
     // Post-conditions - Clears any dynamically allocated memory.
     ~Parser();
 
