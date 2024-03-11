@@ -34,6 +34,6 @@ Classics::Classics(char genreType, const string &directorName,
 // ~Classics()
 // Summary - destructor for the Classics class.
 // Pre-conditions - None.
-// Post-conditions - Resources held by the Classics object are released upon destruction.
+// Post-conditions - Clears any dynamically allocated memory associated with the Classics object.
 Classics::~Classics() {
 }
