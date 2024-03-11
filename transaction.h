@@ -21,25 +21,38 @@ using namespace std;
 
 class Transaction 
 {
-   public:
+    public:
     //---------------------------------------------------Constructors & Destructor------------------------------------------------
     
     // Transaction()
     // Summary - Default constructor.
+    // Pre-conditions - None.
     // Post-conditions - A Transaction object is initialized with default values.
     Transaction();
 
     Transaction(char actionType, const string& mediaId);
 
+
     // ~Transaction()
     // Summary - Destructor.
-    // Post-conditions - Clears any dynamically allocated memory.
+    // Pre-conditions - None.
+    // Post-conditions - clears aby dynamically associated memory.
     ~Transaction();
 
 
-   private:
-    char actionType;        // Type of action for a transaction.
-    string mediaId;         // media Id associated with transaction.
+    //---------------------------------------------------getter methods-----------------------------------------------------------
+
+    // getActionType() const
+    // Summary - gets the type of action associated with the transaction.
+    // Pre-conditions - None.
+    // Post-conditions - Returns the type of action for the transaction.
+    char getActionType() const;
+
+    string getTransactionMedia(); 
+
+    private:
+    char actionType;     // Type of action for a transaction.
+    string mediaId;      // media Id associated with transaction.
 };
 
 #endif;
