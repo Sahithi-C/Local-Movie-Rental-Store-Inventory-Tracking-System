@@ -15,7 +15,7 @@ Parser::Parser() {
 // ~Parser()
 // Summary - Destructor for the Parser class.
 // Pre-conditions - None.
-// Post-conditions - Resources held by the Parser object are released upon destruction.
+// Post-conditions - Clears any dynamically allocated memory associated with the Parser object.
 Parser::~Parser() {
 
 }
