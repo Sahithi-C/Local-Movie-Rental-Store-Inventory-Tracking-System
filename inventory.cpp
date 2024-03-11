@@ -1,3 +1,14 @@
+//------------------------------------------------------inventory.cpp-----------------------------------------------------------
+
+// Programmer Name Course Section Number : VG, Jonah Kolar, Sahithi Chimakurthi(CSS 502 A)
+
+// Creation Date : 03/10/2024
+
+// Date of Last Modification : 03/10/2024
+
+// Purpose : Implementing an Inventory class representing a collection of media items that are also the store's inventory.
+// -------------------------------------------------------------------------------------------------------------------------
+
 #include<iostream>
 #include "inventory.h"
 
