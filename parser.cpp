@@ -1,3 +1,15 @@
+//------------------------------------------------------parser.cpp-----------------------------------------------------------
+
+// Programmer Name Course Section Number : VG, Jonah Kolar, Sahithi Chimakurthi(CSS 502 A)
+
+// Creation Date : 03/10/2024
+
+// Date of Last Modification : 03/10/2024
+
+// Purpose : Implementing the Parser class responsible for parsing input strings and creating corresponding objects.
+
+// -------------------------------------------------------------------------------------------------------------------------
+
 #include<iostream>
 #include "parser.h"
 
