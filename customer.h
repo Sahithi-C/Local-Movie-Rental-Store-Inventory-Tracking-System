@@ -39,14 +39,14 @@ class Customer
 
     // ~Customer()
     // Summary - Destructor.
-    // Post-conditions - cleans any dynamically associated memory.
+    // Post-conditions - Cleans any dynamically associated memory.
     ~Customer();
     
     //------------------------------------------------getter methods-------------------------------------------------------
 
     // getCustomerId() const
     // Summary - Gets the unique customer id.
-    // Post-conditions - Returns unique id of a customer.
+    // Post-conditions - Returns unique ID of a customer.
     int getCustomerId() const;
 
     // getCustomerName() const
@@ -63,20 +63,20 @@ class Customer
 
     // printTransactionHistory() const
     // Summary - Prints the transaction history of the specified customer.
-    // Post-conditions - transactio history of a customer is printed.
+    // Post-conditions - The transaction history of a customer is printed.
     void printTransactionHistory() const;
     
     // borrowMedia(int mediaId)
     // Summary - Records a transaction of a customer borrowing a movie in borrowedMediaList 
     //           to keep track of customer's borrows.
-    // Post-conditions - Transaction history for borrow of media by a customer is recorded.
+    // Post-conditions - Transaction history for borrowing media by a customer is recorded.
     void borrowMedia(int mediaId);
 
     // returnmedia(int mediaId)
     // Summary - Records a transaction for a customer returning a movie, 
     //           by removing the media item from borrowedMediaList.
-    // Post-conditions - Transaction history for return of media by a customer is recorded, 
-    //                   by removing the item from list.
+    // Post-conditions - Transaction history for the return of media by a customer is recorded, 
+    //                   by removing the item from the list.
     void returnMedia(int mediaId);
 
     // isItemReturnable(int mediaId) const
