@@ -29,6 +29,13 @@ class Drama : public Movies  // Drama class inherits from Movie class
     Drama();
 
     // Parameterized constructor
+    // Drama(char genreType, const string &directorName, const string &movieTitle, int releaseYear)
+    // Summary - Initializes a Drama object with specified values for genre type, director name,
+    //           movie title, and release year.
+    // Pre-conditions - The provided genreType should be a valid character representing the genre type.
+    //                - The directorName and movieTitle should be non-empty strings.
+    //                - The releaseYear should be a valid integer representing the year of release.
+    // Post-conditions - An instance of the Drama class is created with the provided values.
     Drama(char genreType, const string& directorName, const string& movieTitle, int releaseYear);
 
     // Drama(const Drama& other)
@@ -46,8 +53,8 @@ class Drama : public Movies  // Drama class inherits from Movie class
     //---------------------------------------------getter methods-----------------------------------------------------------
 
     // getMovieId() const
-    // Summary - gets the unique id for a drama movie.
-    // Pre-consitions - a valid movie should exist in drama genre to get it's id.
+    // Summary - Gets the unique id for a drama movie.
+    // Pre-consitions - A valid movie should exist in drama genre to get it's id.
     // Post-consditions - Returns unique id for a drama movie.
     int getMovieId() const;
 };
