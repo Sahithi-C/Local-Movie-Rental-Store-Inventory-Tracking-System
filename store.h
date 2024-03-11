@@ -21,6 +21,7 @@
 #include "inventoryData.h"
 #include "commandData.h"
 #include "media.h"
+#include "contentFactory.h"
 
 using namespace std;
 
