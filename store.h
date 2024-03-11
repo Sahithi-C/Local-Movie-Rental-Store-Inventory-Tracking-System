@@ -63,12 +63,12 @@ class Store
 
     // showInventory() const
     // Summary - Displays the current inventory of the store.
-    // Post-conditions - Thes current inventory of the store is displayed.
+    // Post-conditions - The current inventory of the store is displayed.
     void showInventory() const;
 
     // showCustomerHistory() const
     // Summary - Displays the list of customers of the store.
-    // Post-conditions - The lsit of customers of the store is displayed.
+    // Post-conditions - The list of customers of the store is displayed.
     void showCustomerHistory(int customerId) const;
 
    private:
