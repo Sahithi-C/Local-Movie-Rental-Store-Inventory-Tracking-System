@@ -16,7 +16,8 @@
 // Date of Last Modification : 03/10/2024
 
 // Purpose : Impementing the Movie class representing a movie entity.
-//           This class is the base class for specific movie genres.        
+//           This class is the base class for specific movie genres.  
+
 // -------------------------------------------------------------------------------------------------------------------------
 
 #include "movies.h"
@@ -32,6 +33,10 @@ Movies::Movies(){
     genreType = 'N';
 }
 
+// Movies(char genreType, const string &director)
+// Summary - Parameterized constructor for the Movies class.
+// Pre-conditions - None.
+// Post-conditions - Constructs a Movies object with the specified genreType and director.
 Movies::Movies(char genreType, const string &director) {
     this->genreType = genreType;
     this->director = director;
