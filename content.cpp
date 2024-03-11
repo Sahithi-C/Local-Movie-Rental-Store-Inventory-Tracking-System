@@ -15,15 +15,15 @@
 
 using namespace std;
 
-// Content::Content()
-// Summary - default constructor for the Content class.
+// Content()
+// Summary - Default constructor for the Content class.
 // Pre-conditions - None.
 // Post-conditions - An instance of the Content class is created with default values.
 Content::Content() {
 }
 
-// Content::Content(const string &title, int releaseYear)
-// Summary - initializes a Content object with specified values for title and release year.
+// Content(const string &title, int releaseYear)
+// Summary - Initializes a Content object with specified values for title and release year.
 // Pre-conditions - The title should be a non-empty string.
 //                  releaseYear should be a valid integer representing the year of release.
 // Post-conditions - An instance of the Content class is created with the provided values.
@@ -33,7 +33,7 @@ Content::Content(const string &title, int releaseYear) {
 }
 
 // ~Content()
-// Summary - destructor for the Content class.
+// Summary - Destructor for the Content class.
 // Pre-conditions - None.
 // Post-conditions - Clears any dynamically allocated memory associated with the Content object.
 virtual Content::~Content() {
