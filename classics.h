@@ -59,25 +59,25 @@ class Classics : public Movies  // Classics class inherits from Movies class
     //--------------------------------------------getter methods------------------------------------------------------------------
 
     // getName() const
-    // Summary - gets the first name and last name of a major actor.
+    // Summary - Gets the first name and last name of a major actor.
     // Pre-conditions - None.
     // Post-conditions - Returns the first name and last name of a major actor.
     string getName() const;
 
     // getReleaseMonth() const
-    // Summary - gets the release month of a classic movie.
+    // Summary - Gets the release month of a classic movie.
     // Pre-conditions - None.
     // Post-conditions - Returns the release month oa a classic movie.
     int getReleaseMonth() const;
 
     // getMovieId() const
-    // Summary - gets the unique id for a classic movie.
-    // Pre-conditions - a valid movie should exist in classic genre to get it's id.
+    // Summary - Gets the unique id for a classic movie.
+    // Pre-conditions - A valid movie should exist in classic genre to get it's id.
     // Post-conditions - Returns the unique id for a classic movie.
     int getMovieId() const;
 
    private:
-    string firstName;  // first name of the major actor.
+    string firstName;  // First name of the major actor.
     string lastName;   // last name of the major actor.
     int releaseMonth;  // release month oa a classic movie.
 
