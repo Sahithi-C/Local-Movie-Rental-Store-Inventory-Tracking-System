@@ -30,11 +30,13 @@ class Inventory
 
     // Inventory()
     // Summary - Default constructor.
+    // Pre-conditions - None.
     // Post-conditions - Initializes an empty inventory object.
     Inventory();
 
     // ~Inventory()
     // Summary - Destructor.
+    // Pre-conditions - None.
     // Post-conditions - Clears any dynamically associated memory.
     virtual ~Inventory();
 
@@ -50,7 +52,9 @@ class Inventory
 
     // populateInventory()
     // Summary - Populates the inventory object with data from the parser.
-    // Post-conditions - The inventory is populated with valid media items.
+    // Pre-conditions - The inventoryList should contain valid InventoryData objects representing content to be added to the inventory.
+    // Post-conditions - The inventory is populated with content based on the data provided in the inventoryList.
+    //                 - Each item in the inventory is associated with a Media object representing its stock and content.
     void populateInventory(const list<InventoryData>& inventoryList);
 
    private:
