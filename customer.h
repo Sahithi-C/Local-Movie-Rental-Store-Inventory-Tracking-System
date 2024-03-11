@@ -57,13 +57,12 @@ class Customer
 
     //-----------------------------------------other member functions-----------------------------------------------------------
 
-
     // printTransactionHistory() const
     // Summary - Prints the transaction history of the specified customer.
     // Post-conditions - transactio history of a customer is printed.
     void printTransactionHistory() const;
     
-  // borrowMedia(int mediaId)
+    // borrowMedia(int mediaId)
     // Summary - Records a transaction of a customer borrowing a movie in borrowedMediaList 
     //           to keep track of customer's borrows.
     // Post-conditions - Transaction history for borrow of media by a customer is recorded.
@@ -74,20 +73,19 @@ class Customer
     //           by removing the media item from borrowedMediaList.
     // Post-conditions - Transaction history for return of media by a customer is recorded, 
     //                   by removing the item from list.
-    void returnMedia(Media& media);
+    bool returnMedia(Media& media);
 
     // isItemReturnable(int mediaId) const
     // Summary - Checks if a media item is returnable by a customer.
     // Post-conditions - Returns true, if the item is returnable. false, otherwise.
     bool isItemReturnable(string mediaId) const;
 
-
    private:
     int customerId;                          // Unique Customer id.
     string firstName;                        // First name of the customer.
     string lastname;                         // last name of the customer.
     list<Transaction> transactionList;       // List of all transactions by the customer.
-    Map<string, bool> borrowedMediaList;    // List of borrowed media items by a customer.
+    Map<string, bool> borrowedMediaList;    // Map of borrowed media items by a customer.
 };
 
 #endif
