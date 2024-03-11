@@ -24,12 +24,17 @@ void Store::borrowItem(const CommandData& data) {
         Media borrowMedia(0, Media::availableMediaTypes::DvD, &content);
 
         Media media = inventory.getMedia(borrowMedia.getMediaId()); 
-        if(media.getStock() > 0) {
-            customer.borrowMedia(media);
-            media.reduceStock();
+        if(media.content != nullptr) {
+             if(media.getStock() > 0) {
+                customer.borrowMedia(media);
+                media.reduceStock();
+            }
+            else {
+                cout << "There's no stock of this movie in the store." << endl;
+            }
         }
         else {
-            cout << "There's no stock of this movie in the store." << endl;
+            cout << "The movie does not exist" << endl;
         }
     }
     else {
@@ -39,15 +44,19 @@ void Store::borrowItem(const CommandData& data) {
 
 void Store::returnItem(const CommandData &data) {
     Customer customer;
-
     if(this->customerMap.getValue(data.customerId, &customer)) {
         Content content = ContentFactory::createContent(data);
         Media returnMedia(0, Media::availableMediaTypes::DvD, &content);
 
         Media media = inventory.getMedia(returnMedia.getMediaId());
-        if(customer.returnMedia(media)) {
-            media.increaseStock();
+        if(media.content != nullptr) {
+            if(customer.returnMedia(media)) {
+                media.increaseStock();
+            }
         }
+        else {
+            cout << "The movie does not exist" << endl;
+        }  
     }
     else {
         cout << "The customer does not exist" << endl;
