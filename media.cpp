@@ -17,6 +17,7 @@
 
     // Media()
     // Summary - Default constructor.
+    // Pre-conditions - None.
     // Post-conditions - A Media object is initialized with default values.
 Media::Media() {
     stock = 0;
@@ -39,6 +40,7 @@ Media::Media(int stock, availableMediaTypes mediaType, Content* content) {
 
 // ~Media()
 // Summary - Destructor.
+// Pre-conditions - None.
 // Post-conditions - Cleans any dynamically associated memory.
 Media::~Media() {}
 
@@ -46,7 +48,7 @@ Media::~Media() {}
 
 // operator>()
 // Summmary - Overloads the > operator to correctly compare Media.
-// Pre-conditons - None.
+// Pre-conditions - None.
 // Post-conditions - Returns true if this is > c.
 //                   false otherwise.
 bool Media::operator>(const Media &m) const {
@@ -55,7 +57,7 @@ bool Media::operator>(const Media &m) const {
 
 // operator>=()
 // Summmary - Overloads the >= operator to correctly compare Media.
-// Pre-conditons - None.
+// Pre-conditions - None.
 // Post-conditions - Returns true if this is >= c.
 //                   false otherwise.
 bool Media::operator>=(const Media &m) const {
@@ -64,7 +66,7 @@ bool Media::operator>=(const Media &m) const {
 
 // operator<()
 // Summmary - Overloads the < operator to correctly compare Media.
-// Pre-conditons - None.
+// Pre-conditions - None.
 // Post-conditions - Returns true if this is < c.
 //                   false otherwise.
 bool Media::operator<(const Media &m) const {
@@ -73,7 +75,7 @@ bool Media::operator<(const Media &m) const {
 
 // operator<=()
 // Summmary - Overloads the <= operator to correctly compare Media.
-// Pre-conditons - None.
+// Pre-conditions - None.
 // Post-conditions - Returns true if this is <= c.
 //                   false otherwise.
 bool Media::operator<=(const Media &m) const {
@@ -83,7 +85,7 @@ bool Media::operator<=(const Media &m) const {
 
 // operator==()
 // Summmary - Overloads the == operator to correctly compare Media.
-// Pre-conditons - None.
+// Pre-conditions - None.
 // Post-conditions - Returns true if this is == c.
 //                   false otherwise.
 bool Media::operator==(const Media &m) const {
@@ -95,6 +97,7 @@ bool Media::operator==(const Media &m) const {
 
 // reduceStock()
 // Summary - Reduces the stock of a media item by 1 if there's valid stock.
+// Pre-conditions - stock count should be greater than zero.
 // Post-conditions - Decreases the stock of the media item by 1.
 //                   Returns true if the stock was descreased.
 //                   false otherwise.
@@ -108,6 +111,7 @@ bool Media::reduceStock(){
 
 // increaseStock()
 // Summary - Increases the stock of media item by 1.
+// Pre-conditions - None.
 // Post-conditions - Increases the stock of the media item by 1.
 //                   Returns true if the stock was increased.
 //                   false otherwise.
@@ -121,6 +125,7 @@ bool Media::increaseStock(){
 // setStock()
 // Summary - Sets the stock count for a valid media item.
 //           Stock cannot be set to a negative number.
+// Pre-conditions - None.
 // Post-conditions - Stock count for a valid media item is set.
 //                   Returns true if the stock was set.
 //                   false otherwise.
