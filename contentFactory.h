@@ -23,14 +23,14 @@ class ContentFactory {
     
     public:
 
-    // ContentFactory::ContentFactory()
-    // Summary - default constructor for the ContentFactory class.
+    // ContentFactory()
+    // Summary - Default constructor for the ContentFactory class.
     // Pre-conditions - None.
     // Post-conditions - An instance of the ContentFactory class is created.
     ContentFactory(); //constructor
 
     // ~ContentFactory()
-    // Summary - destructor for the ContentFactory class.
+    // Summary - Destructor for the ContentFactory class.
     // Pre-conditions - None.
     // Post-conditions - Clears any dynamically allocated memory associated with the ContentFactory object.
     ~ContentFactory(); //destructor
