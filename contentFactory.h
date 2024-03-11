@@ -1,3 +1,15 @@
+//------------------------------------------------------ContentFactory.h-----------------------------------------------------------
+
+// Programmer Name Course Section Number : VG, Jonah Kolar, Sahithi Chimakurthi(CSS 502 A)
+
+// Creation Date : 03/10/2024
+
+// Date of Last Modification : 03/10/2024
+
+// Purpose : Defining the ContentFactory class responsible for creating content objects based on inventory data.
+
+// -------------------------------------------------------------------------------------------------------------------------
+
 #ifndef CONTENTFACTORY_H
 #define CONTENTFACTORY_H
 
