@@ -1,3 +1,15 @@
+//------------------------------------------------------store.cpp-----------------------------------------------------------
+
+// Programmer Name Course Section Number : VG, Jonah Kolar, Sahithi Chimakurthi(CSS 502 A)
+
+// Creation Date : 03/10/2024
+
+// Date of Last Modification : 03/10/2024
+
+// Purpose : Implementing the Store class representing a store that manages inventory and customers.
+
+// -------------------------------------------------------------------------------------------------------------------------
+
 #include<iostream>
 #include "store.h"
 
