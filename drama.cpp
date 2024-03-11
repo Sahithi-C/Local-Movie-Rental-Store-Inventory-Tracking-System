@@ -24,6 +24,6 @@ Drama::Drama(char genreType, const string &directorName, const string &movieTitl
 // ~Drama()
 // Summary - Destructor for the Drama class.
 // Pre-conditions - None.
-// Post-conditions - Resources held by the Drama object are released upon destruction.
+// Post-conditions - Clears any dynamically allocated memory associated with the Drama object.
 Drama::~Drama() {
 }
