@@ -10,16 +10,16 @@ using namespace std;
 
 int main() {
  
-    Parser parser;
-    Store store;
+    Parser parser;        // Instantiate a Parser object
+    Store store;          // Instantiate a Store object
     
     //Creating customer list
-    Map<int, Customer> customers = parser.parseCustomersFile("data4customers.txt");
-    store.setCustomers(customers);
+    Map<int, Customer> customers = parser.parseCustomersFile("data4customers.txt");  // Parse customer data 
+    store.setCustomers(customers);  // Set customers in the store
 
     //Parsing movie data
-    list<InventoryData> inventoryList = parser.parseInventoryFile("data4movies.txt");
-    store.buildInventory(inventoryList);
+    list<InventoryData> inventoryList = parser.parseInventoryFile("data4movies.txt"); // Parse movie data 
+    store.buildInventory(inventoryList);  // Build inventory in the store
 
     //Parsing commands
     list<CommandData> commandList = parser.parseCommandFile("data4commands.txt");
