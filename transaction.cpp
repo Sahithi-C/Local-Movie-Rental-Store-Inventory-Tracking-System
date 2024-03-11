@@ -14,3 +14,11 @@ Transaction::Transaction(char actionType, const string &mediaId) {
 }
 
 Transaction::~Transaction(){}
+
+char Transaction::getActionType() const{
+    return actionType;
+}
+
+string Transaction::getTransactionMedia() {
+    return mediaId;
+}
