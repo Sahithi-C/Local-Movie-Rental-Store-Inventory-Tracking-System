@@ -1,3 +1,15 @@
+//------------------------------------------------------customer.cpp-----------------------------------------------------------
+
+// Programmer Name Course Section Number : VG, Jonah Kolar, Sahithi Chimakurthi(CSS 502 A)
+
+// Creation Date : 03/10/2024
+
+// Date of Last Modification : 03/10/2024
+
+// Purpose : Implementing the Customer class representing a customer in the system. 
+
+// -------------------------------------------------------------------------------------------------------------------------
+
 #include<iostream>
 #include"customer.h"
 
