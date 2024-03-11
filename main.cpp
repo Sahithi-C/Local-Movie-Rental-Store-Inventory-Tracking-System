@@ -1,3 +1,15 @@
+//------------------------------------------------------main.cpp-----------------------------------------------------------
+
+// Programmer Name Course Section Number : VG, Jonah Kolar, Sahithi Chimakurthi(CSS 502 A)
+
+// Creation Date : 03/10/2024
+
+// Date of Last Modification : 03/10/2024
+
+// Purpose : Entry point of the application. Parses input files, builds inventory, and processes commands.
+
+----------------------------------------------------------------------------------------------------------------------------
+
 #include<iostream>
 #include<string>
 #include"parser.h"
