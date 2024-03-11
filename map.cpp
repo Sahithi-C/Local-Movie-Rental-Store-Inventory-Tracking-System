@@ -5,6 +5,10 @@
 
 using namespace std;
 
+// Map()
+// Summary - Constructor for the Map class.
+// Pre-conditions - None.
+// Post-conditions - An instance of the Map class is created with default values.
 template <typename Key, typename Value>
 Map<Key, Value>::Map() {
     this->size = 0;
@@ -12,6 +16,10 @@ Map<Key, Value>::Map() {
     hashMap = new list<pair<Key, Value>>[capacity];
 }
 
+// Map(const Map<Key, Value> &other)
+// Summary - Copy constructor for the Map class.
+// Pre-conditions - None.
+// Post-conditions - A new Map object is created, which is a copy of the provided Map object 'other'.
 template <typename Key, typename Value>
 Map<Key, Value>::Map(const Map<Key, Value> &other) {
   cout << "copy copy copy copy" << endl;
@@ -26,11 +34,20 @@ Map<Key, Value>::Map(const Map<Key, Value> &other) {
   }
 }
 
+// ~Map()
+// Summary - Destructor for the Map class.
+// Pre-conditions - None.
+// Post-conditions - Resources held by the Map object are released upon destruction.
 template <typename Key, typename Value>
 Map<Key, Value>::~Map() {
     delete[] hashMap;
 }
 
+// insert(const Key &key, const Value &value)
+// Summary - Inserts a key-value pair into the map.
+// Pre-conditions - None.
+// Post-conditions - The key-value pair (key, value) is inserted into the map. 
+//                   If the key already exists in the map, its corresponding value is updated.
 template <typename Key, typename Value>
 void Map<Key, Value>::insert(const Key &key, const Value &value) {
 
@@ -48,7 +65,11 @@ void Map<Key, Value>::insert(const Key &key, const Value &value) {
     size++;
 }
  
- 
+// getValue(const Key &key, Value* foundValue)
+// Summary - Retrieves the value associated with the given key.
+// Pre-conditions - None.
+// Post-conditions - If the key exists in the map, its corresponding value is stored in the 'foundValue' parameter, 
+//                   and the method returns true. Otherwise, returns false.
 //Should call like getValue(customerId, &customer)
 template <typename Key, typename Value>
 bool Map<Key, Value>::getValue(const Key &key, Value* foundValue) {
@@ -65,6 +86,11 @@ bool Map<Key, Value>::getValue(const Key &key, Value* foundValue) {
     return false;
 }
 
+// remove(const Key &key)
+// Summary - Removes the key-value pair associated with the given key from the map.
+// Pre-conditions - None.
+// Post-conditions - If the key exists in the map, its corresponding key-value pair is removed, 
+//                   and the method returns true. Otherwise, returns false.
 //Referenced GeeksForGeeks for the list iterator - especially using 'auto'
 template <typename Key, typename Value>
 bool Map<Key, Value>::remove(const Key &key) {
@@ -87,22 +113,39 @@ bool Map<Key, Value>::remove(const Key &key) {
     return false;
 }
 
+// isEmpty() const
+// Summary - Checks if the map is empty.
+// Pre-conditions - None.
+// Post-conditions - Returns true if the map is empty. Otherwise, returns false.
 template <typename Key, typename Value>
 bool Map<Key, Value>::isEmpty() const {
 
     return size == 0;
 }
 
+// getSize() const
+// Summary - Returns the size of the map.
+// Pre-conditions - None.
+// Post-conditions - Returns the number of key-value pairs currently stored in the map.
 template <typename Key, typename Value>
 int Map<Key, Value>::getSize() const {
     return size;
 }
 
+// getCapacity() const
+// Summary - Returns the capacity of the map.
+// Pre-conditions - None.
+// Post-conditions - Returns the total number of slots available in the hash map.
 template <typename Key, typename Value>
 int Map<Key, Value>::getCapacity() const {
     return capacity;
 }
 
+// operator=(const Map<Key, Value> &other)
+// Summary - Overloaded assignment operator for the Map class.
+// Pre-conditions - None.
+// Post-conditions - The current map is assigned the values of the provided map 'other'. 
+//                   Returns a reference to the modified map.
 template <typename Key, typename Value>
 Map<Key, Value> &Map<Key, Value>::operator=(const Map<Key, Value> &other) {
     
@@ -131,6 +174,10 @@ Map<Key, Value> &Map<Key, Value>::operator=(const Map<Key, Value> &other) {
     return *this;
 }
 
+// hash(const Key &key) const
+// Summary - Hash function to callculate the index for a given key.
+// Pre-conditions - None.
+// Post-conditions - Returns the hashed index for the given key.
 template <typename Key, typename Value>
 int Map<Key, Value>::hash(const Key &key) const {
 
@@ -140,6 +187,10 @@ int Map<Key, Value>::hash(const Key &key) const {
     return hashedIndex;
 }
 
+// makeEmpty()
+// Summary - Empties the map by removing all key-value pairs.
+// Pre-conditions - None.
+// Post-conditions - All key-value pairs are removed from the map, and the size of the map becomes zero.
 template <typename Key, typename Value>
 void Map<Key, Value>::makeEmpty() {
       for (int i = 0; i < capacity; ++i) {
