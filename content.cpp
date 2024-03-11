@@ -23,6 +23,6 @@ Content::Content(const string &title, int releaseYear) {
 // ~Content()
 // Summary - destructor for the Content class.
 // Pre-conditions - None.
-// Post-conditions - Resources held by the Content object are released upon destruction.
+// Post-conditions - Clears any dynamically allocated memory associated with the Content object.
 virtual Content::~Content() {
 }
