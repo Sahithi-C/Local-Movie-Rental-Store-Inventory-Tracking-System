@@ -27,13 +27,19 @@ class Map
 
     // Map()
     // Summary - Default constructor.
+    // Pre-conditions - None.
     // Post-conditions - Initializes an empty map object with default capacity.
     Map();
-    
+
+    // Map(const Map<Key, Value> &other)
+    // Summary - Copy constructor for the Map class.
+    // Pre-conditions - None.
+    // Post-conditions - A new Map object is created, which is a copy of the provided Map object 'other'.
     Map(const Map<Key, Value> &other);
 
     // ~Map()
     // Summary - Destructor.
+    // Pre-conditions - None.
     // Post-conditions - Clears any dynamically allocated memory.
     ~Map();
 
@@ -41,34 +47,45 @@ class Map
 
     // setValue(const Key& key, const Value& value)
     // Summary - Inserts a key-value pair into the map. 
+    // Pre-conditions - None.
     // Post-conditions - A key-value pair is inserted into the map. Returns true if successful; false, otherwise.
     void insert( const Key& key, const Value& value);
 
     // getValue(const Key& key, const Value& value)
     // Summary - Finds a key-value pair if present in the map.
+    // Pre-conditions - None.
     // Post-conditions - Searches for a key-value pair in the map. Returns the value if pair is found;
     bool getValue(const Key& key, Value* foundValue);
 
     // remove(const Key& key)
     // Summary - Removes a key-value pair from the map.
+    // Pre-conditions - None.
     // Post-conditions - The key-value pair from the map is removed.  Returns true if successful; false, otherwise.
     bool remove(const Key& key);
 
     // isEmpty() const
     // Summary - Checks if the map is empty.
+    // Pre-conditions - None.
     // Post-conditions - Returns true if the map is empty; false, otherwise.
     bool isEmpty() const;
 
     // getSize()
     // Summary - Returns the current size of the map.
+    // Pre-conditions - None.
     // Post-conditions - Returns the number of elements in the map.
     int getSize() const;
 
     // getCapacity()
     // Summary - Returns the capacity of the map.
+    // Pre-conditions - None.
     // Post-conditions - Returns the maximum number of elements the map can hold.
     int getCapacity() const;
-    
+
+    // operator=(const Map<Key, Value> &other)
+    // Summary - Overloaded assignment operator for the Map class.
+    // Pre-conditions - None.
+    // Post-conditions - The current map is assigned the values of the provided map 'other'. 
+    //                   Returns a reference to the modified map.
     Map<Key, Value>& operator=(const Map<Key, Value>& other);
    
 
