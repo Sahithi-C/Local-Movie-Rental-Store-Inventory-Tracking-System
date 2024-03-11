@@ -20,7 +20,7 @@ class ContentFactory {
     // ~ContentFactory()
     // Summary - destructor for the ContentFactory class.
     // Pre-conditions - None.
-    // Post-conditions - Resources held by the ContentFactory object are released upon destruction.
+    // Post-conditions - Clears any dynamically allocated memory associated with the ContentFactory object.
     ~ContentFactory(); //destructor
 
     // createContent(const InventoryData &data)
