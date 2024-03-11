@@ -37,7 +37,7 @@ Map<Key, Value>::Map(const Map<Key, Value> &other) {
 // ~Map()
 // Summary - Destructor for the Map class.
 // Pre-conditions - None.
-// Post-conditions - Resources held by the Map object are released upon destruction.
+// Post-conditions - Clears any dynamically allocated memory associated with the Map object.
 template <typename Key, typename Value>
 Map<Key, Value>::~Map() {
     delete[] hashMap;
