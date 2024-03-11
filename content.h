@@ -40,6 +40,45 @@ class Content
     // Post-conditions - Clears any dynamically associated memory.
     ~Content();
 
+        //--------------------------------------------comparison operators------------------------------------------------------------
+
+    // operator>()
+    // Summmary - Overloads the > operator to correctly compare Content.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is > c.
+    //                   false otherwise.
+    virtual bool operator>(const Content &c) const;
+
+    // operator>=()
+    // Summmary - Overloads the >= operator to correctly compare Content.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is >= c.
+    //                   false otherwise.
+    virtual bool operator>=(const Content &c) const;
+
+    // operator<()
+    // Summmary - Overloads the < operator to correctly compare Content.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is < c.
+    //                   false otherwise.
+    virtual bool operator<(const Content &c) const;
+
+    // operator<=()
+    // Summmary - Overloads the <= operator to correctly compare Content.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is <= c.
+    //                   false otherwise.
+    virtual bool operator<=(const Content &c) const;
+    
+
+    // operator==()
+    // Summmary - Overloads the == operator to correctly compare Content.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is == c.
+    //                   false otherwise.
+    virtual bool operator==(const Content &c) const;
+
+
     //-----------------------------------------------getter methods---------------------------------------------------------------
 
     // getTitle() const

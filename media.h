@@ -40,6 +40,45 @@ class Media
     // Post-conditions - Cleans any dynamically associated memory.
     virtual ~Media(); 
 
+    //--------------------------------------------comparison operators------------------------------------------------------------
+
+    // operator>()
+    // Summmary - Overloads the > operator to correctly compare Media.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is > c.
+    //                   false otherwise.
+    bool operator>(const Media &m) const;
+
+    // operator>=()
+    // Summmary - Overloads the >= operator to correctly compare Media.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is >= c.
+    //                   false otherwise.
+    bool operator>=(const Media &m) const;
+
+    // operator<()
+    // Summmary - Overloads the < operator to correctly compare Media.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is < c.
+    //                   false otherwise.
+    bool operator<(const Media &m) const;
+
+    // operator<=()
+    // Summmary - Overloads the <= operator to correctly compare Media.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is <= c.
+    //                   false otherwise.
+    bool operator<=(const Media &m) const;
+    
+
+    // operator==()
+    // Summmary - Overloads the == operator to correctly compare Media.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is == c.
+    //                   false otherwise.
+    bool operator==(const Media &m) const;
+
+
     //----------------------------------------------other member functions---------------------------------------------------------
 
     // reduceStock()

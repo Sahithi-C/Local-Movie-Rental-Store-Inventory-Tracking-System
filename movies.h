@@ -56,6 +56,45 @@ class Movies : public Content // Movies class inherits from Content class
     //                   false otherwise.
     bool setGenreType(char genreType);
 
+    //--------------------------------------------comparison operators------------------------------------------------------------
+
+    // operator>()
+    // Summmary - Overloads the > operator to correctly compare Movies.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is > c.
+    //                   false otherwise.
+    virtual bool operator>(const Movies &m) const;
+
+    // operator>=()
+    // Summmary - Overloads the >= operator to correctly compare Movies.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is >= c.
+    //                   false otherwise.
+    virtual bool operator>=(const Movies &m) const;
+
+    // operator<()
+    // Summmary - Overloads the < operator to correctly compare Movies.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is < c.
+    //                   false otherwise.
+    virtual bool operator<(const Movies &m) const;
+
+    // operator<=()
+    // Summmary - Overloads the <= operator to correctly compare Movies.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is <= c.
+    //                   false otherwise.
+    virtual bool operator<=(const Movies &m) const;
+    
+
+    // operator==()
+    // Summmary - Overloads the == operator to correctly compare Movies.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is == c.
+    //                   false otherwise.
+    virtual bool operator==(const Movies &m) const;
+
+
     //-----------------------------------------------getter methods--------------------------------------------------------------
 
     // getGenreType() const

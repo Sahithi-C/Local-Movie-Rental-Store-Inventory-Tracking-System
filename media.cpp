@@ -35,6 +35,55 @@ Media::Media(int stock, availableMediaTypes mediaType, Content* content) {
 // Post-conditions - Cleans any dynamically associated memory.
 Media::~Media() {}
 
+//--------------------------------------------comparison operators------------------------------------------------------------
+
+// operator>()
+// Summmary - Overloads the > operator to correctly compare Media.
+// Pre-conditons - None.
+// Post-conditions - Returns true if this is > c.
+//                   false otherwise.
+bool Media::operator>(const Media &m) const {
+    return this->content > m.content;
+}
+
+// operator>=()
+// Summmary - Overloads the >= operator to correctly compare Media.
+// Pre-conditons - None.
+// Post-conditions - Returns true if this is >= c.
+//                   false otherwise.
+bool Media::operator>=(const Media &m) const {
+    return this->content >= m.content;
+}
+
+// operator<()
+// Summmary - Overloads the < operator to correctly compare Media.
+// Pre-conditons - None.
+// Post-conditions - Returns true if this is < c.
+//                   false otherwise.
+bool Media::operator<(const Media &m) const {
+    return this->content < m.content;
+}
+
+// operator<=()
+// Summmary - Overloads the <= operator to correctly compare Media.
+// Pre-conditons - None.
+// Post-conditions - Returns true if this is <= c.
+//                   false otherwise.
+bool Media::operator<=(const Media &m) const {
+    return this->content <= m.content;
+}
+
+
+// operator==()
+// Summmary - Overloads the == operator to correctly compare Media.
+// Pre-conditons - None.
+// Post-conditions - Returns true if this is == c.
+//                   false otherwise.
+bool Media::operator==(const Media &m) const {
+    return this->content == m.content;
+}
+    
+
 //----------------------------------------------other member functions---------------------------------------------------------
 
 // reduceStock()

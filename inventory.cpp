@@ -119,3 +119,5 @@ ostream& Inventory::printSortedInventory(ostream& out) const {
 
     return out;
 }
+
+int main() {};

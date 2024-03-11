@@ -81,10 +81,6 @@ class Inventory
     Map<string, Media> comedyMap;    // Map to store a list of all comedy media items.
     Map<string, Media> dramaMap;     // Map to store a list of all drama media items.
     Map<string, Media> classicsMap;  // Map to store a list of all classic media items.
-
-    Media& getComedy(string mediaId);
-    Media& getDrama(string mediaId);
-    Media& getClassics(string mediaId);
 };
 
 
