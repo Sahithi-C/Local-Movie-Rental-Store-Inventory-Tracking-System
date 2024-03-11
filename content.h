@@ -73,6 +73,9 @@ class Content
     //                   false otherwise.
     bool setReleaseYear(int releaseYear);
 
+    //------------------------------------------------accessors---------------------------------------------------------------
+    // operator<<()
+    friend ostream& operator<<(ostream& out, const Content c);
 
    protected:
     string title;     // title of the content.

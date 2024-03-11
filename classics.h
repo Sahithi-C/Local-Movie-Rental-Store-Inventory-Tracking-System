@@ -110,6 +110,13 @@ class Classics : public Movies  // Classics class inherits from Movies class
     // Post-conditions - Returns the unique id for a classic movie.
     string getContentId() const;
 
+    //------------------------------------------------accessors---------------------------------------------------------------
+    // operator<<()
+    // Summary - Overrides the << operator to correctly print Classics
+    // Pre-conditions - None
+    // Post-conditions - Sends the Classics object c to ostream.
+    friend ostream& operator<<(ostream& out, const Classics c);
+
    private:
     string firstName;  // first name of the major actor.
     string lastName;   // last name of the major actor.

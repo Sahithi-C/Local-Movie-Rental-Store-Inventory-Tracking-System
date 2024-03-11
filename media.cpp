@@ -132,6 +132,13 @@ string Media::getMediaId() const{
     return this->content->getContentId() + mediaTypeToString(this->mediaType);
 }
 
+//------------------------------------------------accessors---------------------------------------------------------------
+// operator<<()
+ostream& operator<<(ostream& out, const Media m) {
+    out << m.stock << ", " << m.content;
+    return out;
+}
+
 // mediaTypeToString()
 // Summary - Converts the enum availableMediaTypes to a readable string
 // Post-conditions - Returns a string representing the passed mediaType

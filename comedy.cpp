@@ -122,8 +122,18 @@ bool Comedy::operator==(const Comedy &c) const {
 
 // getContentId() const
 // Summary - gets the unique id for a comedy movie.
-// Pre-conditions - There should be a valid movie in movies of drama genre type.
-// Post-conditions - returns the unique id for a drama movie.
+// Pre-conditions - There should be a valid movie in movies of comedy genre type.
+// Post-conditions - returns the unique id for a comedy movie.
 string Comedy::getContentId() const{
        return title + to_string(releaseYear);
+}
+
+//------------------------------------------------accessors---------------------------------------------------------------
+// operator<<()
+// Summary - Overrides the << operator to correctly print Comedy
+// Pre-conditions - None
+// Post-conditions - Sends the Comedy object c to ostream.
+ostream& operator<<(ostream& out, const Comedy c) {
+       out << c.director << ", " << c.title << ", " << c.releaseYear;
+       return out;
 }

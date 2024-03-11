@@ -68,7 +68,7 @@ class Inventory
     // getSortedInventory()
     // Summary - Generates and returns a sorted list of all Media objects in the store.
     // Post-conditions - The return will be a sorted list of all Media objects in the store.
-    list<Media> getSortedInventory();
+    ostream& printSortedInventory(ostream& out) const;
 
    private:
 

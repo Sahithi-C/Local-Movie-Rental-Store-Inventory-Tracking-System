@@ -89,6 +89,13 @@ class Comedy : public Movies  // Comedy class inherits from Movie class.
     // Post-conditions - returns the unique id for a drama movie.
     string getContentId() const;
 
+
+    //------------------------------------------------accessors---------------------------------------------------------------
+    // operator<<()
+    // Summary - Overrides the << operator to correctly print Comedy
+    // Pre-conditions - None
+    // Post-conditions - Sends the Comedy object c to ostream.
+    friend ostream& operator<<(ostream& out, const Comedy c);
 };
 
 #endif

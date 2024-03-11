@@ -72,7 +72,10 @@ class Movies : public Content // Movies class inherits from Content class
     // Summary - Abstract function to get a contentId, the unique identifier of this movie.
     // Post-conditions - None.
     virtual string getContentId() const;
-
+    
+    //------------------------------------------------accessors---------------------------------------------------------------
+    // operator<<()
+    friend ostream& operator<<(ostream& out, const Movies m);
 
     //--------------------------------------------additional functionalities------------------------------------------------
 

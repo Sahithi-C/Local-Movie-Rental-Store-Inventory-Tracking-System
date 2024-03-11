@@ -69,23 +69,32 @@ void Inventory::populateInventory(const list<InventoryData> &inventoryList) {
 // Summary - Generates and returns a sorted list of all Media objects in the store.
 //           Comedy > Drama > Classics
 // Post-conditions - The return will be a sorted list of all Media objects in the store.
-list<Media> Inventory::getSortedInventory() {
-    list<Media> ret;
-    list<Media> temp; 
+ostream& Inventory::printSortedInventory(ostream& out) const {
+    list<Media> temp;
+
+    // Start by sorting and printing all Comedy elements.
+    temp = comedyMap.getAllValues();
+    temp.sort();
+    while (!temp.empty()) {
+        out << "F, " << temp.front() << endl;
+        temp.pop_front();
+    }
     
-    // Start by adding all the comedy elements to the return list and sorting them.
-    ret = comedyMap.getAllValues();
-    ret.sort();
-    
-    // Then sort all Drama objects and append them to the end of ret
+    // Then sort and print all Drama elements
     temp = dramaMap.getAllValues();
     temp.sort();
-    ret.merge(temp);
+    while (!temp.empty()) {
+        out << "D, " << temp.front() << endl;
+        temp.pop_front();
+    }
 
-    // Finally sort all Classics object and append them to the end of ret
+    // Finally sort and print all Classics elements
     temp = classicsMap.getAllValues();
     temp.sort();
-    ret.merge(temp);
+    while (!temp.empty()) {
+        out << "C, " << temp.front() << endl;
+        temp.pop_front();
+    }
 
-    return ret;
+    return out;
 }

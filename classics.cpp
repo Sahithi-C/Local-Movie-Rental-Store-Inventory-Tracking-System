@@ -81,19 +81,11 @@ bool Classics::operator>(const Classics &c) const {
         return false;
     }
 
-    // If equal compare actor last name
-    if (this->lastName > c.lastName) {
+    // If equal compare actor Name
+    if (this->firstName + ' ' + this->lastName > c.firstName + ' ' + c.lastName) {
         return true;
     }
-    else if (this->lastName < c.lastName) {
-        return false;
-    }
-
-    // If equal compare actor first name
-    if (this->firstName > c.firstName) {
-        return true;
-    }
-    else if (this->firstName < c.firstName) {
+    else if (this->firstName + ' ' + this->lastName > c.firstName + ' ' + c.lastName) {
         return false;
     }
 
@@ -155,6 +147,7 @@ bool Classics::operator==(const Classics &c) const {
     return true;
 }
 
+
 //--------------------------------------------getter methods------------------------------------------------------------------
 
 // getName() const
@@ -186,5 +179,15 @@ int Classics::getReleaseMonth() const {
 // Pre-conditions - a valid movie should exist in classic genre to get it's id.
 // Post-conditions - Returns the unique id for a classic movie.
 string Classics::getContentId() const {
-    return to_string(releaseYear) + to_string(releaseMonth) + lastName + firstName;
+    return to_string(releaseYear) + to_string(releaseMonth) + firstName + ' ' + lastName;
+}
+
+//------------------------------------------------accessors---------------------------------------------------------------
+// operator<<()
+// Summary - Overrides the << operator to correctly print Classics
+// Pre-conditions - None
+// Post-conditions - Sends the Classics object c to ostream.
+ostream& operator<<(ostream& out, const Classics c) {
+    out << c.director << ", " << c.title << ", " << c.firstName << " " << c.lastName << " " << c.releaseMonth << " " << c.releaseYear;
+    return out;
 }

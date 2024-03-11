@@ -1,5 +1,7 @@
 #include<iostream>
 #include "store.h"
+#include "ContentFactory.h"
+
 using namespace std;
 
 Store::Store() {}
@@ -29,4 +31,11 @@ void Store::borrowItem(const CommandData& data) {
             media.reduceStock();
         }
     }
+}
+
+// showInventory() const
+// Summary - Displays the current inventory of the store.
+// Post-conditions - Thes current inventory of the store is displayed.
+void Store::showInventory() const {
+	inventory.printSortedInventory(cout);
 }

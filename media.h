@@ -104,6 +104,13 @@ class Media
     // Summary - Converts the enum availableMediaTypes to a readable string
     // Post-conditions - Returns a string representing the passed mediaType
     static string mediaTypeToString(const availableMediaTypes mediaType); 
+
+    //------------------------------------------------accessors---------------------------------------------------------------
+    // operator<<()
+    // Summary - Overrides the << operator to correctly print Media
+    // Pre-conditions - None
+    // Post-conditions - Sends the Media object m to ostream.
+    friend ostream& operator<<(ostream& out, const Media m);
 };
 
 #endif

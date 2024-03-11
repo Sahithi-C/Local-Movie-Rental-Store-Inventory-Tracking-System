@@ -88,6 +88,14 @@ class Drama : public Movies  // Drama class inherits from Movie class
     // Pre-consitions - a valid movie should exist in drama genre to get it's id.
     // Post-consditions - Returns unique id for a drama movie.
     string getContentId() const;
+
+    //------------------------------------------------accessors---------------------------------------------------------------
+    // operator<<()
+    // Summary - Overrides the << operator to correctly print Drama
+    // Pre-conditions - None
+    // Post-conditions - Sends the Drama object d to ostream.
+    friend ostream& operator<<(ostream& out, const Drama d);
+
 };
 
 #endif

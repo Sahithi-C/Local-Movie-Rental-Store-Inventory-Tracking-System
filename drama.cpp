@@ -126,3 +126,13 @@ bool Drama::operator==(const Drama &c) const {
 string Drama::getContentId() const{
       return director + title;
 }
+
+//------------------------------------------------accessors---------------------------------------------------------------
+// operator<<()
+// Summary - Overrides the << operator to correctly print Drama
+// Pre-conditions - None
+// Post-conditions - Sends the Drama object d to ostream.
+ostream& operator<<(ostream& out, const Drama d) {
+      out << d.director << ", " << d.title << ", " << d.releaseYear;
+      return out;
+}
