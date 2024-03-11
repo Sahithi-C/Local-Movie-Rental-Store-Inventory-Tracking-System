@@ -1,3 +1,14 @@
+//------------------------------------------------------inventory.cpp-----------------------------------------------------------
+
+// Programmer Name Course Section Number : VG, Jonah Kolar, Sahithi Chimakurthi(CSS 502 A)
+
+// Creation Date : 03/10/2024
+
+// Date of Last Modification : 03/10/2024
+
+// Purpose : Implementing an Inventory class representing a collection of media items that are also the store's inventory.
+// -------------------------------------------------------------------------------------------------------------------------
+
 #include<iostream>
 #include "inventory.h"
 #include "contentFactory.h"
@@ -8,6 +19,7 @@ using namespace std;
 
 // Inventory()
 // Summary - Default constructor.
+// Pre-conditions - None.
 // Post-conditions - Initializes an empty inventory object.
 Inventory::Inventory() {
     comedyMap = Map<string, Media>();
@@ -17,6 +29,7 @@ Inventory::Inventory() {
 
 // ~Inventory()
 // Summary - Destructor.
+// Pre-conditions - None.
 // Post-conditions - Clears any dynamically associated memory.
 Inventory::~Inventory() {}
 
@@ -24,9 +37,10 @@ Inventory::~Inventory() {}
 
 // getMedia(mediaId)
 // Summary - Gets the Media object using the given mediaId.
-//           mediaId is a unique string representing the mediaType and contentId
+//           mediaId is a unique string representing the mediaType and contentId.
+// Pre-conditions - None.
 // Post-conditions - Returns the Media item of the given mediaId.
-//                   Returns an empty Media item if there is no Media item with the givenId in Inventory.
+//                   Returns an empty Media item if there is no Media item with the given id in Inventory.
 Media& Inventory::getMedia(string mediaId) {
     Media ret = Media();
     if (comedyMap.getValue(mediaId, &ret)) {
@@ -45,7 +59,8 @@ Media& Inventory::getMedia(string mediaId) {
 
 // getComedy(mediaId)
 // Summary - Gets the Media object representing copies of a Comedy Movie using the given mediaId.
-//           mediaId is a unique string representing the mediaType and contentId
+//           mediaId is a unique string representing the mediaType and contentId.
+// Pre-conditions - None.
 // Post-conditions - Returns the Media item of the given mediaId.
 Media& Inventory::getComedy(string mediaId) {
     Media ret;
@@ -55,7 +70,8 @@ Media& Inventory::getComedy(string mediaId) {
 
 // getDrama(mediaId)
 // Summary - Gets the Media object representing copies of a Drama Movie using the given mediaId.
-//           mediaId is a unique string representing the mediaType and contentId
+//           mediaId is a unique string representing the mediaType and contentId.
+// Pre-conditions - None.
 // Post-conditions - Returns the Media item of the given mediaId.
 Media& Inventory::getDrama(string mediaId) {
     Media ret;
@@ -65,7 +81,8 @@ Media& Inventory::getDrama(string mediaId) {
 
 // getClassics(mediaId)
 // Summary - Gets the Media object representing copies of a Classics Movie using the given mediaId.
-//           mediaId is a unique string representing the mediaType and contentId
+//           mediaId is a unique string representing the mediaType and contentId.
+// Pre-conditions - None.
 // Post-conditions - Returns the Media item of the given mediaId.
 Media& Inventory::getClassics(string mediaId) {
     Media ret;
@@ -76,8 +93,10 @@ Media& Inventory::getClassics(string mediaId) {
 //---------------------------------------------------other member functions-----------------------------------------------------
 
 // populateInventory()
-// Summary - Populates the inventory object with data from the parser.
-// Post-conditions - The inventory is populated with valid media items.
+// Summary - This method populates the inventory with content based on the provided inventory list.
+// Pre-conditions - The inventoryList should contain valid InventoryData objects representing content to be added to the inventory.
+// Post-conditions - The inventory is populated with content based on the data provided in the inventoryList.
+//                 - Each item in the inventory is associated with a Media object representing its stock and content.
 void Inventory::populateInventory(const list<InventoryData> &inventoryList) {
 
     for(const auto& data: inventoryList) {
@@ -88,7 +107,8 @@ void Inventory::populateInventory(const list<InventoryData> &inventoryList) {
 
 // getSortedInventory()
 // Summary - Generates and returns a sorted list of all Media objects in the store.
-//           Comedy > Drama > Classics
+//           Comedy > Drama > Classics.
+// Pre-conditions - None.
 // Post-conditions - The return will be a sorted list of all Media objects in the store.
 ostream& Inventory::printSortedInventory(ostream& out) const {
     list<Media> temp;
