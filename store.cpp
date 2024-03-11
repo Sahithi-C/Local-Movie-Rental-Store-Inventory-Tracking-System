@@ -24,7 +24,7 @@ void Store::borrowItem(const CommandData& data) {
         Media borrowMedia(0, Media::availableMediaTypes::DvD, &content);
 
         Media media = inventory.getMedia(borrowMedia.getMediaId()); 
-        if(media.content != nullptr) {
+        if(media.getContent() != nullptr) {
              if(media.getStock() > 0) {
                 customer.borrowMedia(media);
                 media.reduceStock();
@@ -49,7 +49,7 @@ void Store::returnItem(const CommandData &data) {
         Media returnMedia(0, Media::availableMediaTypes::DvD, &content);
 
         Media media = inventory.getMedia(returnMedia.getMediaId());
-        if(media.content != nullptr) {
+        if(media.getContent() != nullptr) {
             if(customer.returnMedia(media)) {
                 media.increaseStock();
             }

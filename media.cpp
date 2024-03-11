@@ -136,7 +136,7 @@ string Media::getMediaId() const{
 // operator<<()
 ostream& operator<<(ostream& out, const Media m) {
     out << m.stock << ", " << m.content;
-    return out;
+    return out; 
 }
 
 // mediaTypeToString()

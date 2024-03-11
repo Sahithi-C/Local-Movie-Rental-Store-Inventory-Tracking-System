@@ -50,7 +50,7 @@ class Map
     // getValue(const Key& key, const Value& value)
     // Summary - Finds a key-value pair if present in the map.
     // Post-conditions - Searches for a key-value pair in the map. Returns the value if pair is found;
-    bool getValue(const Key& key, Value* foundValue);
+    bool getValue(const Key& key, Value* foundValue) const;
 
     // remove(const Key& key)
     // Summary - Removes a key-value pair from the map.

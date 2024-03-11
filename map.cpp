@@ -51,7 +51,7 @@ void Map<Key, Value>::insert(const Key &key, const Value &value) {
  
 //Should call like getValue(customerId, &customer)
 template <typename Key, typename Value>
-bool Map<Key, Value>::getValue(const Key &key, Value* foundValue) {
+bool Map<Key, Value>::getValue(const Key &key, Value* foundValue) const {
 
     int index = getHash(key);
 
