@@ -148,16 +148,8 @@ list<Value> Map<Key, Value>::getAllValues() const {
 template <typename Key, typename Value>
 int Map<Key, Value>::getHash(const Key &key) const {
     int hashedIndex;
-    if(is_same<Key, int>::value) {
-        // Hash function for int keys
-        hash<Key> intHasher;
-        hashedIndex = intHasher(key);
-    } else if(is_same<Key, std::string>::value) {
-        // Hash function for string keys
-        hash<Key> stringHasher;
-        hashedIndex = stringHasher(key);
-    }
-
+    hash<Key> hasher;
+    hashedIndex = hasher(key);
     hashedIndex %= capacity;
 
     return hashedIndex;
