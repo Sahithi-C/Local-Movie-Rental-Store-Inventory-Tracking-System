@@ -13,7 +13,7 @@ struct InventoryData
     string movieTitle;
     int releaseYear;
     string actorFirstName;
-    string actorLastname;
+    string actorLastName;
     int releaseMonth;
 };
 

@@ -19,6 +19,7 @@
 #include "map.h"
 #include "transaction.h"
 #include "media.h"
+#include "inventory.h"
 using namespace std;
 
 class Customer
@@ -59,8 +60,8 @@ class Customer
 
     // printTransactionHistory() const
     // Summary - Prints the transaction history of the specified customer.
-    // Post-conditions - transactio history of a customer is printed.
-    void printTransactionHistory() const;
+    // Post-conditions - Transaction history of a customer is printed.
+    void printTransactionHistory(const Inventory& inventory) const;
     
     // borrowMedia(int mediaId)
     // Summary - Records a transaction of a customer borrowing a movie in borrowedMediaList 

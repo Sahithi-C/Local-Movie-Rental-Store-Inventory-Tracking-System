@@ -18,8 +18,8 @@ class ContentFactory {
     ContentFactory(); //constructor
     ~ContentFactory(); //destructor
 
-    static Content& createContent(const InventoryData& data);
-    static Content& createContent(const CommandData& data);
+    static Content* createContent(const InventoryData& data);
+    static Content* createContent(const CommandData& data);
 
 };
 
