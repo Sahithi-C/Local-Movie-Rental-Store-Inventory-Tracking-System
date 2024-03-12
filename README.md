@@ -30,8 +30,6 @@ The UML class diagram for movie store inventory tracking system can be found her
 
 •	Prepare input files containing customer data (data4customers.txt), inventory data (data4movies.txt), and commands (data4commands.txt).
 
-  (**Note** – We have attached them here in case you need these files to download from here.)
-
 •	Compile the source code using a C++ compiler.
 
 •	Run the compiled executable.
