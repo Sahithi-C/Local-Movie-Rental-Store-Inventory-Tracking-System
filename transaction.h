@@ -15,7 +15,6 @@
 
 #include<iostream>
 #include"media.h"
-#include"customer.h"
 
 using namespace std;
 
