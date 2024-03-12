@@ -150,6 +150,8 @@ class Movies : public Content // Movies class inherits from Content class
    protected:
     string director;    // Director for a movie.
     char genreType;     // genre type for a movie.
+
+    virtual ostream& printHelper(ostream& out, const Content &c) const = 0;
 };
 
 #endif

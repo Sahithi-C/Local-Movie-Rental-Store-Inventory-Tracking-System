@@ -146,3 +146,8 @@ ostream& operator<<(ostream& out, const Drama d) {
       out << d.director << ", " << d.title << ", " << d.releaseYear;
       return out;
 }
+
+ostream& Drama::printHelper(ostream& out, const Content &c) const {
+    out << this->director << ", " << this->title << ", " << this->releaseYear;
+      return out;
+}

@@ -96,6 +96,7 @@ class Drama : public Movies  // Drama class inherits from Movie class
     // Post-conditions - Sends the Drama object d to ostream.
     friend ostream& operator<<(ostream& out, const Drama d);
 
+    ostream& printHelper(ostream& out, const Content &c) const;
 };
 
 #endif

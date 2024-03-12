@@ -100,10 +100,7 @@ Media& Inventory::getClassics(string mediaId) {
 void Inventory::populateInventory(const list<InventoryData> &inventoryList) {
     for(const auto& data: inventoryList) {
         Content * content = ContentFactory::createContent(data);
-        cerr << *content << endl;
-        cerr << "got here" << endl;
         Media media(data.stock, Media::availableMediaTypes::DvD, content);
-        cerr << *content << endl;
         if (data.genreType == 'F') {
             comedyMap.insert(media.getMediaId(), media);
         }
@@ -152,7 +149,7 @@ ostream& Inventory::printSortedInventory(ostream& out) const {
 }
 
 int main() {
-    Content * test = ContentFactory::createContent(InventoryData {'F', 9, "director", "title", 1999, "first1", "last", 7, });
+    Content * test = ContentFactory::createContent(InventoryData {'C', 9, "director", "title", 1999, "first1", "last", 7, });
     Content * test2 = new Comedy('F', "director", "title", 2000);
     
     if (*test < *test2) {
@@ -162,6 +159,8 @@ int main() {
     else {
         cout << "OVERIDES INCORRECTLY" << endl;
     }
+    cout << *test << endl;
+    cout << *test2 << endl;
     Inventory inv = Inventory();
     list<InventoryData> inventoryList = list<InventoryData>();
     inventoryList.push_back(InventoryData {'F', 9, "director", "title1", 1999, "first1", "last", 7, });

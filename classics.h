@@ -131,6 +131,8 @@ class Classics : public Movies  // Classics class inherits from Movies class
     string lastName;   // last name of the major actor.
     int releaseMonth;  // release month oa a classic movie.
 
+    ostream& printHelper(ostream& out, const Content &c) const;
+
 };
 
 #endif

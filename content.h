@@ -131,13 +131,16 @@ class Content
     // Pre-conditions - The Content object 'c' must be valid.
     // Post-conditions - The content of the Content object 'c' is printed to the output stream 'out'.
     friend ostream& operator<<(ostream& out, const Content &c) {
-        out << "broken";
+        c.printHelper(out, c);
         return out;
     }; 
 
    protected:
     string title;     // title of the content.
     int releaseYear;  // release year of the content.
+
+    // Idea for this virtual helper function from https://stackoverflow.com/a/4571634
+    virtual ostream& printHelper(ostream& out, const Content &c) const = 0;
 };
 
 #endif

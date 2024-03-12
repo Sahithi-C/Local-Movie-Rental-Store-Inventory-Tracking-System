@@ -50,7 +50,6 @@ Comedy::~Comedy(){}
 // Post-conditions - Returns true if this is > c.
 //                   false otherwise.
 bool Comedy::operator>(const Content &c) const {
-    cout << "GOT HERE" << endl;
     // Taken from this stack overflow answer https://stackoverflow.com/a/40347965
     const auto comedy = dynamic_cast<const Comedy*>(&c);
     if (comedy == nullptr)
@@ -149,4 +148,9 @@ string Comedy::getContentId() const{
 ostream& operator<<(ostream& out, const Comedy c) {
        out << c.director << ", " << c.title << ", " << c.releaseYear;
        return out;
+}
+
+ostream& Comedy::printHelper(ostream& out, const Content &c) const {
+    out << this->director << ", " << this->title << ", " << this->releaseYear;
+    return out;
 }

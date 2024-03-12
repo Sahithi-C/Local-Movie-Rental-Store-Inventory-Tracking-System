@@ -202,3 +202,8 @@ ostream& operator<<(ostream& out, const Classics c) {
     out << c.director << ", " << c.title << ", " << c.firstName << " " << c.lastName << " " << c.releaseMonth << " " << c.releaseYear;
     return out;
 }
+
+ostream& Classics::printHelper(ostream& out, const Content &c) const {
+    out << this->director << ", " << this->title << ", " << this->firstName << " " << this->lastName << " " << this->releaseMonth << " " << this->releaseYear;
+    return out;
+}
