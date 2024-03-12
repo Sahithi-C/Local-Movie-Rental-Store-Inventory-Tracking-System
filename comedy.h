@@ -97,6 +97,11 @@ class Comedy : public Movies  // Comedy class inherits from Movie class.
     // Post-conditions - Sends the Comedy object c to ostream.
     friend ostream& operator<<(ostream& out, const Comedy c);
 
+    // printHelper(ostream& out, const Content &c) const
+    // Summary - Prints the details of a Comedy movie.
+    // Pre-conditions - The Comedy movie object must be properly initialized with valid director, title, and release year.
+    // Post-conditions - The details of the Comedy movie, including the director, title, and release year,
+    //                   are printed to the output stream 'out'.
     ostream& printHelper(ostream& out, const Content &c) const;
 };
 
