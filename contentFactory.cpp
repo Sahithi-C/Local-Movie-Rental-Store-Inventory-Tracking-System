@@ -34,17 +34,17 @@ ContentFactory::~ContentFactory() {}
 // Post-conditions - If the genreType is 'F', a Comedy object is created with the provided data and returned. - If the genreType is 'D', a Drama object is created with the provided data and returned.
 //                 - If the genreType is 'C', a Classics object is created with the provided data and returned.
 //                 - The returned object's ownership is transferred to the caller, and it is responsible for managing its memory.
-Content& ContentFactory::createContent(const InventoryData &data) {
+Content* ContentFactory::createContent(const InventoryData &data) {
    
     if(data.genreType == 'F') {
-        return Comedy comedyObject(data.genreType, data.directorName, data.movieTitle, data.releseYear);
+        return new Comedy(data.genreType, data.directorName, data.movieTitle, data.releaseYear);
     }
     else if(data.genreType == 'D') {
-        return  Drama dramaObject(data.genreType, data.directorName, data.movieTitle, data.releaseYear);
+        return new Drama(data.genreType, data.directorName, data.movieTitle, data.releaseYear);
     }
     else if(data.genreType == 'C') {
-        return Classics classicsObject(data.genreType, data.directorName, data.movieTitle, data.releaseYear,
-                                data.actorFirstName, data.actorLastname, data.releaseMonth);
+        return new Classics(data.genreType, data.directorName, data.movieTitle, data.releaseYear,
+                                data.actorFirstName, data.actorLastName, data.releaseMonth);
     }
 }
 
@@ -56,18 +56,19 @@ Content& ContentFactory::createContent(const InventoryData &data) {
 //                 - If the genreType is 'D', a Drama object is created with the provided data and returned.
 //                 - If the genreType is 'C', a Classics object is created with the provided data and returned.
 //                 - The returned object's ownership is transferred to the caller, and it is responsible for managing its memory.
-Content& ContentFactory::createContent(const CommandData &data) {
+Content* ContentFactory::createContent(const CommandData &data) {
    
     if(data.genreType == 'F') {
-        return Comedy comedyObject(data.genreType, data.directorName, data.movieTitle, data.releseYear);
+        return new Comedy(data.genreType, data.directorName, data.movieTitle, data.releaseYear);
     }
     else if(data.genreType == 'D') {
-        return  Drama dramaObject(data.genreType, data.directorName, data.movieTitle, data.releaseYear);
+        return new Drama(data.genreType, data.directorName, data.movieTitle, data.releaseYear);
     }
     else if(data.genreType == 'C') {
-        return Classics classicsObject(data.genreType, data.directorName, data.movieTitle, data.releaseYear,
-                                data.actorFirstName, data.actorLastname, data.releaseMonth);
+        return new Classics(data.genreType, data.directorName, data.movieTitle, data.releaseYear,
+                                data.actorFirstName, data.actorLastName, data.releaseMonth);
     }
 }
+
 
  
