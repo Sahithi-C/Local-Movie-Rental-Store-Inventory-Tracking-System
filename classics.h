@@ -133,7 +133,8 @@ class Classics : public Movies  // Classics class inherits from Movies class
 
     // printHelper(ostream& out, const Content &c) const
     // Summary - Prints the details like director, title, firstName, lastName, releaseMonth, and releaseYear of a Classics movie.
-    // Pre-conditions - None.
+    // Pre-conditions - The Classics movie object must be properly initialized with valid director, 
+    //                  title, firstName, lastName, releaseMonth, and release year.
     // Post-conditions - The details of the Classics movie, including director, title, actor's first and last name,
     //                   release month, and release year, are printed to the output stream 'out'.
     ostream& printHelper(ostream& out, const Content &c) const;
