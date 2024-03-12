@@ -87,8 +87,8 @@ void Customer::printTransactionHistory(const Inventory& inventory) const {
         Media media = inventory.getMedia(mediaId);
 
         if(media.getMediaType() == Media::availableMediaTypes::DvD) {
-            const Content content = *(media.getContent());
-            cout << content.getTitle() << " - " << actionType << endl;
+            const Content* content = media.getContent();
+            cout << content->getTitle() << " - " << actionType << endl;
         }
     }
 }
