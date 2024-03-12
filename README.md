@@ -5,8 +5,11 @@ This project is for a local movie rental store. It is to manage a store’s inve
 ****Features:****
 
 •	Parsing input files containing customer data (data4customers.txt), inventory data (data4movies.txt), and commands (data4commands.txt).
+
 •	Managing the store’s inventory of media content, including adding and retrieving media.
+
 •	Keeping track of customer transactions such as borrowing and returning media.
+
 •	Displaying transaction history of the customer.
 
 ****UML Diagram:****
