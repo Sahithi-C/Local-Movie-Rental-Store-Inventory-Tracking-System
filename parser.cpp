@@ -177,7 +177,7 @@ list<CommandData> Parser::parseCommandFile(const string fileName)
                 getline(ss, data.movieTitle, ',');
             }
             else if(data.genreType == 'C') {
-                ss >> data.releaseMonth >> data.releaseYear >> data.actorFirstName >> data.actorLastname;
+                ss >> data.releaseMonth >> data.releaseYear >> data.actorFirstName >> data.actorLastName;
             }
         }
 
