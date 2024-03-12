@@ -84,10 +84,10 @@ void Customer::printTransactionHistory(const Inventory& inventory) const {
 
         const string mediaId = transaction.getTransactionMedia();
 
-        Media media = inventory.getMedia(mediaId);
+        Media * media = inventory.getMedia(mediaId);
 
-        if(media.getMediaType() == Media::availableMediaTypes::DvD) {
-            const Content* content = media.getContent();
+        if((*media).getMediaType() == Media::availableMediaTypes::DvD) {
+            const Content* content = (*media).getContent();
             cout << content->getTitle() << " - " << actionType << endl;
         }
     }
@@ -98,14 +98,10 @@ void Customer::printTransactionHistory(const Inventory& inventory) const {
 // Pre-conditions - The media object passed as a parameter must be valid and represent an available media item.
 // Post-conditions - A transaction of borrowing media is recorded for the customer, and the borrowed media list is updated.
 void Customer::borrowMedia(Media &media) {
-    cerr << "here" << endl;
     string mediaId = media.getMediaId();
-    cerr << mediaId << endl;
     Transaction transaction('B', mediaId);
     this->transactionList.push_back(transaction);
-    cerr << "here2" << endl;
     this->borrowedMediaList.insert(mediaId, true);
-    cerr << "here3" << endl;
 }
 
 // returnMedia(Media &media)

@@ -44,6 +44,9 @@ Media::Media(int stock, availableMediaTypes mediaType, Content* content) {
 // Post-conditions - A new Media object is created with the same attributes and content as the 'm' object.
 //                 - Deep copying is performed if necessary to ensure that each object has its independent copy of any dynamically allocated memory.
 Media::Media(const Media &m) {
+    stock = 0;
+    mediaType = availableMediaTypes::DvD;
+    content = nullptr;
     *this = m;
 }
 

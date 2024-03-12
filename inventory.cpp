@@ -41,52 +41,19 @@ Inventory::~Inventory() {}
 // Pre-conditions - None.
 // Post-conditions - Returns the Media item of the given mediaId.
 //                   Returns an empty Media item if there is no Media item with the given id in Inventory.
-Media& Inventory::getMedia(string mediaId) const {
-    Media ret = Media();
-    if (comedyMap.getValue(mediaId, &ret)) {
+Media * Inventory::getMedia(string mediaId) const {
+    Media * ret;
+    if (comedyMap.getValue(mediaId, ret)) {
         return ret;
     }
-    else if (dramaMap.getValue(mediaId, &ret)) {
+    else if (dramaMap.getValue(mediaId, ret)) {
         return ret;
     }
-    else if (classicsMap.getValue(mediaId, &ret)) {
+    else if (classicsMap.getValue(mediaId, ret)) {
         return ret;
     }
 
     // Will be an empty media object.
-    return ret;
-}
-
-// getComedy(mediaId)
-// Summary - Gets the Media object representing copies of a Comedy Movie using the given mediaId.
-//           mediaId is a unique string representing the mediaType and contentId.
-// Pre-conditions - None.
-// Post-conditions - Returns the Media item of the given mediaId.
-Media& Inventory::getComedy(string mediaId) {
-    Media ret;
-    comedyMap.getValue(mediaId, &ret);
-    return ret;
-}
-
-// getDrama(mediaId)
-// Summary - Gets the Media object representing copies of a Drama Movie using the given mediaId.
-//           mediaId is a unique string representing the mediaType and contentId.
-// Pre-conditions - None.
-// Post-conditions - Returns the Media item of the given mediaId.
-Media& Inventory::getDrama(string mediaId) {
-    Media ret;
-    dramaMap.getValue(mediaId, &ret);
-    return ret;
-}
-
-// getClassics(mediaId)
-// Summary - Gets the Media object representing copies of a Classics Movie using the given mediaId.
-//           mediaId is a unique string representing the mediaType and contentId.
-// Pre-conditions - None.
-// Post-conditions - Returns the Media item of the given mediaId.
-Media& Inventory::getClassics(string mediaId) {
-    Media ret;
-    classicsMap.getValue(mediaId, &ret);
     return ret;
 }
 

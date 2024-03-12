@@ -89,9 +89,8 @@ bool Map<Key, Value>::getValue(const Key &key, Value* foundValue) const{
 
     for(const pair<Key, Value>& pair: hashMap[index]) {
         if(pair.first == key) {
-            cerr << "here";
             *foundValue = pair.second;
-            cerr << "not here";
+
             return true;
         }
     }

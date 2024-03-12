@@ -47,7 +47,7 @@ class Inventory
     //           mediaId is a unique string representing the mediaType and contentId.
     // Pre-conditions - None.
     // Post-conditions - Returns the Media item of the given mediaId.
-    Media& getMedia(string mediaId) const;
+    Media *  getMedia(string mediaId) const;
 
     // getComedy(mediaId)
     // Summary - Gets the Media object representing copies of a Comedy Movie using the given mediaId.
