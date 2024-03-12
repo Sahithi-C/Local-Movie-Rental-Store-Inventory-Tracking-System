@@ -41,7 +41,7 @@ Inventory::~Inventory() {}
 // Pre-conditions - None.
 // Post-conditions - Returns the Media item of the given mediaId.
 //                   Returns an empty Media item if there is no Media item with the given id in Inventory.
-Media& Inventory::getMedia(string mediaId) {
+Media& Inventory::getMedia(string mediaId) const {
     Media ret = Media();
     if (comedyMap.getValue(mediaId, &ret)) {
         return ret;
@@ -100,8 +100,8 @@ Media& Inventory::getClassics(string mediaId) {
 void Inventory::populateInventory(const list<InventoryData> &inventoryList) {
 
     for(const auto& data: inventoryList) {
-        Content content = ContentFactory::createContent(data);
-        Media media(data.stock, Media::availableMediaTypes::DvD, &content);
+        Content* content = ContentFactory::createContent(data);
+        Media media(data.stock, Media::availableMediaTypes::DvD, content);
     }
 }
 
