@@ -32,6 +32,7 @@ Content::Content(const string &title, int releaseYear) {
 
 // Content(const Content& other)
 // Summary - Copy constructor
+// Pre-conditions - The 'other' Content object must be valid and properly initialized.
 // Post-conditions - A content object is initialized with data of other 
 //                    content object.
 Content::Content(const Content& other){
