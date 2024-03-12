@@ -23,10 +23,10 @@ struct InventoryData
     int stock;               // Stock count of the content
     string directorName;     // Name of the director
     string movieTitle;       // Title of the movie
-    int releaseYear;
-    string actorFirstName;
-    string actorLastName;
-    int releaseMonth;
+    int releaseYear;         // Year of release
+    string actorFirstName;   // First name of the major actor
+    string actorLastName;    // Last name of the major actor
+    int releaseMonth;        // Month of release
 };
 
 #endif
