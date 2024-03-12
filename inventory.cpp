@@ -147,30 +147,3 @@ ostream& Inventory::printSortedInventory(ostream& out) const {
 
     return out;
 }
-
-int main() {
-    Content * test = ContentFactory::createContent(InventoryData {'C', 9, "director", "title", 1999, "first1", "last", 7, });
-    Content * test2 = new Comedy('F', "director", "title", 2000);
-    
-    if (*test < *test2) {
-        cout << "OVERIDES CORRECTLY" << endl;
-        cout << "FR THO" << endl;
-    }
-    else {
-        cout << "OVERIDES INCORRECTLY" << endl;
-    }
-    cout << *test << endl;
-    cout << *test2 << endl;
-    Inventory inv = Inventory();
-    list<InventoryData> inventoryList = list<InventoryData>();
-    inventoryList.push_back(InventoryData {'F', 9, "director", "title1", 1999, "first1", "last", 7, });
-    inventoryList.push_back(InventoryData {'F', 7, "director", "title2", 2000, "first2", "last", 7, });
-    inventoryList.push_back(InventoryData {'D', 19, "director", "title3", 1999, "first1", "last", 7, });
-    inventoryList.push_back(InventoryData {'D', 2, "director", "title7", 1999, "first2", "last", 7, });
-    inventoryList.push_back(InventoryData {'C', 13, "director", "title9", 1999, "first1", "last", 7, });
-    inventoryList.push_back(InventoryData {'C', 10, "director", "title2", 1999, "first2", "last", 7, });
-    for (InventoryData item : inventoryList) {
-        cout << item.genreType << " " << item.movieTitle << endl;
-    }
-    inv.populateInventory(inventoryList);
-};
