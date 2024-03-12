@@ -32,11 +32,13 @@ class Parser
 
     // Parser()
     // Summary - Default constructor.
+    // Pre-conditions - None.
     // Post-conditions - Constructs a parser object.
     Parser();
 
     // ~Parser()
     // Summary - Destructor.
+    // Pre-conditions - None.
     // Post-conditions - Clears any dynamically allocated memory.
     ~Parser();
 
@@ -55,7 +57,11 @@ class Parser
     list<InventoryData> parseInventoryFile(const string fileName);
     
     
-
+    // parseCommandFile(const string fileName)
+    // Summary - Parses command data file and constructs a list of CommandData objects.
+    // Pre-conditions - The file 'fileName' should exist and be readable.
+    //                  The format of each line in the file should be specific to the command data.
+    // Post-conditions - Returns a list of CommandData objects parsed from the file.
     list<CommandData> parseCommandFile(const string fileName);
   
 };
