@@ -87,7 +87,7 @@ list<InventoryData> Parser::parseInventoryFile(const string fileName) {
         }
         else if (genre == 'C') {
 
-            ss >> data.actorFirstName >> data.actorLastname >> data.releaseMonth >> data.releaseYear;
+            ss >> data.actorFirstName >> data.actorLastName >> data.releaseMonth >> data.releaseYear;
         }
 
         // Add the parsed data to the inventory list
