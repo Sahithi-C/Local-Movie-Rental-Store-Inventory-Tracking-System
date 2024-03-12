@@ -42,6 +42,40 @@ https://docs.oracle.com/cd/E37069_01/html/E37071/gndfg.html#:~:text=To%20compile
 
 Contributions:
 
+Thanks for your interest in our project. We love your input! We want to make every contribution to this project as transparent and effortless as possible. Please note that we have a code of conduct that we need to follow moving forward in all our interactions with the project.
+
+•	Reporting a bug.
+
+•	Discussing the current state of the code.
+
+•	Submitting a fix.
+
+•	Proposing new features.
+
+•	Becoming a maintainer.
+
+We Develop with GitHub:
+
+We use GitHub to host code, to track issues and feature request, as well as pull requests.
+
+All Code changes happen through pull requests:
+
+Pull requests are the best way to propose changes to the codebase. We actively welcome your pull requests.
+
+•	Fork the repository and create your branch from main.
+
+•	If you've added code that should be tested, add tests.
+
+•	If you've changed APIs, update the documentation.
+
+•	Ensure the test suite passes.
+
+•	Make sure your code lints.
+
+•	Issue that pull request!
+
+•	Always add a README to your added code.
+
 
 
 
