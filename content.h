@@ -140,6 +140,10 @@ class Content
     int releaseYear;  // release year of the content.
 
     // Idea for this virtual helper function from https://stackoverflow.com/a/4571634
+    // virtual printHelper(ostream& out, const Content &c) const
+    // Summary - A pure virtual helper function used for printing details of a derived class object.
+    // Pre-conditions - The derived class object must be properly initialized.
+    // Post-conditions - The details of the derived class object are printed to the output stream 'out'.
     virtual ostream& printHelper(ostream& out, const Content &c) const = 0;
 };
 
