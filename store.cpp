@@ -1,11 +1,14 @@
 #include<iostream>
 #include "store.h"
-
 using namespace std;
 
-Store::Store() {}
+Store::Store() {
 
-Store::~Store() {}
+}
+
+Store::~Store() {
+
+}
 
 void Store::buildInventory(const list<InventoryData> &inventoryList) {
 
@@ -17,11 +20,12 @@ void Store::setCustomers(Map<int, Customer> &customerMap) {
     this->customerMap = customerMap;
 }
 
+
 void Store::borrowItem(const CommandData& data) {
     Customer customer;
     if(this->customerMap.getValue(data.customerId, &customer)) {
-        Content content = ContentFactory::createContent(data);
-        Media borrowMedia(0, Media::availableMediaTypes::DvD, &content);
+        Content* content = ContentFactory::createContent(data);
+        Media borrowMedia(0, Media::availableMediaTypes::DvD, content);
 
         Media media = inventory.getMedia(borrowMedia.getMediaId()); 
         if(media.getContent() != nullptr) {
@@ -44,9 +48,10 @@ void Store::borrowItem(const CommandData& data) {
 
 void Store::returnItem(const CommandData &data) {
     Customer customer;
+
     if(this->customerMap.getValue(data.customerId, &customer)) {
-        Content content = ContentFactory::createContent(data);
-        Media returnMedia(0, Media::availableMediaTypes::DvD, &content);
+        Content* content = ContentFactory::createContent(data);
+        Media returnMedia(0, Media::availableMediaTypes::DvD, content);
 
         Media media = inventory.getMedia(returnMedia.getMediaId());
         if(media.getContent() != nullptr) {
@@ -67,7 +72,7 @@ void Store::showCustomerHistory(int customerId) const {
     Customer customer;
 
     if(this->customerMap.getValue(customerId, &customer)) {
-        customer.printTransactionHistory();
+        customer.printTransactionHistory(inventory);
     }
     else {
         cout << "The customer does not exist" << endl;
