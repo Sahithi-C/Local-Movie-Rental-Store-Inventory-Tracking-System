@@ -151,6 +151,11 @@ class Movies : public Content // Movies class inherits from Content class
     string director;    // Director for a movie.
     char genreType;     // genre type for a movie.
 
+    // virtual ostream& printHelper(ostream& out, const Content &c) const = 0;
+    // Summary - A pure virtual function declared in the Movies class. It serves as a helper function to print the details of a movie.
+    // Pre-conditions - The Content object 'c' should be a valid instance.
+    // Post-conditions - The details of the movie, such as the director, title, and release year are printed to the output stream 'out'.
+    //                 - The output stream 'out' may be modified with the movie details.
     virtual ostream& printHelper(ostream& out, const Content &c) const = 0;
 };
 
