@@ -203,6 +203,11 @@ ostream& operator<<(ostream& out, const Classics c) {
     return out;
 }
 
+// printHelper(ostream& out, const Content &c) const
+// Summary - Prints the details like director, title, firstName, lastName, releaseMonth, and releaseYear of a Classics movie.
+// Pre-conditions - None.
+// Post-conditions - The details of the Classics movie, including director, title, actor's first and last name,
+//                   release month, and release year, are printed to the output stream 'out'.
 ostream& Classics::printHelper(ostream& out, const Content &c) const {
     out << this->director << ", " << this->title << ", " << this->firstName << " " << this->lastName << " " << this->releaseMonth << " " << this->releaseYear;
     return out;
