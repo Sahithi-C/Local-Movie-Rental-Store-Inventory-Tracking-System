@@ -93,7 +93,7 @@ class Media
     // Summary - Overloads the = operator to correctly assign Media.
     // Pre-conditions - m should be a non null media object.
     // Post-conditons - *this will be equivalent to m.
-    Media operator=(const Media &m);
+    Media& operator=(const Media &m);
 
 
     //----------------------------------------------other member functions---------------------------------------------------------
