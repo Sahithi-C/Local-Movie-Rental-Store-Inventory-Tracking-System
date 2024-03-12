@@ -96,7 +96,7 @@ class Customer
    private:
     int customerId;                          // Unique Customer id.
     string firstName;                        // First name of the customer.
-    string lastname;                         // last name of the customer.
+    string lastName;                         // last name of the customer.
     list<Transaction> transactionList;       // List of all transactions by the customer.
     Map<string, bool> borrowedMediaList;    // Map of borrowed media items by a customer.
 };
