@@ -106,12 +106,18 @@ bool Media::operator==(const Media &m) const {
 // Summary - Overloads the = operator to correctly assign Media.
 // Pre-conditions - m should be a non null media object.
 // Post-conditons - *this will be equivalent to m.
-Media Media::operator=(const Media &m) {
+Media& Media::operator=(const Media &m) {
     setStock(m.stock);
     setMediaType(m.mediaType);
-    Content * contentCopy;
-    *contentCopy = *(m.content);
-    setContent(contentCopy);
+    if (m.content != nullptr) {
+        // Content * contentCopy;
+        // *contentCopy = *(m.content);
+        // setContent(m.content);
+        this->content = m.content;
+    } else {
+        setContent(nullptr);
+    }
+    return *this; 
 }    
 
 //----------------------------------------------other member functions---------------------------------------------------------
