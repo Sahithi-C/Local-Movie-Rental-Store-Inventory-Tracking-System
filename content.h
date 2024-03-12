@@ -23,20 +23,28 @@ class Content
     //-------------------------------------------------Constructors & Destructor--------------------------------------------------
 
     // Content()
-    // Summary - Default constuctor.
+    // Summary - Default constructor.
+    // Pre-conditions - None.
     // Post-conditions - A content object is initialized with default values.
     Content();
 
+    // Content(const string &title, int releaseYear)
+    // Summary - Initializes a Content object with specified values for title and release year.
+    // Pre-conditions - The title should be a non-empty string.
+    //                  releaseYear should be a valid integer representing the year of release.
+    // Post-conditions - An instance of the Content class is created with the provided values.
     Content(const string& title, int releaseYear);
 
     // Content(const Content& other)
     // Summary - Copy constructor
+    // Pre-conditions - The 'other' Content object must be valid and properly initialized.
     // Post-consditions - A content object is initialized with data of other 
     //                    content object.
     Content(const Content& other);
 
     // ~Content()
-    // Summary - Destructor
+    // Summary - Destructor.
+    // Pre-conditions - None.
     // Post-conditions - Clears any dynamically associated memory.
     ~Content();
 
@@ -83,16 +91,19 @@ class Content
 
     // getTitle() const
     // Summary - Gets the title of a content(Movie, in our case).
+    // Pre-conditions - None.
     // Post-conditions - Returns the title of a content(movie).
     string getTitle() const;      
 
     // getReleaseYear() const
     // Summary - Gets the release year of the content(movie).
+    // Pre-conditions - None.
     // Post-conditions - Returns the release year of a content(movie).
     int getReleaseYear() const;
 
     // getContentId() const
     // Summary: Gets the unique ID for this piece of content.
+    // Pre-conditions - None.
     // Post-conditions: Returns the unique ID for this piece of content.
     virtual string getContentId() const;
 
@@ -100,6 +111,7 @@ class Content
 
     // setTitle(const string& title)
     // Summary - Sets the title of the content(Movie, in our case).
+    // Pre-conditions - The input string 'title' must not be empty.
     // Post-conditions - Title of a movie is set.
     //                   Returns true if title is set.
     //                   false otherwise.
@@ -107,6 +119,7 @@ class Content
 
     // setReleaseYear(int year)
     // Summary - Sets the release year of the content(Movie).
+    // Pre-conditions - The input 'releaseYear' must be a non-negative integer.
     // Post-conditions - Release year of a movie is set.
     //                   Returns true if release year is set.
     //                   false otherwise.
@@ -114,6 +127,9 @@ class Content
 
     //------------------------------------------------accessors---------------------------------------------------------------
     // operator<<()
+    // Summary - Overloaded output stream operator.
+    // Pre-conditions - The Content object 'c' must be valid.
+    // Post-conditions - The content of the Content object 'c' is printed to the output stream 'out'.
     friend ostream& operator<<(ostream& out, const Content c);
 
    protected:
