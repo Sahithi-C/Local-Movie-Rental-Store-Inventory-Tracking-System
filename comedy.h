@@ -50,28 +50,28 @@ class Comedy : public Movies  // Comedy class inherits from Movie class.
     // Pre-conditons - None.
     // Post-conditions - Returns true if this is > c.
     //                   false otherwise.
-    bool operator>(const Comedy &c) const;
+    virtual bool operator>(const Content &c) const;
 
     // operator>=()
     // Summmary - Overloads the >= operator to correctly compare Comedy.
     // Pre-conditons - None.
     // Post-conditions - Returns true if this is >= c.
     //                   false otherwise.
-    bool operator>=(const Comedy &c) const;
+    virtual bool operator>=(const Content &c) const;
 
     // operator<()
     // Summmary - Overloads the < operator to correctly compare Comedy.
     // Pre-conditons - None.
     // Post-conditions - Returns true if this is < c.
     //                   false otherwise.
-    bool operator<(const Comedy &c) const;
+    virtual bool operator<(const Content &c) const;
 
     // operator<=()
     // Summmary - Overloads the <= operator to correctly compare Comedy.
     // Pre-conditons - None.
     // Post-conditions - Returns true if this is <= c.
     //                   false otherwise.
-    bool operator<=(const Comedy &c) const;
+    virtual bool operator<=(const Content &c) const;
     
 
     // operator==()
@@ -79,7 +79,7 @@ class Comedy : public Movies  // Comedy class inherits from Movie class.
     // Pre-conditons - None.
     // Post-conditions - Returns true if this is == c.
     //                   false otherwise.
-    bool operator==(const Comedy &c) const;
+    virtual bool operator==(const Content &c) const;
 
     //------------------------------------------------getter methods---------------------------------------------------------------
     

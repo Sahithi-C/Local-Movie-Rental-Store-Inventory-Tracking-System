@@ -98,10 +98,12 @@ Media& Inventory::getClassics(string mediaId) {
 // Post-conditions - The inventory is populated with content based on the data provided in the inventoryList.
 //                 - Each item in the inventory is associated with a Media object representing its stock and content.
 void Inventory::populateInventory(const list<InventoryData> &inventoryList) {
-
     for(const auto& data: inventoryList) {
         Content * content = ContentFactory::createContent(data);
+        cerr << *content << endl;
+        cerr << "got here" << endl;
         Media media(data.stock, Media::availableMediaTypes::DvD, content);
+        cerr << *content << endl;
         if (data.genreType == 'F') {
             comedyMap.insert(media.getMediaId(), media);
         }
@@ -149,4 +151,27 @@ ostream& Inventory::printSortedInventory(ostream& out) const {
     return out;
 }
 
-int main() {};
+int main() {
+    Content * test = ContentFactory::createContent(InventoryData {'F', 9, "director", "title", 1999, "first1", "last", 7, });
+    Content * test2 = new Comedy('F', "director", "title", 2000);
+    
+    if (*test < *test2) {
+        cout << "OVERIDES CORRECTLY" << endl;
+        cout << "FR THO" << endl;
+    }
+    else {
+        cout << "OVERIDES INCORRECTLY" << endl;
+    }
+    Inventory inv = Inventory();
+    list<InventoryData> inventoryList = list<InventoryData>();
+    inventoryList.push_back(InventoryData {'F', 9, "director", "title1", 1999, "first1", "last", 7, });
+    inventoryList.push_back(InventoryData {'F', 7, "director", "title2", 2000, "first2", "last", 7, });
+    inventoryList.push_back(InventoryData {'D', 19, "director", "title3", 1999, "first1", "last", 7, });
+    inventoryList.push_back(InventoryData {'D', 2, "director", "title7", 1999, "first2", "last", 7, });
+    inventoryList.push_back(InventoryData {'C', 13, "director", "title9", 1999, "first1", "last", 7, });
+    inventoryList.push_back(InventoryData {'C', 10, "director", "title2", 1999, "first2", "last", 7, });
+    for (InventoryData item : inventoryList) {
+        cout << item.genreType << " " << item.movieTitle << endl;
+    }
+    inv.populateInventory(inventoryList);
+};

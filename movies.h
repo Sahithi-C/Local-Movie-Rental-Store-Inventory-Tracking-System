@@ -63,28 +63,28 @@ class Movies : public Content // Movies class inherits from Content class
     // Pre-conditons - None.
     // Post-conditions - Returns true if this is > c.
     //                   false otherwise.
-    virtual bool operator>(const Movies &m) const;
+    virtual bool operator>(const Content &c) const = 0;
 
     // operator>=()
     // Summmary - Overloads the >= operator to correctly compare Movies.
     // Pre-conditons - None.
     // Post-conditions - Returns true if this is >= c.
     //                   false otherwise.
-    virtual bool operator>=(const Movies &m) const;
+    virtual bool operator>=(const Content &c) const = 0;
 
     // operator<()
     // Summmary - Overloads the < operator to correctly compare Movies.
     // Pre-conditons - None.
     // Post-conditions - Returns true if this is < c.
     //                   false otherwise.
-    virtual bool operator<(const Movies &m) const;
+    virtual bool operator<(const Content &c) const = 0;
 
     // operator<=()
     // Summmary - Overloads the <= operator to correctly compare Movies.
     // Pre-conditons - None.
     // Post-conditions - Returns true if this is <= c.
     //                   false otherwise.
-    virtual bool operator<=(const Movies &m) const;
+    virtual bool operator<=(const Content &c) const = 0;
     
 
     // operator==()
@@ -92,7 +92,7 @@ class Movies : public Content // Movies class inherits from Content class
     // Pre-conditons - None.
     // Post-conditions - Returns true if this is == c.
     //                   false otherwise.
-    virtual bool operator==(const Movies &m) const;
+    virtual bool operator==(const Content &c) const = 0;
 
 
     //-----------------------------------------------getter methods--------------------------------------------------------------
@@ -114,7 +114,7 @@ class Movies : public Content // Movies class inherits from Content class
     
     //------------------------------------------------accessors---------------------------------------------------------------
     // operator<<()
-    friend ostream& operator<<(ostream& out, const Movies m);
+    friend ostream& operator<<(ostream& out, const Movies &m);
 
     //--------------------------------------------additional functionalities------------------------------------------------
 

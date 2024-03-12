@@ -38,7 +38,7 @@ class Inventory
     // Summary - Destructor.
     // Pre-conditions - None.
     // Post-conditions - Clears any dynamically associated memory.
-    virtual ~Inventory();
+    ~Inventory();
 
     //--------------------------------------------------getter methods------------------------------------------------------------
 

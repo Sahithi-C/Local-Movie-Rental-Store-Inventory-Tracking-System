@@ -48,21 +48,25 @@ Drama::~Drama(){}
 // Pre-conditons - None.
 // Post-conditions - Returns true if this is > c.
 //                   false otherwise.
-bool Drama::operator>(const Drama &c) const {
-
+bool Drama::operator>(const Content &c) const {
+    const auto drama = dynamic_cast<const Drama*>(&c);
+    if (drama == nullptr)
+    {
+        return false;  // Not a comedy.  Cannot be equal.
+    }
     // Start with the title
-    if (this->director > c.director) {
+    if (this->director > drama->director) {
        return true;
     }
-    else if (this->title < c.title) {
+    else if (this->title < drama->title) {
        return false;
     }
 
     // If equal compare release year
-    if (this->releaseYear > c.releaseYear) {
+    if (this->releaseYear > drama->releaseYear) {
         return true;
     }
-    else if (this->releaseYear < c.releaseYear) {
+    else if (this->releaseYear < drama->releaseYear) {
         return false;
     }
 
@@ -75,7 +79,7 @@ bool Drama::operator>(const Drama &c) const {
 // Pre-conditons - None.
 // Post-conditions - Returns true if this is >= c.
 //                   false otherwise.
-bool Drama::operator>=(const Drama &c) const {
+bool Drama::operator>=(const Content &c) const {
     return (*this > c || *this == c);
 }
 
@@ -84,7 +88,7 @@ bool Drama::operator>=(const Drama &c) const {
 // Pre-conditons - None.
 // Post-conditions - Returns true if this is < c.
 //                   false otherwise.
-bool Drama::operator<(const Drama &c) const {
+bool Drama::operator<(const Content &c) const {
     return !(*this > c || *this == c);
 }
 
@@ -93,7 +97,7 @@ bool Drama::operator<(const Drama &c) const {
 // Pre-conditons - None.
 // Post-conditions - Returns true if this is <= c.
 //                   false otherwise.
-bool Drama::operator<=(const Drama &c) const {
+bool Drama::operator<=(const Content &c) const {
     return (*this < c || *this == c);
 }
 
@@ -104,13 +108,19 @@ bool Drama::operator<=(const Drama &c) const {
 // Pre-conditons - None.
 // Post-conditions - Returns true if this is == c.
 //                   false otherwise.
-bool Drama::operator==(const Drama &c) const {
-    
-    if (this->director != c.director) {
+bool Drama::operator==(const Content &c) const {
+    // Taken from this stack overflow answer https://stackoverflow.com/a/40347965
+    const auto drama = dynamic_cast<const Drama*>(&c);
+    if (drama == nullptr)
+    {
+        return false;  // Not a comedy.  Cannot be equal.
+    }
+
+    if (this->director != drama->director) {
        return false;
     }
     
-    if (this->releaseYear != c.releaseYear) {
+    if (this->releaseYear != drama->releaseYear) {
         return false;
     }
 

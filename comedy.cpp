@@ -49,21 +49,28 @@ Comedy::~Comedy(){}
 // Pre-conditons - None.
 // Post-conditions - Returns true if this is > c.
 //                   false otherwise.
-bool Comedy::operator>(const Comedy &c) const {
+bool Comedy::operator>(const Content &c) const {
+    cout << "GOT HERE" << endl;
+    // Taken from this stack overflow answer https://stackoverflow.com/a/40347965
+    const auto comedy = dynamic_cast<const Comedy*>(&c);
+    if (comedy == nullptr)
+    {
+        return false;  // Not a comedy.  Cannot be equal.
+    }
 
     // Start with the title
-    if (this->title > c.title) {
+    if (this->title > comedy->title) {
        return true;
     }
-    else if (this->title < c.title) {
+    else if (this->title < comedy->title) {
        return false;
     }
 
     // If equal compare release year
-    if (this->releaseYear > c.releaseYear) {
+    if (this->releaseYear > comedy->releaseYear) {
         return true;
     }
-    else if (this->releaseYear < c.releaseYear) {
+    else if (this->releaseYear < comedy->releaseYear) {
         return false;
     }
 
@@ -76,7 +83,7 @@ bool Comedy::operator>(const Comedy &c) const {
 // Pre-conditons - None.
 // Post-conditions - Returns true if this is >= c.
 //                   false otherwise.
-bool Comedy::operator>=(const Comedy &c) const {
+bool Comedy::operator>=(const Content &c) const {
     return (*this > c || *this == c);
 }
 
@@ -85,7 +92,7 @@ bool Comedy::operator>=(const Comedy &c) const {
 // Pre-conditons - None.
 // Post-conditions - Returns true if this is < c.
 //                   false otherwise.
-bool Comedy::operator<(const Comedy &c) const {
+bool Comedy::operator<(const Content &c) const {
     return !(*this > c || *this == c);
 }
 
@@ -94,7 +101,7 @@ bool Comedy::operator<(const Comedy &c) const {
 // Pre-conditons - None.
 // Post-conditions - Returns true if this is <= c.
 //                   false otherwise.
-bool Comedy::operator<=(const Comedy &c) const {
+bool Comedy::operator<=(const Content &c) const {
     return (*this < c || *this == c);
 }
 
@@ -105,13 +112,19 @@ bool Comedy::operator<=(const Comedy &c) const {
 // Pre-conditons - None.
 // Post-conditions - Returns true if this is == c.
 //                   false otherwise.
-bool Comedy::operator==(const Comedy &c) const {
-    
-    if (this->title != c.title) {
+bool Comedy::operator==(const Content &c) const {
+    // Taken from this stack overflow answer https://stackoverflow.com/a/40347965
+    const auto comedy = dynamic_cast<const Comedy*>(&c);
+    if (comedy == nullptr)
+    {
+        return false;  // Not a comedy.  Cannot be equal.
+    }
+
+    if (this->title != comedy->title) {
        return false;
     }
     
-    if (this->releaseYear != c.releaseYear) {
+    if (this->releaseYear != comedy->releaseYear) {
         return false;
     }
 

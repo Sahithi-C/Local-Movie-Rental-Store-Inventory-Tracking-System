@@ -62,28 +62,28 @@ class Classics : public Movies  // Classics class inherits from Movies class
     // Pre-conditons - None.
     // Post-conditions - Returns true if this is > c.
     //                   false otherwise.
-    bool operator>(const Classics &c) const;
+    bool operator>(const Content &c) const;
 
     // operator>=()
     // Summmary - Overloads the >= operator to correctly compare Classics.
     // Pre-conditons - None.
     // Post-conditions - Returns true if this is >= c.
     //                   false otherwise.
-    bool operator>=(const Classics &c) const;
+    bool operator>=(const Content &c) const;
 
     // operator<()
     // Summmary - Overloads the < operator to correctly compare Classics.
     // Pre-conditons - None.
     // Post-conditions - Returns true if this is < c.
     //                   false otherwise.
-    bool operator<(const Classics &c) const;
+    bool operator<(const Content &c) const;
 
     // operator<=()
     // Summmary - Overloads the <= operator to correctly compare Classics.
     // Pre-conditons - None.
     // Post-conditions - Returns true if this is <= c.
     //                   false otherwise.
-    bool operator<=(const Classics &c) const;
+    bool operator<=(const Content &c) const;
     
 
     // operator==()
@@ -91,7 +91,7 @@ class Classics : public Movies  // Classics class inherits from Movies class
     // Pre-conditons - None.
     // Post-conditions - Returns true if this is == c.
     //                   false otherwise.
-    bool operator==(const Classics &c) const;
+    bool operator==(const Content &c) const;
 
     //--------------------------------------------getter methods------------------------------------------------------------------
 

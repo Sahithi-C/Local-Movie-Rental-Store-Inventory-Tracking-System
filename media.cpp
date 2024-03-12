@@ -150,17 +150,13 @@ bool Media::setMediaType(availableMediaTypes mediaType){
 
 // setContent()
 // Summary - Sets the content that is present on this media.
-//           Media can only have content assigned to it once.
 // Pre-conditions - None.
 // Post-conditions - content field is set for this media object permanently.
 //                   Returns true if content field was updated.
 //                   false otherwise.
 bool Media::setContent(Content * content) {
-    if (this->content != nullptr) {
-        this->content = content;
-        return true;
-    }
-    return false;
+    this->content = content;
+    return true;
 }
 
 //---------------------------------------------------getter methods------------------------------------------------------------

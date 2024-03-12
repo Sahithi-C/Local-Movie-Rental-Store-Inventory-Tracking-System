@@ -136,7 +136,7 @@ list<Value> Map<Key, Value>::getAllValues() const {
     list<Value> allValues;
 
     for(int i = 0; i < capacity; i++) {
-        for(const suto& pair : hashMap[i]) {
+        for(const auto& pair : hashMap[i]) {
             allValues.push_back(pair.second);
         }
     }

@@ -55,28 +55,28 @@ class Content
     // Pre-conditons - None.
     // Post-conditions - Returns true if this is > c.
     //                   false otherwise.
-    virtual bool operator>(const Content &c) const;
+    virtual bool operator>(const Content &c) const = 0;
 
     // operator>=()
     // Summmary - Overloads the >= operator to correctly compare Content.
     // Pre-conditons - None.
     // Post-conditions - Returns true if this is >= c.
     //                   false otherwise.
-    virtual bool operator>=(const Content &c) const;
+    virtual bool operator>=(const Content &c) const = 0;
 
     // operator<()
     // Summmary - Overloads the < operator to correctly compare Content.
     // Pre-conditons - None.
     // Post-conditions - Returns true if this is < c.
     //                   false otherwise.
-    virtual bool operator<(const Content &c) const;
+    virtual bool operator<(const Content &c) const = 0;
 
     // operator<=()
     // Summmary - Overloads the <= operator to correctly compare Content.
     // Pre-conditons - None.
     // Post-conditions - Returns true if this is <= c.
     //                   false otherwise.
-    virtual bool operator<=(const Content &c) const;
+    virtual bool operator<=(const Content &c) const = 0;
     
 
     // operator==()
@@ -84,7 +84,7 @@ class Content
     // Pre-conditons - None.
     // Post-conditions - Returns true if this is == c.
     //                   false otherwise.
-    virtual bool operator==(const Content &c) const;
+    virtual bool operator==(const Content &c) const = 0;
 
 
     //-----------------------------------------------getter methods---------------------------------------------------------------
@@ -130,7 +130,10 @@ class Content
     // Summary - Overloaded output stream operator.
     // Pre-conditions - The Content object 'c' must be valid.
     // Post-conditions - The content of the Content object 'c' is printed to the output stream 'out'.
-    friend ostream& operator<<(ostream& out, const Content c);
+    friend ostream& operator<<(ostream& out, const Content &c) {
+        out << "broken";
+        return out;
+    }; 
 
    protected:
     string title;     // title of the content.

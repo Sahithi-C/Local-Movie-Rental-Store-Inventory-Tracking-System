@@ -63,29 +63,34 @@ Classics::~Classics() {
 // Pre-conditons - None.
 // Post-conditions - Returns true if this is > c.
 //                   false otherwise.
-bool Classics::operator>(const Classics &c) const {
+bool Classics::operator>(const Content &c) const {
+    const auto classic = dynamic_cast<const Classics*>(&c);
+    if (classic == nullptr)
+    {
+        return false;  // Not a comedy.  Cannot be equal.
+    }
 
     // Start with release year
-    if (this->releaseYear > c.releaseYear) {
+    if (this->releaseYear > classic->releaseYear) {
         return true;
     }
-    else if (this->releaseYear < c.releaseYear) {
+    else if (this->releaseYear < classic->releaseYear) {
         return false;
     }
 
     // If equal compare release months
-    if (this->releaseMonth > c.releaseMonth) {
+    if (this->releaseMonth > classic->releaseMonth) {
         return true;
     }
-    else if (this->releaseMonth < c.releaseMonth) {
+    else if (this->releaseMonth < classic->releaseMonth) {
         return false;
     }
 
     // If equal compare actor Name
-    if (this->firstName + ' ' + this->lastName > c.firstName + ' ' + c.lastName) {
+    if (this->firstName + ' ' + this->lastName > classic->firstName + ' ' + classic->lastName) {
         return true;
     }
-    else if (this->firstName + ' ' + this->lastName > c.firstName + ' ' + c.lastName) {
+    else if (this->firstName + ' ' + this->lastName > classic->firstName + ' ' + classic->lastName) {
         return false;
     }
 
@@ -98,7 +103,7 @@ bool Classics::operator>(const Classics &c) const {
 // Pre-conditons - None.
 // Post-conditions - Returns true if this is >= c.
 //                   false otherwise.
-bool Classics::operator>=(const Classics &c) const {
+bool Classics::operator>=(const Content &c) const {
     return (*this > c || *this == c);
 }
 
@@ -107,7 +112,7 @@ bool Classics::operator>=(const Classics &c) const {
 // Pre-conditons - None.
 // Post-conditions - Returns true if this is < c.
 //                   false otherwise.
-bool Classics::operator<(const Classics &c) const {
+bool Classics::operator<(const Content &c) const {
     return !(*this > c || *this == c);
 }
 
@@ -116,7 +121,7 @@ bool Classics::operator<(const Classics &c) const {
 // Pre-conditons - None.
 // Post-conditions - Returns true if this is <= c.
 //                   false otherwise.
-bool Classics::operator<=(const Classics &c) const {
+bool Classics::operator<=(const Content &c) const {
     return (*this < c || *this == c);
 }
 
@@ -127,20 +132,26 @@ bool Classics::operator<=(const Classics &c) const {
 // Pre-conditons - None.
 // Post-conditions - Returns true if this is == c.
 //                   false otherwise.
-bool Classics::operator==(const Classics &c) const {
-    if(this->releaseYear != c.releaseYear) {
+bool Classics::operator==(const Content &c) const {
+    const auto classic = dynamic_cast<const Classics*>(&c);
+    if (classic == nullptr)
+    {
+        return false;  // Not a comedy.  Cannot be equal.
+    }
+
+    if(this->releaseYear != classic->releaseYear) {
         return false;
     }
 
-    if(this->releaseMonth != c.releaseMonth) {
+    if(this->releaseMonth != classic->releaseMonth) {
         return false;
     }
 
-    if(this->lastName != c.lastName) {
+    if(this->lastName != classic->lastName) {
         return false;
     }
 
-    if(this->firstName != c.firstName) {
+    if(this->firstName != classic->firstName) {
         return false;
     }
 
