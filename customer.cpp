@@ -21,7 +21,7 @@ string Customer::getCustomerName() const {
     return firstName + " " + lastName;
 }
 
-void Customer::printTransactionHistory() const{
+void Customer::printTransactionHistory(const Inventory& inventory) const {
 
     cout << "Customer ID: " << this->customerId << endl;
     cout << "Customer Name: " << this->getCustomerName() << endl;
@@ -45,12 +45,12 @@ void Customer::printTransactionHistory() const{
             actionType = "Returned";
         }
 
-        string mediaId = transaction.getTransactionMedia();
+        const string mediaId = transaction.getTransactionMedia();
 
-        Media media = getMedia(mediaId);
+        Media media = inventory.getMedia(mediaId);
 
-        if(media.getMediaType == Media::availableMediaTypes::DvD) {
-            Content content = media.getContent();
+        if(media.getMediaType() == Media::availableMediaTypes::DvD) {
+            const Content content = *(media.getContent());
             cout << content.getTitle() << " - " << actionType << endl;
         }
     }
