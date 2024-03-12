@@ -147,6 +147,11 @@ ostream& operator<<(ostream& out, const Drama d) {
       return out;
 }
 
+// printHelper(ostream& out, const Content &c) const
+// Summary - Prints the details of a Drama movie.
+// Pre-conditions - The Drama movie object must be properly initialized with valid director, title, and release year.
+// Post-conditions - The details of the Drama movie, including the director, title, and release year,
+//                   are printed to the output stream 'out'.
 ostream& Drama::printHelper(ostream& out, const Content &c) const {
     out << this->director << ", " << this->title << ", " << this->releaseYear;
       return out;
