@@ -38,13 +38,11 @@ Media::Media(int stock, availableMediaTypes mediaType, Content* content) {
     setContent(content);
 }
 
-// Media(int stock, availableMediaTypes mediaType, Content* content)
-// Summary - Constructs a Media object with the given stock, media type, and content.
-// Pre-conditions - The `stock` parameter must be a non-negative integer representing the stock count of the media.
-//                - The `mediaType` parameter must be one of the values defined in the `availableMediaTypes` enum, representing the type of media.
-//                - The `content` parameter must point to a valid `Content` object representing the content associated with the media.
-// Post-conditions - A Media object is constructed with the provided `stock`, `mediaType`, and `content`.
-//                 - The member variables `stock`, `mediaType`, and `content` are initialized with the corresponding parameters.
+// Media(const Media &m)
+// Summary - Copy constructor for the Media class.
+// Pre-conditions - The parameter 'm' must be a valid Media object.
+// Post-conditions - A new Media object is created with the same attributes and content as the 'm' object.
+//                 - Deep copying is performed if necessary to ensure that each object has its independent copy of any dynamically allocated memory.
 Media::Media(const Media &m) {
     *this = m;
 }
