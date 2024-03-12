@@ -125,7 +125,7 @@ ostream& Inventory::printSortedInventory(ostream& out) const {
     temp = comedyMap.getAllValues();
     temp.sort();
     while (!temp.empty()) {
-        out << "F, " << *(temp.front().getContent()) << endl;
+        out << "F, " << temp.front().getStock() << ", " << *(temp.front().getContent()) << endl;
         temp.pop_front();
     }
     
@@ -133,7 +133,7 @@ ostream& Inventory::printSortedInventory(ostream& out) const {
     temp = dramaMap.getAllValues();
     temp.sort();
     while (!temp.empty()) {
-        out << "D, " << *(temp.front().getContent()) << endl;
+        out << "D, " << temp.front().getStock() << ", " << *(temp.front().getContent()) << endl;
         temp.pop_front();
     }
 
@@ -141,7 +141,7 @@ ostream& Inventory::printSortedInventory(ostream& out) const {
     temp = classicsMap.getAllValues();
     temp.sort();
     while (!temp.empty()) {
-        out << "C, " << *(temp.front().getContent()) << endl;
+        out << "C, " << temp.front().getStock() << ", " << *(temp.front().getContent()) << endl;
         temp.pop_front();
     }
 
