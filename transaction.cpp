@@ -19,10 +19,7 @@ using namespace std;
 // Summary - Default constructor.
 // Pre-conditions - None.
 // Post-conditions - A Transaction object is initialized with default values.
-Transaction::Transaction() {
-    this->actionType = '';
-    this->mediaId = "";
-}
+Transaction::Transaction() {}
 
 // Transaction(char actionType, const string &mediaId)
 // Summary - Parameterized constructor for the Transaction class.
