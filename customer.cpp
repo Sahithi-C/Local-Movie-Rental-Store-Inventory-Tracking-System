@@ -114,7 +114,7 @@ bool Customer::returnMedia(Media &media) {
     string mediaId = media.getMediaId();
     
     if(isItemReturnable(mediaId)) {
-        this->borrowedMediaList.remove(mediaId)
+        this->borrowedMediaList.remove(mediaId);
 
         Transaction transaction('R', mediaId);
         this->transactionList.push_back(transaction);
