@@ -51,6 +51,6 @@ char Transaction::getActionType() const{
 // Summary - Getter function for the mediaId attribute.
 // Pre-conditions - None.
 // Post-conditions - Returns the mediaId of the Transaction object.
-string Transaction::getTransactionMedia() {
+string Transaction::getTransactionMedia() const {
     return mediaId;
 }
