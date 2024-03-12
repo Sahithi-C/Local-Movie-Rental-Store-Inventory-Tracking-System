@@ -96,6 +96,11 @@ class Drama : public Movies  // Drama class inherits from Movie class
     // Post-conditions - Sends the Drama object d to ostream.
     friend ostream& operator<<(ostream& out, const Drama d);
 
+    // printHelper(ostream& out, const Content &c) const
+    // Summary - Prints the details of a Drama movie.
+    // Pre-conditions - The Drama movie object must be properly initialized with valid director, title, and release year.
+    // Post-conditions - The details of the Drama movie, including the director, title, and release year,
+    //                   are printed to the output stream 'out'.
     ostream& printHelper(ostream& out, const Content &c) const;
 };
 
