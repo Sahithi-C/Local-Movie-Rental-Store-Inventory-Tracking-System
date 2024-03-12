@@ -12,13 +12,19 @@
 //-------------------------------------------------Constructors & Destructor--------------------------------------------------
 
 // Content()
-// Summary - Default constuctor.
+// Summary - Default constructor.
+// Pre-conditions - None.
 // Post-conditions - A content object is initialized with default values.
 Content::Content(){
     title = "";
     releaseYear = -1;
 }
 
+// Content(const string &title, int releaseYear)
+// Summary - Initializes a Content object with specified values for title and release year.
+// Pre-conditions - The title should be a non-empty string.
+//                  releaseYear should be a valid integer representing the year of release.
+// Post-conditions - An instance of the Content class is created with the provided values.
 Content::Content(const string &title, int releaseYear) {
     this->title = title;
     this->releaseYear = releaseYear;
@@ -26,7 +32,7 @@ Content::Content(const string &title, int releaseYear) {
 
 // Content(const Content& other)
 // Summary - Copy constructor
-// Post-consditions - A content object is initialized with data of other 
+// Post-conditions - A content object is initialized with data of other 
 //                    content object.
 Content::Content(const Content& other){
     this->title = other.title;
@@ -35,6 +41,7 @@ Content::Content(const Content& other){
 
 // ~Content()
 // Summary - Destructor
+// Pre-conditions - None.
 // Post-conditions - Clears any dynamically associated memory.
 Content::~Content(){}
 
@@ -42,6 +49,7 @@ Content::~Content(){}
 
 // getTitle() const
 // Summary - Gets the title of a content(Movie, in our case).
+// Pre-conditions - None.
 // Post-conditions - Returns the title of a content(movie).
 string Content::getTitle() const{
     return title;
@@ -49,6 +57,7 @@ string Content::getTitle() const{
 
 // getReleaseYear() const
 // Summary - Gets the release year of the content(movie).
+// Pre-conditions - None.
 // Post-conditions - Returns the release year of a content(movie).
 int Content::getReleaseYear() const{
     return releaseYear; 
@@ -56,6 +65,7 @@ int Content::getReleaseYear() const{
 
 // getContentId() const
 // Summary: Gets the unique ID for this piece of content.
+// Pre-conditions - None.
 // Post-conditions: Returns the unique ID for this piece of content.
 string Content::getContentId() const{
     return title + to_string(releaseYear);
@@ -65,6 +75,7 @@ string Content::getContentId() const{
 
 // setTitle(const string& title)
 // Summary - Sets the title of the content(Movie, in our case).
+// Pre-conditions - The input string 'title' must not be empty.
 // Post-conditions - Title of a movie is set.
 //                   Returns true if title is set.
 //                   false otherwise.
@@ -76,6 +87,7 @@ bool Content::setTitle(const string& title){
 // setReleaseYear(int year)
 // Summary - Sets the release year of the content(Movie).
 //           Release year cannot be set to a negative value.
+// Pre-conditions - The input 'releaseYear' must be a non-negative integer.
 // Post-conditions - Release year of a movie is set.
 //                   Returns true if release year is set.
 //                   false otherwise.
