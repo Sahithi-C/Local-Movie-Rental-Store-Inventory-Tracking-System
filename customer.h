@@ -29,18 +29,22 @@ class Customer
 
     // Customer()
     // Summary - Default constructor initializes a customer object with default values.
+    // Pre-conditions - None.
     // Post-conditions - A customer object is initialized with default values.
     Customer();
 
     // Customer()
     // Summary - Parametrized constructor that initializes a customer object with
     //           customer id, first name and last name.
+    // Pre-conditions - The customerId should be a valid integer.
+    //                - The firstName and lastName should be non-empty strings.
     // Post-conditions - A customer object is initialized with customer id,
     //                   first name and last name.
     Customer(int customerId, const string& firstName, const string& lastName);
 
     // ~Customer()
     // Summary - Destructor.
+    // Pre-conditions - None.
     // Post-conditions - cleans any dynamically associated memory.
     ~Customer();
     
@@ -48,11 +52,13 @@ class Customer
 
     // getCustomerId() const
     // Summary - Gets the unique customer id.
+    // Pre-conditions - None.
     // Post-conditions - Returns unique id of a customer.
     int getCustomerId() const;
 
     // getCustomerName() const
     // Summary - Gets first and last names of a customer.
+    // Pre-conditions - None.
     // Post-conditions - Returns first and last names of a customer.
     string getCustomerName() const;
 
@@ -60,24 +66,30 @@ class Customer
 
     // printTransactionHistory() const
     // Summary - Prints the transaction history of the specified customer.
+    // Pre-conditions - The Inventory object 'inventory' must be properly initialized and contain the valid media items.
     // Post-conditions - Transaction history of a customer is printed.
     void printTransactionHistory(const Inventory& inventory) const;
     
     // borrowMedia(int mediaId)
     // Summary - Records a transaction of a customer borrowing a movie in borrowedMediaList 
     //           to keep track of customer's borrows.
+    // Pre-conditions - The Media object 'media' must be properly initialized and represent a valid movie that can be borrowed.
+    //                - The customer must have a valid ID to be eligible to borrow the media item.
     // Post-conditions - Transaction history for borrow of media by a customer is recorded.
     void borrowMedia(Media& media);
 
     // returnmedia(int mediaId)
     // Summary - Records a transaction for a customer returning a movie, 
     //           by removing the media item from borrowedMediaList.
+    // Pre-conditions - The media object passed as a parameter must be valid and represent a borrowed media item by the customer.
     // Post-conditions - Transaction history for return of media by a customer is recorded, 
     //                   by removing the item from list.
     bool returnMedia(Media& media);
 
     // isItemReturnable(int mediaId) const
     // Summary - Checks if a media item is returnable by a customer.
+    // Pre-conditions - The mediaId parameter must represent a valid unique identifier of a media item.
+    //                  The borrowedMediaList must contain an entry for the media item with the specified media ID.
     // Post-conditions - Returns true, if the item is returnable. false, otherwise.
     bool isItemReturnable(string mediaId) const;
 

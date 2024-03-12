@@ -1,17 +1,42 @@
+//------------------------------------------------------parser.cpp-----------------------------------------------------------
+
+// Programmer Name Course Section Number : VG, Jonah Kolar, Sahithi Chimakurthi(CSS 502 A)
+
+// Creation Date : 03/10/2024
+
+// Date of Last Modification : 03/10/2024
+
+// Purpose : Implementing the Parser class responsible for parsing input strings and creating corresponding objects.
+
+// -------------------------------------------------------------------------------------------------------------------------
+
 #include<iostream>
 #include "parser.h"
 
 
 using namespace std;
 
+// Parser()
+// Summary - Default constructor for the Parser class.
+// Pre-conditions - None.
+// Post-conditions - An instance of the Parser class is created.
 Parser::Parser() {
     
 }
 
+// ~Parser()
+// Summary - Destructor for the Parser class.
+// Pre-conditions - None.
+// Post-conditions - Clears any dynamically allocated memory associated with the Parser object.
 Parser::~Parser() {
 
 }
 
+// parseCustomersFile(const string fileName)
+// Summary - Parses the customer data file and constructs a map of customers.
+// Pre-conditions - The file 'fileName' should exist and be readable.
+//                - The format of each line in the file should be in the required format as: "<customerId> <firstName> <lastName>".
+// Post-conditions - Returns a map of customer IDs to Customer objects parsed from the file.
 Map<int, Customer> Parser::parseCustomersFile(const string fileName) {
 
     Map<int, Customer> customerMap;
@@ -47,6 +72,11 @@ Map<int, Customer> Parser::parseCustomersFile(const string fileName) {
     return customerMap;
 }
 
+// parseInventoryFile(const string fileName)
+// Summary - Parses the inventory data file and constructs a list of InventoryData objects.
+// Pre-conditions - The file 'fileName' should exist and be readable.
+//                - The format of each line in the file should be in the required format specific to the inventory data.
+// Post-conditions - Returns a list of InventoryData objects parsed from the file.
 list<InventoryData> Parser::parseInventoryFile(const string fileName) {
 
     list<InventoryData> inventoryList;
@@ -101,7 +131,11 @@ list<InventoryData> Parser::parseInventoryFile(const string fileName) {
     return inventoryList;
 }
 
-
+// parseCommandFile(const string fileName)
+// Summary - Parses the command data file and constructs a list of CommandData objects.
+// Pre-conditions - The file 'fileName' should exist and be readable.
+//                - The format of each line in the file should be in the required format and specific to the command data.
+// Post-conditions - Returns a list of CommandData objects parsed from the file.
 list<CommandData> Parser::parseCommandFile(const string fileName)
 {
     list<CommandData> commandList;

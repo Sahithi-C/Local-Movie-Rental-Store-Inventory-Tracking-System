@@ -30,13 +30,22 @@ class Media
 
     // Media()
     // Summary - Default constructor.
+    // Pre-conditions - None.
     // Post-conditions - A Media object is initialized with default values.
     Media();
 
+    // Media(int stock, availableMediaTypes mediaType, Content* content)
+    // Summary - Constructs a Media object with the given stock, media type, and content.
+    // Pre-conditions - The `stock` parameter must be a non-negative integer representing the stock count of the media.
+    //                - The `mediaType` parameter must be one of the values defined in the `availableMediaTypes` enum, representing the type of media.
+    //                - The `content` parameter must point to a valid `Content` object representing the content associated with the media.
+    // Post-conditions - A Media object is constructed with the provided `stock`, `mediaType`, and `content`.
+    //                 - The member variables `stock`, `mediaType`, and `content` are initialized with the corresponding parameters.
     Media(int stock, availableMediaTypes mediaType, Content* content);
 
     // ~Media()
     // Summary - Destructor.
+    // Pre-conditions - None.
     // Post-conditions - Cleans any dynamically associated memory.
     virtual ~Media(); 
 
@@ -83,11 +92,13 @@ class Media
 
     // reduceStock()
     // Summary - Reduces the stock of a media item by 1 if there's valid stock.
+    // Pre-conditions - stock count should be greater than zero.
     // Post-conditions - Decreases the stock of the media item by 1.
     bool reduceStock();
 
     // increaseStock()
     // Summary - Increases the stock of media item by 1.
+    // Pre-conditions - None.
     // Post-conditions - Increases the stock of the media item by 1.
     bool increaseStock();
     
@@ -95,17 +106,20 @@ class Media
 
     // setStock()
     // Summary - Sets the stock count for a valid media item.
+    // Pre-conditions - None.
     // Post-conditions - Stock count for a valid media item is set.
     bool setStock(int stock);
 
     // setMediaType()
     // Summary - Sets the type for a media item.
+    // Pre-conditions - None.
     // Post-conditions - Type of the media is set for the media item.
     bool setMediaType(availableMediaTypes mediaType);
 
     // setContent()
     // Summary - Sets the content that is present on this media.
     //           Media can only have content assigned to it once.
+    // Pre-conditions - None.
     // Post-conditions - content field is set for this media object permanently.
     //                   Returns true if content field was updated.
     //                   false otherwise.
@@ -115,22 +129,26 @@ class Media
 
     // getStock() const
     // Summary - Gets the available stock count for a particular media.
+    // Pre-conditions - None.
     // Post-conditions - Returns the stock count for the media item.
     int getStock() const;
 
     // getMediaType() const
     // Summary - Gets the type of the media item.
+    // Pre-conditions - None.
     // Post-conditions - Returns the type of media item.
     availableMediaTypes getMediaType() const;
 
     // getContent()
     // Summary - Gets the content that is present on this media.
+    // Pre-conditions - None.
     // Post-conditions - Returns the content for on this media object.
     //                   nullptr if there is no content for this media object yet.
     const Content * getContent() const;
 
     // getMediaId() const
     // Summary - Gets the unique identifier of a media item.
+    // Pre-conditions - None.
     // Post-conditions - Returns the unique identifier of a media item.
     string getMediaId() const;
 
@@ -140,14 +158,15 @@ class Media
     Content * content;        // Pointer to the associated Movies object.
 
     // mediaTypeToString()
-    // Summary - Converts the enum availableMediaTypes to a readable string
-    // Post-conditions - Returns a string representing the passed mediaType
+    // Summary - Converts the enum availableMediaTypes to a readable string.
+    // Pre-conditions - None.
+    // Post-conditions - Returns a string representing the passed mediaType.
     static string mediaTypeToString(const availableMediaTypes mediaType); 
 
     //------------------------------------------------accessors---------------------------------------------------------------
     // operator<<()
-    // Summary - Overrides the << operator to correctly print Media
-    // Pre-conditions - None
+    // Summary - Overrides the << operator to correctly print Media.
+    // Pre-conditions - None.
     // Post-conditions - Sends the Media object m to ostream.
     friend ostream& operator<<(ostream& out, const Media m);
 };

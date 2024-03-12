@@ -1,3 +1,15 @@
+//------------------------------------------------------main.cpp-----------------------------------------------------------
+
+// Programmer Name Course Section Number : VG, Jonah Kolar, Sahithi Chimakurthi(CSS 502 A)
+
+// Creation Date : 03/10/2024
+
+// Date of Last Modification : 03/10/2024
+
+// Purpose : Entry point of the application. Parses input files, builds inventory, and processes commands.
+
+----------------------------------------------------------------------------------------------------------------------------
+
 #include<iostream>
 #include<string>
 #include"parser.h"
@@ -10,16 +22,16 @@ using namespace std;
 
 int main() {
  
-    Parser parser;
-    Store store;
+    Parser parser;    // Instantiate a Parser object
+    Store store;      // Instantiate a Store object
     
     //Creating customer list
-    Map<int, Customer> customers = parser.parseCustomersFile("data4customers.txt");
-    store.setCustomers(customers);
+    Map<int, Customer> customers = parser.parseCustomersFile("data4customers.txt");    // Parse customer data 
+    store.setCustomers(customers);     // Set customers in the store
 
     //Parsing movie data
-    list<InventoryData> inventoryList = parser.parseInventoryFile("data4movies.txt");
-    store.buildInventory(inventoryList);
+    list<InventoryData> inventoryList = parser.parseInventoryFile("data4movies.txt");    // Parse movie data
+    store.buildInventory(inventoryList);    // Build inventory in the store
 
     //Parsing commands
     list<CommandData> commandList = parser.parseCommandFile("data4commands.txt");

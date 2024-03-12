@@ -71,17 +71,35 @@ class Map
     // Summary - Returns the capacity of the map.
     // Post-conditions - Returns the maximum number of elements the map can hold.
     int getCapacity() const;
-    
+
+    // operator=(const Map<Key, Value> &other)
+    // Summary - Overloaded assignment operator for the Map class.
+    // Pre-conditions - None.
+    // Post-conditions - The current map is assigned the values of the provided map 'other'. 
+    //                   Returns a reference to the modified map.
     Map<Key, Value>& operator=(const Map<Key, Value>& other);
-    
+
+    // getAllValues() const
+    // Summary - Retrieves all the values stored in the map.
+    // Pre-conditions - None.
+    // Post-conditions - Returns a list containing all the values stored in the map.
     list<Value> getAllValues() const;
 
    private:
     list<pair<Key, Value>>* hashMap; // Array of lists of Key-Value pairs
     int size;                        // Number of elements in the hash map
     int capacity;                    // Capacity of the hash map
-    
+
+    // getHash(const Key &key) const
+    // Summary - Calculates the hash value for the given key.
+    // Pre-conditions - None.
+    // Post-conditions - Returns the hashed index corresponding to the given key.
     int getHash(const Key& key) const;  //Hash function
+
+    // makeEmpty()
+    // Summary - Empties the map by removing all key-value pairs.
+    // Pre-conditions - None.
+    // Post-conditions - All key-value pairs are removed from the map, and the size of the map becomes zero.
     void makeEmpty();                // To clear exisiting map
 };
 
