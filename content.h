@@ -93,6 +93,8 @@ class Content
     //                   false otherwise.
     virtual bool operator!=(const Content &c) const = 0;
 
+    virtual Content& operator=(const Content &c) = 0;
+
 
     //-----------------------------------------------getter methods---------------------------------------------------------------
 

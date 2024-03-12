@@ -33,8 +33,12 @@ Comedy::Comedy(char genreType, const string &directorName, const string &movieTi
 // Summary - Copy constructor.
 // Pre-conditions - None.
 // Post-conditions - Constructs a comedy object as a copy of ther comedy object.
-Comedy::Comedy(const Comedy& other) 
-       : Movies(other) {}
+Comedy::Comedy(const Comedy& other) {
+    setTitle(other.title);
+    setDirector(other.director);
+    setReleaseYear(other.releaseYear);
+    setGenreType(other.genreType);
+}
 
 // ~Comedy()
 // Summary - Destrcutor.
@@ -138,6 +142,40 @@ bool Comedy::operator==(const Content &c) const {
 bool Comedy::operator!=(const Content &c) const {
     return !(*this == c);
 }
+
+// operator=()
+// Summary - Overloads the = operator to correctly assign Comedy.
+// Pre-conditions - m should be a non null Comedy object.
+// Post-conditons - *this will be equivalent to m.
+Content& Comedy::operator=(const Content &c) {
+    const auto comedy = dynamic_cast<const Comedy*>(&c);
+    if (comedy == nullptr)
+    {
+        return *this;  // Not a comedy do nothing
+    }
+    setTitle(comedy->title);
+    setDirector(comedy->director);
+    setReleaseYear(comedy->releaseYear);
+    setGenreType(comedy->genreType);
+    return *this;
+}   
+
+// operator=()
+// Summary - Overloads the = operator to correctly assign Comedy.
+// Pre-conditions - m should be a non null Comedy object.
+// Post-conditons - *this will be equivalent to m.
+Movies& Comedy::operator=(const Movies &c) {
+    const auto comedy = dynamic_cast<const Comedy*>(&c);
+    if (comedy == nullptr)
+    {
+        return *this;  // Not a comedy do nothing
+    }
+    setTitle(comedy->title);
+    setDirector(comedy->director);
+    setReleaseYear(comedy->releaseYear);
+    setGenreType(comedy->genreType);
+    return *this;
+}   
 
 //------------------------------------------------getter methods---------------------------------------------------------------
 

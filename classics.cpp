@@ -41,11 +41,14 @@ Classics::Classics(char genreType, const string &directorName,
 // Summary - Copy constructor.
 // Pre-conditions - None.
 // Post-conditiond - Constructs a Classics object as a copy of other Classics object.
-Classics::Classics(const Classics& other) 
-    : Movies(other) {
-        this->firstName = other.firstName;
-        this->lastName = other.lastName;
-        this->releaseMonth = other.releaseMonth;
+Classics::Classics(const Classics& other) {
+    setTitle(other.title);
+    setDirector(other.director);
+    setReleaseYear(other.releaseYear);
+    setGenreType(other.genreType);
+    this->firstName = other.firstName;
+    this->lastName = other.lastName;
+    this->releaseMonth = other.releaseMonth;
 }
 
 
@@ -166,6 +169,26 @@ bool Classics::operator==(const Content &c) const {
 bool Classics::operator!=(const Content &c) const {
     return !(*this == c);
 }
+
+// operator=()
+// Summary - Overloads the = operator to correctly assign Content.
+// Pre-conditions - m should be a non null Content object.
+// Post-conditons - *this will be equivalent to m.
+Content& Classics::operator=(const Content &c) {
+    const auto classic = dynamic_cast<const Classics*>(&c);
+    if (classic == nullptr)
+    {
+        return *this;  // Not a Classic do nothing
+    }
+    setTitle(classic->title);
+    setDirector(classic->director);
+    setReleaseYear(classic->releaseYear);
+    setGenreType(classic->genreType);
+    this->firstName = classic->firstName;
+    this->lastName = classic->lastName;
+    this->releaseMonth = classic->releaseMonth;
+    return *this;
+}   
 
 
 //--------------------------------------------getter methods------------------------------------------------------------------

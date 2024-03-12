@@ -63,8 +63,9 @@ void Store::borrowItem(const CommandData& data) {
     if(this->customerMap.getValue(data.customerId, &customer)) {
         Content* content = ContentFactory::createContent(data);
         Media borrowMedia(0, Media::availableMediaTypes::DvD, content);
-
+        cerr << borrowMedia.getStock() << " " << borrowMedia.getMediaId() << endl;
         Media media = inventory.getMedia(borrowMedia.getMediaId()); 
+        cerr << media.getMediaId() << endl;
         if(media.getContent() != nullptr) {
              if(media.getStock() > 0) {
                 customer.borrowMedia(media);

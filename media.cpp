@@ -111,9 +111,18 @@ bool Media::operator==(const Media &m) const {
 Media Media::operator=(const Media &m) {
     setStock(m.stock);
     setMediaType(m.mediaType);
+    cerr << "here" << endl;
     Content * contentCopy;
-    *contentCopy = *(m.content);
+    cerr << m.content << endl;
+    if (m.content == nullptr) {
+        contentCopy = nullptr;
+    }
+    else {
+        *contentCopy = *m.content;
+    }
+    cerr << "not here" << endl;
     setContent(contentCopy);
+    return * this;
 }    
 
 //----------------------------------------------other member functions---------------------------------------------------------

@@ -72,7 +72,6 @@ void Map<Key, Value>::insert(const Key &key, const Value &value) {
             return;
         }
     }
-
     hashMap[index].push_back(make_pair(key, value));
     size++;
 }
@@ -90,7 +89,9 @@ bool Map<Key, Value>::getValue(const Key &key, Value* foundValue) const{
 
     for(const pair<Key, Value>& pair: hashMap[index]) {
         if(pair.first == key) {
+            cerr << "here";
             *foundValue = pair.second;
+            cerr << "not here";
             return true;
         }
     }

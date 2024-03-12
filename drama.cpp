@@ -32,8 +32,12 @@ Drama::Drama(char genreType, const string &directorName, const string &movieTitl
 // Summary - Copy constructor.
 // Pre-conditions - None.
 // Post-consitions - Constructs a drama objects as a copy other drama object.
-Drama::Drama(const Drama& other)
-      : Movies(other) {}
+Drama::Drama(const Drama& other) {
+    setTitle(other.title);
+    setDirector(other.director);
+    setReleaseYear(other.releaseYear);
+    setGenreType(other.genreType);
+}
 
 // ~Drama()
 // Summary - Destructor.
@@ -136,6 +140,22 @@ bool Drama::operator!=(const Content &c) const {
     return !(*this == c);
 }
 
+// operator=()
+// Summary - Overloads the = operator to correctly assign Content.
+// Pre-conditions - m should be a non null Content object.
+// Post-conditons - *this will be equivalent to m.
+Content& Drama::operator=(const Content &c) {
+    const auto drama = dynamic_cast<const Drama*>(&c);
+    if (drama == nullptr)
+    {
+        return *this;  // Not a drama do nothing
+    }
+    setTitle(drama->title);
+    setDirector(drama->director);
+    setReleaseYear(drama->releaseYear);
+    setGenreType(drama->genreType);
+    return *this;
+}   
 
 //---------------------------------------------getter methods-----------------------------------------------------------
 

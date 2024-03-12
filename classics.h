@@ -100,6 +100,8 @@ class Classics : public Movies  // Classics class inherits from Movies class
     //                   false otherwise.
     virtual bool operator!=(const Content &c) const;
 
+    Content& operator=(const Content &c);
+
     //--------------------------------------------getter methods------------------------------------------------------------------
 
     // getFirstName() const

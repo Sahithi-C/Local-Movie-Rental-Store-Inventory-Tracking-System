@@ -88,6 +88,12 @@ class Drama : public Movies  // Drama class inherits from Movie class
     //                   false otherwise.
     virtual bool operator!=(const Content &c) const;
 
+    // operator=()
+    // Summary - Overloads the = operator to correctly assign Content.
+    // Pre-conditions - m should be a non null Content object.
+    // Post-conditons - *this will be equivalent to m.
+    Content& operator=(const Content &c);
+
     //---------------------------------------------getter methods-----------------------------------------------------------
 
     // getContentId() const
