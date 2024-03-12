@@ -1,6 +1,6 @@
-                              *******Local Movie Rental Store Inventory Tracking System*******
+                              Local Movie Rental Store Inventory Tracking System
 
-This projected is for a local movie rental store. It is to manage a store’s inventory, track customer transactions and perform various operations related to borrowing and returning media from the store.
+This project is for a local movie rental store. It is to manage a store’s inventory, track customer transactions and performs various operations related to borrowing and returning media from the store.
 
 ****Features:****
 
