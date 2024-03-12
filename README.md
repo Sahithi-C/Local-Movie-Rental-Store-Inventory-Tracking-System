@@ -2,7 +2,7 @@
 
 This projected is for a local movie rental store. It is to manage a store’s inventory, track customer transactions and perform various operations related to borrowing and returning media from the store.
 
-Features:
+****Features:****
 
 •	Parsing input files containing customer data (data4customers.txt), inventory data (data4movies.txt), and commands (data4commands.txt).
 
@@ -12,7 +12,7 @@ Features:
 
 •	Displaying transaction history of the customer.
 
-UML Diagram:
+****UML Diagram:****
 
 The UML class diagram for movie store inventory tracking system can be found here for your reference.
  
@@ -20,17 +20,17 @@ The UML class diagram for movie store inventory tracking system can be found her
 
 
 
-Dependencies:
+****Dependencies:****
 
 •	C++ compiler with support for C++11 or higher.
 
 •	Standard C++ library.
 
-How to Run or Usage:
+****How to Run or Usage:****
 
 •	Prepare input files containing customer data (data4customers.txt), inventory data (data4movies.txt), and commands (data4commands.txt).
 
-(Note – We have attached them here in case you need these files to download from here.)
+  (**Note** – We have attached them here in case you need these files to download from here.)
 
 •	Compile the source code using a C++ compiler.
 
@@ -40,15 +40,15 @@ How to Run or Usage:
 
 •	Check output for results of each command.
 
-Compilation:
+****Compilation:****
 
-Compile the source code using a C++ compiler that supports at least C++11:
-g++ -std=c++11 main.cpp -o movie_rental_system
+***Compile the source code using a C++ compiler that supports at least C++11:***
+                                         g++ -std=c++11 main.cpp -o movie_rental_system
 
-Refer for compilation help – 
+****Refer for compilation help –**** 
 https://docs.oracle.com/cd/E37069_01/html/E37071/gndfg.html#:~:text=To%20compile%20in%20C%2B%2B,runtime%20library%20that%20is%20supplied).
 
-Contributions:
+****Contributions:****
 
 Thanks for your interest in our project. We love your input! We want to make every contribution to this project as transparent and effortless as possible. Please note that we have a code of conduct that we need to follow moving forward in all our interactions with the project.
 
@@ -62,11 +62,11 @@ Thanks for your interest in our project. We love your input! We want to make eve
 
 •	Becoming a maintainer.
 
-We Develop with GitHub:
+****We Develop with GitHub:****
 
 We use GitHub to host code, to track issues and feature request, as well as pull requests.
 
-All Code changes happen through pull requests:
+****All Code changes happen through pull requests:****
 
 Pull requests are the best way to propose changes to the codebase. We actively welcome your pull requests.
 
