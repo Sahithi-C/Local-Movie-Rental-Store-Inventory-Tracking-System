@@ -214,6 +214,6 @@ string Media::mediaTypeToString(availableMediaTypes mediaType) {
         case availableMediaTypes::DvD:
             return "DvD";
         default: 
-            return "";
+            return "DvD";
     }
 }
