@@ -214,6 +214,10 @@ int Map<Key, Value>::getHash(const Key &key) const {
     hashedIndex = hasher(key);
     hashedIndex %= capacity;
 
+    if (hashedIndex < 0) {
+        hashedIndex += capacity;
+    }
+
     return hashedIndex;
 }
 
