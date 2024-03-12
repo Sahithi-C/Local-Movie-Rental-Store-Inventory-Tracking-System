@@ -12,6 +12,14 @@ Features:
 
 •	Displaying transaction history of the customer.
 
+UML Diagram:
+
+The UML class diagram for movie store inventory tracking system can be found here for your reference.
+ 
+![image](https://github.com/Sahithi-C/Local-Movie-Rental-Store-Inventory-Tracking-System/assets/117063184/a4b0d76b-38c8-42cd-9c7e-5887007218d1)
+
+https://online.visual-paradigm.com/share.jsp?id=333132373539342d31#diagram:workspace=invtxlij&proj=0&id=1
+
 Dependencies:
 
 •	C++ compiler with support for C++11 or higher.
