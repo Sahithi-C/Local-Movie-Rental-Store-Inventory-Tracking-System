@@ -83,6 +83,15 @@ void Inventory::populateInventory(const list<InventoryData> &inventoryList) {
     for(const auto& data: inventoryList) {
         Content content = ContentFactory::createContent(data);
         Media media(data.stock, Media::availableMediaTypes::DvD, &content);
+        if (data.genreType == 'F') {
+            comedyMap.insert(media.getMediaId(), media);
+        }
+        else if(data.genreType == 'D') {
+            dramaMap.insert(media.getMediaId(), media);
+        }
+        else if(data.genreType == 'C') {
+            classicsMap.insert(media.getMediaId(), media);
+        }
     }
 }
 
