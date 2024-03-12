@@ -93,6 +93,13 @@ class Classics : public Movies  // Classics class inherits from Movies class
     //                   false otherwise.
     bool operator==(const Content &c) const;
 
+    // operator!=()
+    // Summmary - Overloads the != operator to correctly compare Classics.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is != c.
+    //                   false otherwise.
+    virtual bool operator!=(const Content &c) const;
+
     //--------------------------------------------getter methods------------------------------------------------------------------
 
     // getFirstName() const

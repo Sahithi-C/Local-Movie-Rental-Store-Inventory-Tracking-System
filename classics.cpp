@@ -158,6 +158,15 @@ bool Classics::operator==(const Content &c) const {
     return true;
 }
 
+// operator!=()
+// Summmary - Overloads the != operator to correctly compare Classics.
+// Pre-conditons - None.
+// Post-conditions - Returns true if this is != c.
+//                   false otherwise.
+bool Classics::operator!=(const Content &c) const {
+    return !(*this == c);
+}
+
 
 //--------------------------------------------getter methods------------------------------------------------------------------
 

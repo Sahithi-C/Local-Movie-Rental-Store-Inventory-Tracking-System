@@ -81,6 +81,13 @@ class Drama : public Movies  // Drama class inherits from Movie class
     //                   false otherwise.
     bool operator==(const Content &c) const;
 
+    // operator!=()
+    // Summmary - Overloads the != operator to correctly compare Drama.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is != c.
+    //                   false otherwise.
+    virtual bool operator!=(const Content &c) const;
+
     //---------------------------------------------getter methods-----------------------------------------------------------
 
     // getContentId() const

@@ -104,6 +104,13 @@ class Movies : public Content // Movies class inherits from Content class
     //                   false otherwise.
     virtual bool operator==(const Content &c) const = 0;
 
+    // operator!=()
+    // Summmary - Overloads the != operator to correctly compare Movies.
+    // Pre-conditons - None.
+    // Post-conditions - Returns true if this is != c.
+    //                   false otherwise.
+    virtual bool operator!=(const Content &c) const = 0;
+
 
     //-----------------------------------------------getter methods--------------------------------------------------------------
 

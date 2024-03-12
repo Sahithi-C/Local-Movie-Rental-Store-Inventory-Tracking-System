@@ -130,6 +130,15 @@ bool Comedy::operator==(const Content &c) const {
     return true;
 }
 
+// operator!=()
+// Summmary - Overloads the != operator to correctly compare Comedy.
+// Pre-conditons - None.
+// Post-conditions - Returns true if this is != c.
+//                   false otherwise.
+bool Comedy::operator!=(const Content &c) const {
+    return !(*this == c);
+}
+
 //------------------------------------------------getter methods---------------------------------------------------------------
 
 // getContentId() const
