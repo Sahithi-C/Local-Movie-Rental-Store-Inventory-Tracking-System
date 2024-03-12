@@ -26,24 +26,33 @@ class Movies : public Content // Movies class inherits from Content class
 
     // Movies()
     // Summary - Default constructor.
+    // Pre-conditions - None.
     // Post-conditions - Constructs a movie object.
     Movies();
 
+    // Movies(char genreType, const string &director, const string &movieTitle, int releaseYear)
+    // Summary - Parameterized constructor for the Movies class.
+    // Pre-conditions - None.
+    // Post-conditions - A Movies object is initialized with the specified genre type, director, movie title, and release year.
+    //                   The content (movie title and release year) is set through the Content constructor.
     Movies(char genreType, const string &director, const string &movieTitle, int releaseYear);
 
     // Movies(Movies& other)
     // Summary - Copy constructor.
+    // Pre-conditions - The 'other' parameter must be a valid Movies object.
     // Post-conditions - constructs movie object as a copy of another movies object.
     Movies(const Movies& other);
 
     // ~Movies()
     // Summary - Destructor.
+    // Pre-conditions - None.
     // Post-conditions - cleans up any dynamically allocated memory.
     ~Movies();
 
     //---------------------------------------------Setter methods--------------------------------------------------------------
     // setDirector(const string& director)
     // Summary - Sets the director of a movie.
+    // Pre-conditions - The input string 'director' should not be empty.
     // Post-conditions - Director of a movie is set.
     //                   Returns true if the director is set.
     //                   false otherwise.
@@ -51,6 +60,7 @@ class Movies : public Content // Movies class inherits from Content class
 
     // setGenreType(char genre)
     // Summary - Sets the genre type for a movie.
+    // Pre-conditions - The genreType must be a valid character representing the genre type of the movie.
     // Post-conditions - genreType is set for a movie.
     //                   Returns true if the genre is set.
     //                   false otherwise.
@@ -99,32 +109,41 @@ class Movies : public Content // Movies class inherits from Content class
 
     // getGenreType() const
     // Summary - Gets the genre type of a movie.
+    // Pre-conditions - None.
     // Post-conditions - Returns genre type of a movie.
     char getGenreType() const;
 
     // getDirector() const
     // Summary - Gets the director of a movie.
+    // Pre-conditions - None.
     // Post-conditions - Returns the firstName and lastName of the director of a movie.
     string getDirector() const;
 
     // getContentId() const
     // Summary - Abstract function to get a contentId, the unique identifier of this movie.
-    // Post-conditions - None.
+    // Pre-conditions - None.
+    // Post-conditions - Returns the unique identifier (contentId) of this movie.
     virtual string getContentId() const;
     
     //------------------------------------------------accessors---------------------------------------------------------------
     // operator<<()
+    // Summary - Overloaded output stream operator for Movies objects.
+    // Pre-conditions - The output stream 'out' should be valid.
+    //                - The Movies object 'm' should be valid.
+    // Post-conditions - The Movies object 'm' is displayed to output.
     friend ostream& operator<<(ostream& out, const Movies m);
 
     //--------------------------------------------additional functionalities------------------------------------------------
 
     // addMovie()
     // Summary - Adds a movie to the inventory.
+    // Pre-conditions - None.
     // Post-conditions - A movie is added to the inventory.
     bool addMovie();
 
     // removeMovie()
     // Summary - Removes a movie from the inventory.
+    // Pre-conditions - There sould be a movie existing in inventory to remove it.
     // Post-conditions - a movie is removed from the inventory.
     bool removeMovie();
 
