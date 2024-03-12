@@ -15,6 +15,11 @@ This project is for a local movie rental store. It is to manage a store’s inve
 ****UML Diagram:****
 
 The UML class diagram for movie store inventory tracking system can be found here for your reference.
+
+**Link to UML diagram for any changes – **
+
+https://online.visual-paradigm.com/share.jsp?id=333132373539342d31#diagram:workspace=invtxlij&proj=0&id=1
+
  
 ![image](https://github.com/Sahithi-C/Local-Movie-Rental-Store-Inventory-Tracking-System/assets/117063184/9a62aa7f-49fb-4eb2-9f71-90aec712751a)
 
