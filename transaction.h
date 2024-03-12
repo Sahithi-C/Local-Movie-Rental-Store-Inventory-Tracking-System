@@ -56,11 +56,11 @@ class Transaction
     // Summary - Getter function for the mediaId attribute.
     // Pre-conditions - None.
     // Post-conditions - Returns the mediaId of the Transaction object.
-    string getTransactionMedia(); 
+    string getTransactionMedia() const; 
 
     private:
     char actionType;     // Type of action for a transaction.
     string mediaId;      // media Id associated with transaction.
 };
 
-#endif;
+#endif
