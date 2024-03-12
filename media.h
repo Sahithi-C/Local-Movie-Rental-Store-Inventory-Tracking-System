@@ -43,6 +43,8 @@ class Media
     //                 - The member variables `stock`, `mediaType`, and `content` are initialized with the corresponding parameters.
     Media(int stock, availableMediaTypes mediaType, Content* content);
 
+    Media(Media &m);
+
     // ~Media()
     // Summary - Destructor.
     // Pre-conditions - None.
@@ -86,6 +88,8 @@ class Media
     // Post-conditions - Returns true if this is == c.
     //                   false otherwise.
     bool operator==(const Media &m) const;
+
+    Media operator=(const Media &m);
 
 
     //----------------------------------------------other member functions---------------------------------------------------------

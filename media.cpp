@@ -38,6 +38,17 @@ Media::Media(int stock, availableMediaTypes mediaType, Content* content) {
     setContent(content);
 }
 
+// Media(int stock, availableMediaTypes mediaType, Content* content)
+// Summary - Constructs a Media object with the given stock, media type, and content.
+// Pre-conditions - The `stock` parameter must be a non-negative integer representing the stock count of the media.
+//                - The `mediaType` parameter must be one of the values defined in the `availableMediaTypes` enum, representing the type of media.
+//                - The `content` parameter must point to a valid `Content` object representing the content associated with the media.
+// Post-conditions - A Media object is constructed with the provided `stock`, `mediaType`, and `content`.
+//                 - The member variables `stock`, `mediaType`, and `content` are initialized with the corresponding parameters.
+Media::Media(Media &m) {
+    *this = m;
+}
+
 // ~Media()
 // Summary - Destructor.
 // Pre-conditions - None.
@@ -91,7 +102,14 @@ bool Media::operator<=(const Media &m) const {
 bool Media::operator==(const Media &m) const {
     return this->content == m.content;
 }
-    
+
+Media Media::operator=(const Media &m) {
+    setStock(m.stock);
+    setMediaType(m.mediaType);
+    Content * contentCopy;
+    *contentCopy = *(m.content);
+    setContent(contentCopy);
+}    
 
 //----------------------------------------------other member functions---------------------------------------------------------
 
