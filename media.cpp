@@ -45,7 +45,7 @@ Media::Media(int stock, availableMediaTypes mediaType, Content* content) {
 //                - The `content` parameter must point to a valid `Content` object representing the content associated with the media.
 // Post-conditions - A Media object is constructed with the provided `stock`, `mediaType`, and `content`.
 //                 - The member variables `stock`, `mediaType`, and `content` are initialized with the corresponding parameters.
-Media::Media(Media &m) {
+Media::Media(const Media &m) {
     *this = m;
 }
 
@@ -103,6 +103,11 @@ bool Media::operator==(const Media &m) const {
     return this->content == m.content;
 }
 
+
+// operator=()
+// Summary - Overloads the = operator to correctly assign Media.
+// Pre-conditions - m should be a non null media object.
+// Post-conditons - *this will be equivalent to m.
 Media Media::operator=(const Media &m) {
     setStock(m.stock);
     setMediaType(m.mediaType);
