@@ -40,9 +40,10 @@ Inventory::~Inventory() {}
 //           mediaId is a unique string representing the mediaType and contentId.
 // Pre-conditions - None.
 // Post-conditions - Returns the Media item of the given mediaId.
-//                   Returns an empty Media item if there is no Media item with the given id in Inventory.
+//                   Returns a nullptr if there is no item of the given mediaId.
 Media * Inventory::getMedia(string mediaId) const {
     Media * ret;
+    
     if (comedyMap.getValue(mediaId, ret)) {
         return ret;
     }
@@ -53,8 +54,7 @@ Media * Inventory::getMedia(string mediaId) const {
         return ret;
     }
 
-    // Will be an empty media object.
-    return ret;
+    return nullptr;
 }
 
 //---------------------------------------------------other member functions-----------------------------------------------------

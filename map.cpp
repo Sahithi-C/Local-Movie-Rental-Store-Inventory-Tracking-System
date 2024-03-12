@@ -87,10 +87,12 @@ bool Map<Key, Value>::getValue(const Key &key, Value* foundValue) const{
 
     int index = getHash(key);
 
-    for(const pair<Key, Value>& pair: hashMap[index]) {
-        if(pair.first == key) {
-            *foundValue = pair.second;
+    // Finding the key-value pair in the list at the index
+    list<pair<Key, Value>>& currentList = hashMap[index];
 
+    for(auto itr = currentList.begin(); itr != currentList.end(); ++itr) {
+        if(itr->first == key) {
+            *foundValue = itr->second; // I have no idea why but this is the line causing the capacity to get set to 0.
             return true;
         }
     }
@@ -106,7 +108,6 @@ bool Map<Key, Value>::getValue(const Key &key, Value* foundValue) const{
 //Referenced GeeksForGeeks for the list iterator - especially using 'auto'
 template <typename Key, typename Value>
 bool Map<Key, Value>::remove(const Key &key) {
-
     int index = getHash(key);
 
     // Finding the key-value pair in the list at the index
@@ -212,7 +213,7 @@ int Map<Key, Value>::getHash(const Key &key) const {
     int hashedIndex;
     hash<Key> hasher;
     hashedIndex = hasher(key);
-    hashedIndex %= capacity;
+    hashedIndex = hashedIndex % capacity;
 
     if (hashedIndex < 0) {
         hashedIndex += capacity;
